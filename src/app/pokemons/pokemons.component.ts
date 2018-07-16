@@ -8,6 +8,21 @@ import { Router } from '@angular/router';
 })
 export class PokemonsComponent implements OnInit {
 
+  data = [
+    {
+      title: 'Ant Design Title 1'
+    },
+    {
+      title: 'Ant Design Title 2'
+    },
+    {
+      title: 'Ant Design Title 3'
+    },
+    {
+      title: 'Ant Design Title 4'
+    }
+  ];
+
   constructor(
     private router: Router
   ) { }
