@@ -9,7 +9,7 @@ import { Pokemon, PokemonService } from '../shared/pokemon.service';
 export class PokemonsComponent implements OnInit {
 
   private pokemons: Pokemon[];
-  private searchWord: [number, string];
+  private searchWord: string = '';
 
   constructor(
     private pokemonService: PokemonService
@@ -17,6 +17,18 @@ export class PokemonsComponent implements OnInit {
 
   ngOnInit() {
     this.pokemons = this.pokemonService.getPokemons();
+  }
+
+  searchPokemon(v) {
+    if (!v) {
+      this.pokemons = this.pokemonService.getPokemons();
+    } else {
+      this.pokemons = this.pokemonService.searchPokemons(v);
+    }
+  }
+
+  surprisePokemon() {
+    this.pokemons = this.pokemonService.surprisePokemon();
   }
 }
 
