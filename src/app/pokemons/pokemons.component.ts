@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Pokemon, PokemonService } from '../shared/pokemon.service';
 
 @Component({
@@ -10,18 +9,14 @@ import { Pokemon, PokemonService } from '../shared/pokemon.service';
 export class PokemonsComponent implements OnInit {
 
   private pokemons: Pokemon[];
+  private searchWord: [number, string];
 
   constructor(
-    private router: Router,
     private pokemonService: PokemonService
   ) { }
 
   ngOnInit() {
     this.pokemons = this.pokemonService.getPokemons();
-  }
-
-  turnToNews() {
-      this.router.navigate(['news']);
   }
 }
 

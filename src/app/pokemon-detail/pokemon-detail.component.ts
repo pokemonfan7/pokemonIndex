@@ -18,7 +18,6 @@ export class PokemonDetailComponent implements OnInit {
 
   ngOnInit() {
     const pokemonId: string = this.routerInfo.snapshot.params['id'];
-    console.log(pokemonId);
     this.pokemonDetail = this.pokemonService.getPokemonDetail(pokemonId);
   }
 

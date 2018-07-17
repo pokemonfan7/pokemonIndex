@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { NewsComponent } from './news/news.component';
 import { PageNotFindComponent } from './page-not-find/page-not-find.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 registerLocaleData(zh);
 
