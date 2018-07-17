@@ -13,8 +13,8 @@
 <div>
   <ul>
     <li *ngFor="let pokemon of pokemons">
-      <a [routerLink]="['/pokemon', pokemon.id]">2222</a>
-      <div>{{pokemon.name}}</div>
+      <a [routerLink]="['/pokemon', pokemon.id]">{{ pokemon.id }}</a>
+      <div>{{ pokemon.name }}</div>
     </li>
   </ul>
 </div>
