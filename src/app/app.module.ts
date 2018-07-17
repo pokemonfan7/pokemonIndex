@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 registerLocaleData(zh);
 
@@ -20,7 +21,8 @@ registerLocaleData(zh);
     AppComponent,
     PokemonsComponent,
     NewsComponent,
-    PageNotFindComponent
+    PageNotFindComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
