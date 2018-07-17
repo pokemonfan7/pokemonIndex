@@ -48,23 +48,23 @@ export class PokemonService {
   }
 
   surprisePokemon() {
-    const number = [];
-    const surprisePokemon = [];
+    const numSets = [];
+    const surprisePokemons = [];
     for (let i = 1; i < 11; i++) {
       const n = Math.round(Math.random() * 19) + 1;
-      if (number.indexOf(n) >= 0) {
+      if (numSets.indexOf(n) >= 0) {
         i--;
       } else {
-        number.push(n);
+        numSets.push(n);
       }
     }
-    number.forEach(
-      n => surprisePokemon.push(
+    numSets.forEach(
+      n => surprisePokemons.push(
         this.pokemons.find(pokemon => Number(pokemon.id) === n)
       )
     );
-    console.log(surprisePokemon);
-    return surprisePokemon;
+    console.log(surprisePokemons);
+    return surprisePokemons;
   }
 }
 
