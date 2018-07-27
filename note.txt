@@ -1,0 +1,97 @@
+ng-content
+
+this.form.get('formControlName').setValue(null)
+
+url 支持自动传参的，如：/test/:lotId/:deviceNo, http.get(ApiAddress.URL, {params: {lotId: '1', deviceNo: 'xxx'}})
+
+http调用接口会自动取消订阅，不需要取消订阅
+
+指令与组件共有的钩子
+ngOnChanges
+ngOnInit
+ngDoCheck
+ngOnDestroy
+组件特有的钩子
+ngAfterContentInit
+ngAfterContentChecked
+ngAfterViewInit
+ngAfterViewChecked
+Angular 2 指令生命周期钩子的作用及调用顺序
+组件的构造函数会在所有的生命周期钩子之前被调用，它主要用于依赖注入或执行简单的数据初始化操作。
+ngOnChanges - 当数据绑定输入属性的值发生变化时调用
+ngOnInit - 在第一次 ngOnChanges 后调用
+ngDoCheck - 自定义的方法，用于检测和处理值的改变
+ngAfterContentInit - 在组件内容初始化之后调用
+ngAfterContentChecked - 组件每次检查内容时调用
+ngAfterViewInit - 组件相应的视图初始化之后调用
+ngAfterViewChecked - 组件每次检查视图时调用
+ngOnDestroy - 指令销毁前调用
+
+constructor() 是类中的特殊方法，主要用来做初始化操作，在进行类实例化操作时，会被自动调用。
+在 Angular 2 中，构造函数一般用于依赖注入或执行一些简单的初始化操作。
+ngOnInit()用于在获取输入属性后初始化组件，该钩子方法会在第一次 ngOnChanges 之后被调用。
+在项目开发中我们要尽量保持构造函数简单明了，让它只执行简单的数据初始化操作，因此我们会把其他的初始化操作放在 ngOnInit 钩子中去执行。
+如在组件获取输入属性之后，需执行组件初始化操作等。
+类中的静态属性(static)是属于 AppComponent 构造函数的，而成员属性是属于 AppComponent 实例。
+
+ViewEncapsulation 允许设置三个可选的值：
+ViewEncapsulation.Emulated - 无 Shadow DOM，但是通过 Angular 提供的样式包装机制来封装组件，使得组件的样式不受外部影响。这是 Angular 的默认设置。
+ViewEncapsulation.Native - 使用原生的 Shadow DOM 特性
+ViewEncapsulation.None - 无 Shadow DOM，并且也无样式包装
+
+@Input('bindingPropertyName')
+Input 装饰器支持一个可选的参数，用来指定组件绑定属性的名称。如果没有指定，则默认使用 @Input 装饰器，装饰的属性名。
+
+setter 和 getter 是用来约束属性的设置和获取，它们提供了一些属性读写的封装，可以让代码更便捷，更具可扩展性。
+通过 setter 和 getter 方式，我们对类中的私有属性进行了封装，能避免外界操作影响到该私有属性。此外通过 setter 我们还可以封装一些业务逻辑，
+具体示例如下：
+ _count: number = 0; // 默认私有属性以下划线开头，不是必须也可以使用$count
+    biggerThanTen: boolean = false;
+
+    @Input()
+    set count (num: number) {
+        this.biggerThanTen = num > 10;
+        this._count = num;
+    }
+
+    get count(): number {
+        return this._count;
+    }
+
+当数据绑定输入属性的值发生变化的时候，Angular 将会主动调用 ngOnChanges 方法。
+它会获得一个 SimpleChanges 对象，包含绑定属性的新值和旧值，它主要用于监测组件输入属性的变化。具体示例如下：
+ngOnChanges(changes: SimpleChanges) {
+        console.dir(changes['count']);
+    }
+
+不能同时使用 @Input 装饰器 或在 @Directive、@Component inputs 字段中定义同一个输入属性，具体示例如下：
+@Component({
+    selector: 'exe-counter',
+    inputs:['count:value'] 
+})
+export class CounterComponent {
+    @Input('value') count: number = 0;
+}
+
+@Input vs inputs
+相同点：
+它们都是用来定义输入属性
+异同点：
+inputs 定义在指令的 metadata 信息中，开发者对指令的输入属性一目了然。此外对于未选用 TypeScript 作为开发语言的开发者，也只能在 metadata 中定义指令的输入属性。
+@Input 属于属性装饰器，通过它我们可以一起定义属性的访问描述符 (public、private、protected)：@Input() public attr: string;
+
+项目开发中尽量通过 @Input 装饰器定义无状态的组件，即组件仅依赖于输入属性，这样会大大提高组件可复用性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
