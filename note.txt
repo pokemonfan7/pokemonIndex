@@ -111,14 +111,122 @@ Output ×°ÊÎÆ÷Ö§³ÖÒ»¸ö¿ÉÑ¡µÄ²ÎÊı£¬ÓÃÀ´Ö¸¶¨×é¼ş°ó¶¨ÊôĞÔµÄÃû³Æ¡£Èç¹ûÃ»ÓĞÖ¸¶¨£¬ÔòÄ¬È
 outputs ¶¨ÒåÔÚÖ¸ÁîµÄ metadata ĞÅÏ¢ÖĞ£¬¿ª·¢Õß¶ÔÖ¸ÁîµÄÊäÈëÊôĞÔÒ»Ä¿ÁËÈ»¡£´ËÍâ¶ÔÓÚÎ´Ñ¡ÓÃ TypeScript ×÷Îª¿ª·¢ÓïÑÔµÄ¿ª·¢Õß£¬Ò²Ö»ÄÜÔÚ metadata ÖĞ¶¨ÒåÖ¸ÁîµÄÊäÈëÊôĞÔ¡£
 @Output ÊôÓÚÊôĞÔ×°ÊÎÆ÷£¬Í¨¹ıËüÎÒÃÇ¿ÉÒÔÒ»Æğ¶¨ÒåÊôĞÔµÄ·ÃÎÊÃèÊö·û (public¡¢private¡¢protected)£º@Output('countChange') change: EventEmitter<number> = new EventEmitter<number>();
 
+son.ccomponent template
+<div style="border: 1px solid #666;margin: 4px;">
+     <div style="border: 1px solid red;margin: 5px;">
+         <ng-content select="header"></ng-content>
+     </div>
+     <div style="border: 1px solid green;margin: 5px;">
+         <ng-content select=".card_body"></ng-content>
+     </div>
+     <div style="border: 1px solid blue;margin: 5px;">
+         <ng-content select="footer"></ng-content>
+     </div>
+</div>
+parent.componet
+<son>
+    <header>Card Header</header>
+        <div class="card_body">Card Body</div>
+    <footer>Card Footer</footer>
+</son>
 
+ContentChild Óë ViewChild µÄÒìÍ¬µã
+ÏàÍ¬µã
+¶¼ÊÇÊôĞÔ×°ÊÎÆ÷
+¶¼ÓĞ¶ÔÓ¦µÄ¸´ÊıĞÎÊ½×°ÊÎÆ÷£ºContentChildren¡¢ViewChildren
+¶¼Ö§³Ö Type<any>|Function|string ÀàĞÍµÄÑ¡ÔñÆ÷
+²»Í¬µã
+ContentChild ÓÃÀ´´ÓÍ¨¹ı Content Projection ·½Ê½ (ng-content) ÉèÖÃµÄÊÓÍ¼ÖĞ»ñÈ¡Æ¥ÅäµÄÔªËØ
+ViewChild ÓÃÀ´´ÓÄ£°åÊÓÍ¼ÖĞ»ñÈ¡Æ¥ÅäµÄÔªËØ
+ÔÚ¸¸×é¼şµÄ ngAfterContentInit ÉúÃüÖÜÆÚ¹³×ÓÖĞ²ÅÄÜ³É¹¦»ñÈ¡Í¨¹ı ContentChild ²éÑ¯µÄÔªËØ
+ÔÚ¸¸×é¼şµÄ ngAfterViewInit ÉúÃüÖÜÆÚ¹³×ÓÖĞ²ÅÄÜ³É¹¦»ñÈ¡Í¨¹ı ViewChild ²éÑ¯µÄÔªËØ
 
+ËŞÖ÷ÔªËØµÄ¸ÅÄîÍ¬Ê±ÊÊÓÃÓÚÖ¸ÁîºÍ×é¼ş¡£¶ÔÓÚÖ¸ÁîÀ´Ëµ£¬Õâ¸ö¸ÅÄîÊÇÏàµ±¼òµ¥µÄ¡£Ó¦ÓÃÖ¸ÁîµÄÔªËØ£¬¾ÍÊÇËŞÖ÷ÔªËØ¡£
 
+ @HostListener('click', ['$event.target'])
+    onClick(btn: HTMLElement) {
+        console.log('button', btn, 'number of clicks:', this.numberOfClicks++);
+    }
+´ËÍâ£¬ÎÒÃÇÒ²¿ÉÒÔ¼àÌıËŞÖ÷ÔªËØÍâ£¬ÆäËü¶ÔÏó²úÉúµÄÊÂ¼ş£¬Èç window »ò document ¶ÔÏó¡£
+constructor(private el: ElementRef, private renderer: Renderer) { }
 
+    @HostListener('document:click', ['$event'])
+    onClick(btn: Event) {
+        if (this.el.nativeElement.contains(event.target)) {
+            this.highlight('yellow');
+        } else {
+            this.highlight(null);
+        }
+    }
 
+    highlight(color: string) {
+        this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', color);
+    }
 
+HostBinding ÊÇÊôĞÔ×°ÊÎÆ÷£¬ÓÃÀ´¶¯Ì¬ÉèÖÃËŞÖ÷ÔªËØµÄÊôĞÔÖµ¡£
+    @HostBinding('attr.role') role = 'button';
+    @HostBinding('class.pressed') isPressed: boolean;
 
+    @HostListener('mousedown') hasPressed() {
+        this.isPressed = true;
+    }
+    @HostListener('mouseup') hasReleased() {
+        this.isPressed = false;
+    }
 
+ElementRefµÄÓ¦ÓÃ
+ÎÒÃÇÏÈÀ´½éÉÜÒ»ÏÂÕûÌåĞèÇó£¬ÎÒÃÇÏëÔÚÒ³Ãæ³É¹¦äÖÈ¾ºó£¬»ñÈ¡Ò³ÃæÖĞµÄ div ÔªËØ£¬²¢¸Ä±ä¸Ã div ÔªËØµÄ±³¾°ÑÕÉ«¡£½ÓÏÂÀ´ÎÒÃÇÀ´Ò»²½²½£¬ÊµÏÖÕâ¸öĞèÇó¡£
+
+Ê×ÏÈÎÒÃÇÒªÏÈ»ñÈ¡ div ÔªËØ£¬ÔÚÎÄÖĞ "ElementRef µÄ×÷ÓÃ" ²¿·Ö£¬ÎÒÃÇÒÑ¾­Ìáµ½¿ÉÒÔÀûÓÃ Angular Ìá¹©µÄÇ¿´óµÄÒÀÀµ×¢ÈëÌØĞÔ£¬»ñÈ¡·â×°ºóµÄ native ÔªËØ¡£
+ÔÚä¯ÀÀÆ÷ÖĞ native ÔªËØ¾ÍÊÇ DOM ÔªËØ£¬ÎÒÃÇÖ»ÒªÏÈ»ñÈ¡ my-appÔªËØ£¬È»ºóÀûÓÃ querySelector API ¾ÍÄÜ»ñÈ¡Ò³ÃæÖĞ div ÔªËØ¡£
+import { Component, ElementRef, ViewChild, AfterViewInit, Renderer } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  template: `
+    <h1>Welcome to Angular World</h1>
+    <div #greet>Hello {{ name }}</div>
+  `,
+})
+export class AppComponent {
+  name: string = 'Semlinker';
+
+  @ViewChild('greet')
+  greetDiv: ElementRef;
+
+  constructor(private elementRef: ElementRef, private renderer: Renderer) { }
+
+  ngAfterViewInit() {
+    // this.greetDiv.nativeElement.style.backgroundColor  = 'red';
+    this.renderer.setElementStyle(this.greetDiv.nativeElement, 'backgroundColor', 'red');
+  }
+}
+
+render2³£ÓÃ·½·¨
+export abstract class Renderer2 {
+  abstract createElement(name: string, namespace?: string|null): any;
+  abstract createComment(value: string): any;
+  abstract createText(value: string): any;
+  abstract setAttribute(el: any, name: string, value: string,
+    namespace?: string|null): void;
+  abstract removeAttribute(el: any, name: string, namespace?: string|null): void;
+  abstract addClass(el: any, name: string): void;
+  abstract removeClass(el: any, name: string): void;
+  abstract setStyle(el: any, style: string, value: any, 
+    flags?: RendererStyleFlags2): void;
+  abstract removeStyle(el: any, style: string, flags?: RendererStyleFlags2): void;
+  abstract setProperty(el: any, name: string, value: any): void;
+  abstract setValue(node: any, value: string): void;
+  abstract listen(
+      target: 'window'|'document'|'body'|any, eventName: string,
+      callback: (event: any) => boolean | void): () => void;
+}
+
+TemplateRef£ºÓÃÓÚ±íÊ¾ÄÚÇ¶µÄ template Ä£°åÔªËØ£¬Í¨¹ı TemplateRef ÊµÀı£¬ÎÒÃÇ¿ÉÒÔ·½±ã´´½¨ÄÚÇ¶ÊÓÍ¼(Embedded Views)£¬ÇÒ¿ÉÒÔÇáËÉµØ·ÃÎÊµ½Í¨¹ı ElementRef ·â×°ºóµÄ nativeElement¡£
+ĞèÒª×¢ÒâµÄÊÇ×é¼şÊÓÍ¼ÖĞµÄ template Ä£°åÔªËØ£¬¾­¹ıäÖÈ¾ºó»á±»Ìæ»»³É comment ÔªËØ¡£
+
+ViewContainerRef£ºÓÃÓÚ±íÊ¾Ò»¸öÊÓÍ¼ÈİÆ÷£¬¿ÉÌí¼ÓÒ»¸ö»ò¶à¸öÊÓÍ¼¡£Í¨¹ı ViewContainerRef ÊµÀı£¬ÎÒÃÇ¿ÉÒÔ»ùÓÚ TemplateRef ÊµÀı´´½¨ÄÚÇ¶ÊÓÍ¼£¬²¢ÄÜÖ¸¶¨ÄÚÇ¶ÊÓÍ¼µÄ²åÈëÎ»ÖÃ£¬
+Ò²¿ÉÒÔ·½±ã¶ÔÊÓÍ¼ÈİÆ÷ÖĞÒÑÓĞµÄÊÓÍ¼½øĞĞ¹ÜÀí¡£¼ò¶øÑÔÖ®£¬ViewContainerRef µÄÖ÷Òª×÷ÓÃÊÇ´´½¨ºÍ¹ÜÀíÄÚÇ¶ÊÓÍ¼»ò×é¼şÊÓÍ¼¡£
 
 
 
