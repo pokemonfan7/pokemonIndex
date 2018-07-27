@@ -82,7 +82,34 @@ inputs ¶¨ÒåÔÚÖ¸ÁîµÄ metadata ĞÅÏ¢ÖĞ£¬¿ª·¢Õß¶ÔÖ¸ÁîµÄÊäÈëÊôĞÔÒ»Ä¿ÁËÈ»¡£´ËÍâ¶ÔÓÚÎ´Ñ
 
 ÏîÄ¿¿ª·¢ÖĞ¾¡Á¿Í¨¹ı @Input ×°ÊÎÆ÷¶¨ÒåÎŞ×´Ì¬µÄ×é¼ş£¬¼´×é¼ş½öÒÀÀµÓÚÊäÈëÊôĞÔ£¬ÕâÑù»á´ó´óÌá¸ß×é¼ş¿É¸´ÓÃĞÔ
 
+EventEmitter ÓÃÀ´´¥·¢×Ô¶¨ÒåÊÂ¼ş£¬¾ßÌåÊ¹ÓÃÊ¾ÀıÈçÏÂ£º
+let numberEmitter: EventEmitter<number> = new EventEmitter<number>(); 
+numberEmitter.subscribe((value: number) => console.log(value));
+numberEmitter.emit(10);
 
+ÔÚ Angular 2 ÖĞµÄ EventEmitter Ó¦ÓÃ³¡¾°ÊÇ£º×ÓÖ¸Áî´´½¨Ò»¸ö EventEmitter ÊµÀı£¬²¢½«Æä×÷ÎªÊä³öÊôĞÔµ¼³ö¡£
+×ÓÖ¸Áîµ÷ÓÃÒÑ´´½¨µÄ EventEmitter ÊµÀıÖĞµÄ emit(payload) ·½·¨À´´¥·¢Ò»¸öÊÂ¼ş£¬¸¸Ö¸ÁîÍ¨¹ıÊÂ¼ş°ó¶¨ (eventName) µÄ·½Ê½¼àÌı¸ÃÊÂ¼ş£¬²¢Í¨¹ı $event ¶ÔÏóÀ´»ñÈ¡ payload ¶ÔÏó¡£
+son.component
+@Output() change: EventEmitter<number> = new EventEmitter<number>();
+
+    increment() {
+        this.count++;
+        this.change.emit(this.count);
+    }
+parent.component
+(change)="countChange($event)"
+countChange(event: number) {
+    this.changeMsg = `×Ó×é¼şchangeÊÂ¼şÒÑ´¥·¢£¬µ±Ç°ÖµÊÇ: ${event}`;
+  }
+
+Output ×°ÊÎÆ÷Ö§³ÖÒ»¸ö¿ÉÑ¡µÄ²ÎÊı£¬ÓÃÀ´Ö¸¶¨×é¼ş°ó¶¨ÊôĞÔµÄÃû³Æ¡£Èç¹ûÃ»ÓĞÖ¸¶¨£¬ÔòÄ¬ÈÏÊ¹ÓÃ @Output ×°ÊÎÆ÷£¬×°ÊÎµÄÊôĞÔÃû¡£
+
+@Output vs outputs
+ÏàÍ¬µã£º
+ËüÃÇ¶¼ÊÇÓÃÀ´¶¨ÒåÊä³öÊôĞÔ
+ÒìÍ¬µã£º
+outputs ¶¨ÒåÔÚÖ¸ÁîµÄ metadata ĞÅÏ¢ÖĞ£¬¿ª·¢Õß¶ÔÖ¸ÁîµÄÊäÈëÊôĞÔÒ»Ä¿ÁËÈ»¡£´ËÍâ¶ÔÓÚÎ´Ñ¡ÓÃ TypeScript ×÷Îª¿ª·¢ÓïÑÔµÄ¿ª·¢Õß£¬Ò²Ö»ÄÜÔÚ metadata ÖĞ¶¨ÒåÖ¸ÁîµÄÊäÈëÊôĞÔ¡£
+@Output ÊôÓÚÊôĞÔ×°ÊÎÆ÷£¬Í¨¹ıËüÎÒÃÇ¿ÉÒÔÒ»Æğ¶¨ÒåÊôĞÔµÄ·ÃÎÊÃèÊö·û (public¡¢private¡¢protected)£º@Output('countChange') change: EventEmitter<number> = new EventEmitter<number>();
 
 
 
