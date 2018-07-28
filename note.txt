@@ -59,6 +59,7 @@ setter ºÍ getter ÊÇÓÃÀ´Ô¼ÊøÊôĞÔµÄÉèÖÃºÍ»ñÈ¡£¬ËüÃÇÌá¹©ÁËÒ»Ğ©ÊôĞÔ¶ÁĞ´µÄ·â×°£¬¿ÉÒÔÈ
     }
 
 µ±Êı¾İ°ó¶¨ÊäÈëÊôĞÔµÄÖµ·¢Éú±ä»¯µÄÊ±ºò£¬Angular ½«»áÖ÷¶¯µ÷ÓÃ ngOnChanges ·½·¨¡£
+ÔÚ×é¼şÄÚÊÖ¶¯¸Ä±äÊäÈëÊôĞÔµÄÖµ£¬ngOnChanges ¹³×ÓÊÇ²»»á´¥·¢µÄ¡£
 Ëü»á»ñµÃÒ»¸ö SimpleChanges ¶ÔÏó£¬°üº¬°ó¶¨ÊôĞÔµÄĞÂÖµºÍ¾ÉÖµ£¬ËüÖ÷ÒªÓÃÓÚ¼à²â×é¼şÊäÈëÊôĞÔµÄ±ä»¯¡£¾ßÌåÊ¾ÀıÈçÏÂ£º
 ngOnChanges(changes: SimpleChanges) {
         console.dir(changes['count']);
@@ -247,6 +248,317 @@ Metadata£ºÈç @Input()¡¢@Output()¡¢@ContentChild/Children¡¢@ViewChild/Children µÈ
 Constructor£ºÈç¹ûÅÉÉúÀàÎ´ÉùÃ÷¹¹Ôìº¯Êı£¬Ëü½«Ê¹ÓÃ»ùÀàµÄ¹¹Ôìº¯Êı¡£ÕâÒâÎ¶×ÅÔÚ»ùÀà¹¹Ôìº¯Êı×¢ÈëµÄËùÓĞ·şÎñ£¬×Ó×é¼ş¶¼ÄÜ·ÃÎÊµ½¡£
 Lifecycle hooks£ºÈç¹û»ùÀàÖĞ°üº¬ÉúÃüÖÜÆÚ¹³×Ó£¬Èç ngOnInit¡¢ngOnChanges µÈ¡£¾¡¹ÜÔÚÅÉÉúÀàÃ»ÓĞ¶¨ÒåÏàÓ¦µÄÉúÃüÖÜÆÚ¹³×Ó£¬»ùÀàµÄÉúÃüÖÜÆÚ¹³×Ó»á±»×Ô¶¯µ÷ÓÃ¡£
 ĞèÒª×¢ÒâµÄÊÇ£¬Ä£°åÊÇ²»ÄÜ±»¼Ì³ĞµÄ £¬Òò´Ë¹²ÏíµÄ DOM ½á¹¹»òĞĞÎªĞèÒªµ¥¶À´¦Àí¡£×Ó×é¼şÊÇ²»ÄÜ¼Ì³Ğ¸¸×é¼ş×°ÊÎÆ÷ÖĞÔªÊı¾İ¡£
+
+Change Detection (±ä»¯¼ì²â) ÊÇ Angular 2 ÖĞ×îÖØÒªµÄÒ»¸öÌØĞÔ¡£µ±×é¼şÖĞµÄÊı¾İ·¢Éú±ä»¯µÄÊ±ºò£¬Angular 2 ÄÜ¼ì²âµ½Êı¾İ±ä»¯²¢×Ô¶¯Ë¢ĞÂÊÓÍ¼·´Ó³³öÏàÓ¦µÄ±ä»¯¡£
+ÏÖÔÚÎÒÃÇÀ´×Ü½áÒ»ÏÂ£¬ÒıÆğÄ£ĞÍ±ä»¯µÄÈıÀàÊÂ¼şÔ´£º
+Events£ºclick, mouseover, keyup ...
+Timers£ºsetInterval¡¢setTimeout
+XHRs£ºAjax(GET¡¢POST ...)
+ÕâĞ©ÊÂ¼şÔ´ÓĞÒ»¸ö¹²Í¬µÄÌØĞÔ£¬¼´ËüÃÇ¶¼ÊÇÒì²½²Ù×÷¡£ÄÇÎÒÃÇ¿ÉÒÔÕâÑùÈÏÎª£¬ËùÓĞµÄÒì²½²Ù×÷¶¼ÓĞ¿ÉÄÜ»áÒıÆğÄ£ĞÍµÄ±ä»¯¡£
+
+ÆäÊµÔÚ Angular 2 Ó¦ÓÃ³ÌĞòÆô¶¯Ö®Ç°£¬Zone ²ÉÓÃºï×Ó²¹¶¡ (Monkey-patched) µÄ·½Ê½£¬½« JavaScript ÖĞµÄÒì²½ÈÎÎñ¶¼½øĞĞÁË°ü×°£¬
+ÕâÊ¹µÃÕâĞ©Òì²½ÈÎÎñ¶¼ÄÜÔËĞĞÔÚ Zone µÄÖ´ĞĞÉÏÏÂÎÄÖĞ£¬Ã¿¸öÒì²½ÈÎÎñÔÚ Zone ÖĞ¶¼ÊÇÒ»¸öÈÎÎñ£¬³ıÁËÌá¹©ÁËÒ»Ğ©¹©¿ª·¢ÕßÊ¹ÓÃµÄ¹³×ÓÍâ£¬Ä¬ÈÏÇé¿öÏÂ Zone ÖØĞ´ÁËÒÔÏÂ·½·¨£º
+setInterval¡¢clearInterval¡¢setTimeout¡¢clearTimeout
+alert¡¢prompt¡¢confirm
+requestAnimationFrame¡¢cancelAnimationFrame
+addEventListener¡¢removeEventListener
+
+Immutable ¼´²»¿É±ä£¬±íÊ¾µ±Êı¾İÄ£ĞÍ·¢Éú±ä»¯µÄÊ±ºò£¬ÎÒÃÇ²»»áĞŞ¸ÄÔ­ÓĞµÄÊı¾İÄ£ĞÍ£¬¶øÊÇ´´½¨Ò»¸öĞÂµÄÊı¾İÄ£ĞÍ¡£
+µ±ÎÒÃÇÊ¹ÓÃ OnPush ²ßÂÔÊ±£¬ĞèÒªÊ¹ÓÃµÄ Immutable µÄÊı¾İ½á¹¹£¬²ÅÄÜ±£Ö¤³ÌĞòÕı³£ÔËĞĞ¡£
+
+ÔÚ Angular 2 ÖĞÎÒÃÇ¿ÉÒÔÔÚ¶¨Òå×é¼şµÄ metadata ĞÅÏ¢Ê±£¬Éè¶¨Ã¿¸ö×é¼şµÄ±ä»¯¼ì²â²ßÂÔ¡£
+OnPush²ßÂÔ
+    selector: 'profile-card',
+    template: `
+       <div>
+         <profile-name [name]='profile.name'></profile-name>
+         <profile-age [age]='profile.age'></profile-age>
+       </div>
+    `,
+    changeDetection: ChangeDetectionStrategy.OnPush
+
+ChangeDetectorRef ÊÇ×é¼şµÄ±ä»¯¼ì²âÆ÷µÄÒıÓÃ£¬ÎÒÃÇ¿ÉÒÔÔÚ×é¼şÖĞµÄÍ¨¹ıÒÀÀµ×¢ÈëµÄ·½Ê½À´»ñÈ¡¸Ã¶ÔÏó£º
+import { ChangeDetectorRef } from '@angular/core';
+@Component({}) class MyComponent {
+    constructor(private cdRef: ChangeDetectorRef) {}
+}
+ChangeDetectorRef ±ä»¯¼ì²âÀàÖĞÖ÷Òª·½·¨ÓĞÒÔÏÂ¼¸¸ö£º
+angularÖĞ´æÔÚ×é¼şÊ÷£¬Ã¿¸ö×é¼şÓĞ±ä»¯¼ì²â£¬ĞÎ³ÉÁË±ä»¯¼ì²âÊ÷
+markForCheck() - ÔÚ×é¼şµÄ metadata ÖĞÈç¹ûÉèÖÃÁË changeDetection: ChangeDetectionStrategy.OnPush Ìõ¼ş£¬ÄÇÃ´±ä»¯¼ì²â²»»áÔÙ´ÎÖ´ĞĞ£¬³ı·ÇÊÖ¶¯µ÷ÓÃ¸Ã·½·¨¡£
+detach() - ´Ó±ä»¯¼ì²âÊ÷ÖĞ·ÖÀë±ä»¯¼ì²âÆ÷£¬¸Ã×é¼şµÄ±ä»¯¼ì²âÆ÷½«²»ÔÙÖ´ĞĞ±ä»¯¼ì²â£¬³ı·ÇÊÖ¶¯µ÷ÓÃ reattach() ·½·¨¡£
+reattach() - ÖØĞÂÌí¼ÓÒÑ·ÖÀëµÄ±ä»¯¼ì²âÆ÷£¬Ê¹µÃ¸Ã×é¼ş¼°Æä×Ó×é¼ş¶¼ÄÜÖ´ĞĞ±ä»¯¼ì²â
+detectChanges() - ´Ó¸Ã×é¼şµ½¸÷¸ö×Ó×é¼şÖ´ĞĞÒ»´Î±ä»¯¼ì²â
+
+Ê¹ÓÃ Observables »úÖÆÌáÉıĞÔÄÜºÍ²»¿É±äµÄ¶ÔÏóÀàËÆ£¬µ«µ±·¢Éú±ä»¯µÄÊ±ºò£¬Observables ²»»á´´½¨ĞÂµÄÄ£ĞÍ£¬µ«ÎÒÃÇ¿ÉÒÔÍ¨¹ı¶©ÔÄ Observables ¶ÔÏó£¬
+ÔÚ±ä»¯·¢ÉúÖ®ºó£¬½øĞĞÊÓÍ¼¸üĞÂ¡£Ê¹ÓÃ Observables »úÖÆµÄÊ±ºò£¬ÎÒÃÇÍ¬ÑùĞèÒªÉèÖÃ×é¼şµÄ±ä»¯¼ì²â²ßÂÔÎª OnPush¡£
+
+×Ü½áÒ»ÏÂ±ä»¯¼ì²âµÄÔ­Àí£ºAngular Ó¦ÓÃÊÇÒ»¸öÏìÓ¦ÏµÍ³£¬±ä»¯¼ì²â×ÜÊÇ´Ó¸ù×é¼şµ½×Ó×é¼şÕâÑùÒ»¸ö´ÓÉÏµ½ÏÂµÄË³Ğò¿ªÊ¼Ö´ĞĞ£¬ËüÊÇÒ»¿ÃÏßĞÔµÄÓĞÏòÊ÷£¬Ä¬ÈÏÇé¿öÏÂ£¬±ä»¯¼ì²âÏµÍ³½«»á×ß±éÕû¿ÃÊ÷£¬
+µ«ÎÒÃÇ¿ÉÒÔÊ¹ÓÃ OnPush ±ä»¯¼ì²â²ßÂÔ£¬ÔÚ½áºÏ Observables ¶ÔÏó£¬½ø¶øÀûÓÃ ChangeDetectorRef ÊµÀıÌá¹©µÄ·½·¨£¬À´ÊµÏÖ¾Ö²¿µÄ±ä»¯¼ì²â£¬×îÖÕÌá¸ßÏµÍ³µÄÕûÌåĞÔÄÜ¡£
+
+
+
+
+
+Provider
+ÔÚ Angular 2 ÖĞÎÒÃÇÊ¹ÓÃ Provider À´ÃèÊöÓë Token ¹ØÁªµÄÒÀÀµ¶ÔÏóµÄ´´½¨·½Ê½¡£Angular 2 ÖĞÒÀÀµ¶ÔÏóµÄ´´½¨·½Ê½ÓĞËÄÖÖ£¬ËüÃÇ·Ö±ğÊÇ£º
+useClass
+useValue
+useExisting
+useFactory
+
+useClass
+@Injectable()
+export class ApiService {
+   constructor(
+      public http: Http, 
+      public loadingCtrl: LoadingController) {
+   }
+   ...
+}
+
+@NgModule({
+  ...
+  providers: [
+       { provide: ApiService, useClass: ApiService } // ¿ÉÊ¹ÓÃ¼ò½àµÄÓï·¨£¬¼´Ö±½ÓÊ¹ÓÃApiService
+  ]
+})
+export class CoreModule { }
+
+useValue
+{ provide: 'API_URL', useValue: 'http://my.api.com/v1' }
+
+useExisting
+{ provide: 'ApiServiceAlias', useExisting: ApiService }
+
+useFactory
+export function configFactory(config: AppConfig) {
+  return () => config.load();
+}
+
+@NgModule({
+  ...
+  providers: [
+       { provide: APP_INITIALIZER, useFactory: configFactory, 
+        deps: [AppConfig], multi: true }
+  ]
+})
+export class CoreModule { }
+
+
+
+
+
+
+Directive(Ö¸Áî)
+
+ngIf
+ngIf Ö¸ÁîÓÃÓÚ¸ù¾İ±í´ïÊ½µÄÖµ£¬ÔÚÖ¸¶¨Î»ÖÃäÖÈ¾ then »ò else Ä£°åµÄÄÚÈİ¡£
+then Ä£°å³ı·Ç°ó¶¨µ½²»Í¬µÄÖµ£¬·ñÔòÄ¬ÈÏÊÇ ngIf Ö¸Áî¹ØÁªµÄÄÚÁªÄ£°å¡£
+else Ä£°å³ı·Ç°ó¶¨¶ÔÓ¦µÄÖµ£¬·ñÔòÄ¬ÈÏÊÇ null¡£
+<div *ngIf="condition; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>...</ng-template>
+<ng-template #elseBlock>...</ng-template>
+
+ngForOf
+<li *ngFor="let item of items; index as i; trackBy: trackByFn">...</li>
+<li *ngFor="let item of items; let i = index">
+Angular Ê¹ÓÃ¶ÔÏó±êÊ¶À´¸ú×Ù¿Éµü´ú¶ÔÏóÖĞ£¬Ã¿Ò»ÏîµÄ²åÈëºÍÉ¾³ı£¬²¢ÔÚ DOM ÖĞ×ö³öÏàÓ¦µÄ±ä»¯¡£µ«Ê¹ÓÃ¶ÔÏó±êÊ¶ÓĞÒ»¸öÎÊÌâ£¬¼ÙÉèÎÒÃÇÍ¨¹ı·şÎñ¶Ë»ñÈ¡¿Éµü´ú¶ÔÏó£¬
+µ±ÖØĞÂµ÷ÓÃ·şÎñ¶Ë½Ó¿Ú»ñÈ¡ĞÂÊı¾İÊ±£¬¾¡¹Ü·şÎñ¶Ë·µ»ØµÄÊı¾İÃ»ÓĞ±ä»¯£¬µ«Ëü½«²úÉúÒ»¸öĞÂµÄ¶ÔÏó¡£´ËÊ±£¬Angular ½«ÍêÈ«Ïú»Ù¿Éµü´ú¶ÔÏóÏà¹ØµÄ DOM ÔªËØ£¬
+È»ºóÖØĞÂ´´½¨¶ÔÓ¦µÄ DOM ÔªËØ¡£ÕâÊÇÒ»¸öºÜ°º¹ó (Ó°ÏìĞÔÄÜ) µÄ²Ù×÷£¬Èç¹û¿ÉÄÜµÄ»°Ó¦¸Ã¾¡Á¿±ÜÃâ¡£
+Òò´Ë£¬Angular Ìá¹©ÁË trackBy Ñ¡Ïî£¬ÈÃÎÒÃÇÄÜ¹»×Ô¶¨Òå¸ú×ÙËã·¨¡£ trackBy Ñ¡ÏîĞè°ó¶¨µ½Ò»¸ö°üº¬ index ºÍ item Á½¸ö²ÎÊıµÄº¯Êı¶ÔÏó¡£
+ÈôÉè¶¨ÁË trackBy Ñ¡Ïî£¬Angular ½«»ùÓÚº¯ÊıµÄ·µ»ØÖµÀ´¸ú×Ù±ä»¯¡£
+
+ngTmeplateOutlet
+<ng-container *ngTemplateOutlet="templateRefExp; context: contextExp"></ng-container>
+<ng-container *ngTemplateOutlet="greet"></ng-container>
+    <hr>
+    <ng-container *ngTemplateOutlet="eng; context: myContext"></ng-container>
+    <hr>
+    <ng-container *ngTemplateOutlet="svk; context: myContext"></ng-container>
+    <hr>
+    <ng-template #greet><span>Hello</span></ng-template>
+    <ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
+    <ng-template #svk let-person="localSk"><span>Ahoj {{person}}!</span></ng-template>
+
+×Ô¶¨Òåbtn·À¶¶¶¯Ö¸Áî
+import { Directive, EventEmitter, HostListener, OnInit, Output, OnDestroy, Input } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from "rxjs/Subscription";
+import 'rxjs/add/operator/debounceTime';
+
+@Directive({
+    selector: '[appDebounceClick]'
+})
+export class DebounceClickDirective implements OnInit, OnDestroy {
+    @Input() debounceTime = 500;
+    @Output() debounceClick = new EventEmitter();
+    private clicks = new Subject<any>();
+    private subscription: Subscription;
+
+    constructor() { }
+
+    ngOnInit() {
+        this.subscription = this.clicks
+            .debounceTime(this.debounceTime)
+            .subscribe(e => this.debounceClick.emit(e));
+    }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+
+    @HostListener('click', ['$event'])
+    clickEvent(event: MouseEvent) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.clicks.next(event);
+    }
+}
+
+×Ü½áÒ»ÏÂ <ng-template> ºÍ <ng-container> µÄÇø±ğ£º
+
+<ng-template> £ºÊ¹ÓÃ * Óï·¨ÌÇµÄ½á¹¹Ö¸Áî£¬×îÖÕ¶¼»á×ª»»Îª <ng-template> »ò <template> Ä£°åÖ¸Áî£¬Ä£°åÄÚµÄÄÚÈİÈç¹û²»½øĞĞ´¦Àí£¬ÊÇ²»»áÔÚÒ³ÃæÖĞÏÔÊ¾µÄ¡£
+
+<ng-container>£ºÊÇÒ»¸öÂß¼­ÈİÆ÷£¬¿ÉÓÃÓÚ¶Ô½Úµã½øĞĞ·Ö×é£¬µ«²»×÷Îª DOM Ê÷ÖĞµÄ½Úµã£¬Ëü½«±»äÖÈ¾Îª HTMLÖĞµÄ comment ÔªËØ£¬Ëü¿ÉÓÃÓÚ±ÜÃâÌí¼Ó¶îÍâµÄÔªËØÀ´Ê¹ÓÃ½á¹¹Ö¸Áî¡£
+
+
+
+
+
+
+Decorator(×°ÊÎÆ÷)
+×°ÊÎÆ÷ÊÇÊ²Ã´
+ËüÊÇÒ»¸ö±í´ïÊ½
+¸Ã±í´ïÊ½±»Ö´ĞĞºó£¬·µ»ØÒ»¸öº¯Êı
+º¯ÊıµÄÈë²Î·Ö±ğÎª targe¡¢name ºÍ descriptor
+Ö´ĞĞ¸Ãº¯Êıºó£¬¿ÉÄÜ·µ»Ø descriptor ¶ÔÏó£¬ÓÃÓÚÅäÖÃ target ¶ÔÏó¡¡
+×°ÊÎÆ÷µÄ·ÖÀà
+Àà×°ÊÎÆ÷ (Class decorators)
+ÊôĞÔ×°ÊÎÆ÷ (Property decorators)
+·½·¨×°ÊÎÆ÷ (Method decorators)
+²ÎÊı×°ÊÎÆ÷ (Parameter decorators)
+
+Angular 2 ÄÚÖÃ×°ÊÎÆ÷·ÖÀà£º
+Àà×°ÊÎÆ÷
+@Component¡¢@NgModule¡¢@Pipe¡¢@Injectable
+ÊôĞÔ×°ÊÎÆ÷
+@Input¡¢@Output¡¢@ContentChild¡¢@ContentChildren¡¢@ViewChild¡¢@ViewChildren
+·½·¨×°ÊÎÆ÷
+@HostListener
+²ÎÊı×°ÊÎÆ÷
+@Inject¡¢@Optional¡¢@Self¡¢@SkipSelf¡¢@Host
+
+
+
+
+
+
+Pipe(¹ÜµÀ)
+ÓÃÀ´¶ÔÊäÈëµÄÊı¾İ½øĞĞ´¦Àí£¬Èç´óĞ¡Ğ´×ª»»¡¢ÊıÖµºÍÈÕÆÚ¸ñÊ½»¯µÈ¡£
+Angular 2 ÄÚ½¨¹ÜµÀ¼°·ÖÀà
+---String -> String
+UpperCasePipe
+LowerCasePipe
+TitleCasePipe
+---Number -> String
+DecimalPipe
+PercentPipe
+CurrencyPipe
+---Object -> String
+JsonPipe
+DatePipe
+---Tools
+SlicePipe
+AsyncPipe
+I18nPluralPipe
+I18nSelectPipe
+
+¹ÜµÀ²ÎÊı
+¹ÜµÀ¿ÉÒÔ½ÓÊÕÈÎÒâÊıÁ¿µÄ²ÎÊı£¬Ê¹ÓÃ·½Ê½ÊÇÔÚ¹ÜµÀÃû³ÆºóÃæÌí¼Ó : ºÍ²ÎÊıÖµ¡£Èç number: '1.4-4' £¬ÈôĞèÒª´«µİ¶à¸ö²ÎÊıÔò²ÎÊıÖ®¼äÓÃÃ°ºÅ¸ô¿ª£¬¾ßÌåÊ¾ÀıÈçÏÂ£º
+<p>{{ 'semlinker' | slice:0:3 }}</p> <!-- Output: sem -->
+
+¹ÜµÀÁ´
+ÎÒÃÇ¿ÉÒÔ½«¶à¸ö¹ÜµÀÁ¬½ÓÔÚÒ»Æğ£¬×é³É¹ÜµÀÁ´¶ÔÊı¾İ½øĞĞ´¦Àí¡£
+<p>{{ 'semlinker' | slice:0:3 | uppercase }}</p> <!-- Output: SEM -->
+
+×Ô¶¨ÒåWelcome¹ÜµÀ
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'welcome' })
+export class WelcomePipe implements PipeTransform {
+  transform(value: string): string {
+    if(!value) return value;
+    if(typeof value !== 'string') {
+      throw new Error('Invalid pipe argument for WelcomePipe');
+    }
+    return "Welcome to " + value;
+  }
+} 
+<p>{{ 'semlinker' | welcome }}</p> <!-- Output: Welcome to semlinker -->
+
+¹ÜµÀ·ÖÀà
+pure ¹ÜµÀ£¨Ä¬ÈÏ£©£º½öµ±¹ÜµÀÊäÈëÖµ±ä»¯µÄÊ±ºò£¬²ÅÖ´ĞĞ×ª»»²Ù×÷£¬Ä¬ÈÏµÄÀàĞÍÊÇ pure ÀàĞÍ¡£
+(±¸×¢£ºÊäÈëÖµ±ä»¯ÊÇÖ¸Ô­Ê¼Êı¾İÀàĞÍÈç£ºstring¡¢number¡¢boolean µÈµÄÊıÖµ»ò¶ÔÏóµÄÒıÓÃÖµ·¢Éú±ä»¯)
+impure ¹ÜµÀ£ºÔÚÃ¿´Î±ä»¯¼ì²âÆÚ¼ä¶¼»áÖ´ĞĞ£¬ÈçÊó±êµã»÷»òÒÆ¶¯¶¼»áÖ´ĞĞ impure ¹ÜµÀ
+
+async¹ÜµÀ
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+
+@Component({
+    selector: 'exe-observable-pipe',
+    template: `
+     <h4>Observable with AsyncPipe Component</h4>
+     <p>{{ observable | async }}</p>
+    `
+})
+export class ObservableAsyncPipeComponent {
+    observable: Observable<number>
+
+    constructor() {
+        this.observable = this.getObservable();
+    }
+
+    getObservable(): Observable<number> {
+        return Observable
+            .interval(1000)
+            .take(10)
+            .map(v => v * v);
+    }
+}
+Promise vs Observable
+Promise
+·µ»Øµ¥¸öÖµ
+²»¿ÉÈ¡ÏûµÄ
+Observable
+Ëæ×ÅÊ±¼äµÄÍÆÒÆ·¢³ö¶à¸öÖµ
+¿ÉÒÔÈ¡ÏûµÄ
+Ö§³Ö map¡¢filter¡¢reduce µÈ²Ù×÷·û
+ÑÓ³ÙÖ´ĞĞ£¬µ±¶©ÔÄµÄÊ±ºò²Å»á¿ªÊ¼Ö´ĞĞ
+
+
+
+
+
+
+Dependency Injection(ÒÀÀµ×¢Èë)
+@Self()¡¢@SkipSelf()¡¢@Optional() µÈ×°ÊÎÆ÷ÓĞÊ²Ã´×÷ÓÃ£¿
+@Self() - ±íÊ¾Ö»ÔÚ±¾¼¶×¢ÈëÆ÷²éÕÒÒÀÀµ¶ÔÏó
+@SkipSelf() - ±íÊ¾²»´Ó±¾¼¶×¢ÈëÆ÷»ñÈ¡ÒÀÀµ¶ÔÏó
+@Optional - ±íÊ¾¸ÃÒÀÀµ¶ÔÏóÊÇ¿ÉÑ¡µÄ£¬Èç¹ûÕÒ²»µ½·µ»Ø null
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
