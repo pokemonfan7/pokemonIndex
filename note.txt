@@ -683,6 +683,148 @@ dirty - 表单控件值已改变
 touched - 表单控件已被访问过
 untouched - 表单控件未被访问过
 
+this.signupForm = this.fb.group({
+  userName: ['', [Validators.required, Validators.minLength(3)]],
+  email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+_]+@[a-z0-9.-]+')]]
+});
+动态调整验证规则
+myControl.setValidators(Validators.email);
+myControl.setValidators([Validators.required, Validators.maxLength(6)]);
+myControl.clearValidators();
+myControl.updateValueAndValidity();
+
+动态调整验证规则功能
+ngOnInit(): void {
+    ...
+    this.signupForm.get('enableMobile').valueChanges
+      .subscribe(value => this.checkMobile(value));     //监听值的变化
+}
+
+checkMobile(enableMobile: string): void {
+  const mobileControl = this.signupForm.get('mobile');
+  
+  enableMobile === "1" ? 
+      mobileControl.setValidators([Validators.required,
+        Validators.pattern('1(3|4|5|7|8)\\d{9}')]) :
+      mobileControl.clearValidators();
+  
+    mobileControl.updateValueAndValidity();
+}
+
+更新模型的值，我们可以利用 FormGroup 对象的 patchValue() 方法：
+this.form.patchValue({
+  name: 'Semlinker',
+  event: {
+    title: 'Angular 4.x\'s Road',
+    location: 'Xiamen'
+  }
+});
+
+对于 FormControl 对象来说，patchValue() 和 setValue() 这两个方法是等价的。此外 setValue() 方法中做了三件事：
+更新控件当前值
+判断是否注册 onChange 事件，若有则循环调用已注册的 changeFn 函数。
+重新计算控件的值和验证状态
+setValue() 方法相比 patchValue() 会更严格，会执行多个判断：
+判断的是否为所有控件都设置更新值
+判断控件是否存在
+而 patchValue() 方法，会先使用 this.controls[name] 进行过滤，只更新参数 value 中设定控件的值。
+
+
+
+
+
+Router
+根模块中使用 forRoot()，子模块中使用 forChild()
+
+{ path: '/profile/:username', component: ProfileComponent }
+我们已经建立一个动态路由，此时最重要的事情就是如何获取路由参数。要访问当前路由的相关信息，我们需要先从 @angular/router 模块中导入 ActivatedRoute ，
+然后在组件类的构造函数中注入该对象，最后通过订阅该对象的 params 属性，来获取路由参数
+
+子路由
+{ 
+    path: 'settings', 
+    component: SettingsComponent,
+    children: [
+      { path: 'profile', component: ProfileSettingsComponent },
+      { path: 'password', component: PasswordSettingsComponent }
+    ]
+  }
+接下来，我们需要做的最后一件事是在我们的 SettingsComponent 组件中添加 router-outlet 指令，因为我们要在设置页面中呈现子路由。
+如果我们没有在 SettingsComponent 组件中添加 router-outlet 指令，尽管 /settings/password 匹配修改密码页面的路由地址，但修改密码页面将无法正常显示。
+（也可以不定义父路由的component，那么/settings/profile 和 /settings/password 路由定义的内容，将显示在 AppComponent 组件的 router-outlet 元素中。）
+
+子模块
+{
+    path: '',
+    component: SettingsComponent,
+    children: [
+      { path: 'profile', component: ProfileSettingsComponent },
+      { path: 'password', component: PasswordSettingsComponent }
+    ]
+  }
+主模块
+{
+    path: 'settings',
+    loadChildren: './settings/settings.module#SettingsModule'
+  }
+需要注意的是，我们没有将 SettingsModule 导入到我们的 AppModule 中，而是通过 loadChildren 属性，告诉 Angular 路由依据 loadChildren 属性
+配置的路径去加载 SettingsModule 模块。这就是模块懒加载功能的具体应用，当用户访问 /settings/** 路径的时候，才会加载对应的 SettingsModule 模块，
+这减少了应用启动时加载资源的大小。
+
+我们传递一个字符串作为 loadChildren 的属性值，该字符串由三部分组成：
+需要导入模块的相对路径
+# 分隔符
+导出模块类的名称
+
+路由指令
+除了 router-outlet 指令，路由模块中还提供了一些其它指令
+
+routerLink
+<a routerLink="/settings/password">Change password</a>
+如果我们想要链接到动态的路由地址，且该地址有一个 username 的路由变量，则我们可以按照以下方式配置 routerLink 对应的属性值：
+<a [routerLink]="['/profile', username]">
+
+routerLinkActive
+通过使用 routerLinkActive 指令，当 a 元素对应的路由处于激活状态时，active 类将会自动添加到 a 元素上。
+<a routerLink="/settings/profile" routerLinkActive="active">Profile Settings</a>
+
+我们可以通过路由还提供的 API 实现与 routerLink 相同的功能。要使用 Router API，我们需要在组件类中注入 Router 对象
+ constructor(private router: Router) {}
+ this.router.navigate(['/settings']);
+
+假设当前的 URL 地址是：
+/inbox/11/message/22(popup:compose)
+当我们调用 router.navigateByUrl('/inbox/33/message/44') 方法后，此时的 URL 地址将变成 /inbox/33/message/44 。
+但如果我们是调用 router.navigate('/inbox/33/message/44') 方法，当前的 URL 地址将变成 /inbox/33/message/44(popup:compose) 。
+
+
+
+
+
+RxJS
+RxJS 是基于观察者模式和迭代器模式以函数式编程思维来实现的。RxJS 中含有两个基本概念：Observables 与 Observer。
+Observables 作为被观察者，是一个值或事件的流集合；而 Observer 则作为观察者，根据 Observables 进行处理。
+Observables 与 Observer 之间的订阅发布关系(观察者模式) 如下：
+订阅：Observer 通过 Observable 提供的 subscribe() 方法订阅 Observable。
+发布：Observable 通过回调 next 方法向 Observer 发布事件。
+
+Observable vs Promise
+Promise
+返回单个值
+不可取消的
+Observable
+随着时间的推移发出多个值
+可以取消的
+支持 map、filter、reduce 等操作符
+延迟执行，当订阅的时候才会开始执行
+
+Observable 对象可以被重复订阅
+Observable 对象每次被订阅后，都会重新执行
+
+
+
+
+
 
 
 
