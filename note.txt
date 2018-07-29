@@ -542,31 +542,146 @@ Observable
 
 
 Dependency Injection(依赖注入)
+angular是一个控制反转（IOC，Inversion of Control）的容器，使用依赖注入（DI，Dependency Injection）来实现控制反转。
+在NgModule中的providers中添加注入的类（服务），当在组件的constructor中注入类（服务时），providers会自动实例化对象并添加进组件里。
+
+依赖注入的好处是解耦合性、可重用性和可测试性。
+解耦合是让组件和需要实例化的对象解耦；
+可重用性是组件可重用；
+可测试性是当需要的服务未写时，可先用一个mock的服务来测试，当需要的服务写好后，直接改变注入即可。
+
+[{provide: ProductService, useclass: ProductService}]
+provide属性是token（一个标志），useclass属性是实例化的类，在constructor中声明的ProductService是token
+
+声明了@Injectable（）装饰器的服务才能在其constructor中注入其他服务
+
 @Self()、@SkipSelf()、@Optional() 等装饰器有什么作用？
 @Self() - 表示只在本级注入器查找依赖对象
 @SkipSelf() - 表示不从本级注入器获取依赖对象
 @Optional - 表示该依赖对象是可选的，如果找不到返回 null
 
+为什么在构造函数中，非 Type 类型的参数只能用 @Inject(Something) 的方式注入 ？
+因为 Type 类型的对象，会被 TypeScript 编译器编译。即我们通过 class 关键字声明的服务，最终都会编译成 ES5 的函数对象。
+
+在构造函数中，Type 类型的参数能用 @Inject(Type) 的方式注入么？
+Type 类型的参数也能使用 @Inject(Type) 的方式注入，具体如下：
+constructor(@Inject(Http) private http) { }
+同样也可以使用以下方式：
+constructor(@Inject(Http) private http: Http) { }
+第一种方式虽然可以正常编译，但 IDE 会有如下的提示信息：
+[ts] Parameter 'http' implicitly has an 'any' type.
+第二种方式，虽然 Angular 内部会合并 design:paramtypes 与 parameters 内的 metadata 信息，但本人觉得是有点冗余了。
+总而言之，若果是 Type 类型的参数，推荐使用下面的方式：
+constructor(private http: Http) { }
 
 
 
 
 
+HTTP
+                       权限                 路径
+        ┌──────┴────────┐┌─┴─┐
+  abc://username:password@example.com:123/path/data?key=value&key2=value2#fragid1
+└┬┘   └───┬──┘ └─┬─┘ └┬┘        └────┬────┘└─┬─┘
+  协议        用户信息      主机名    端口                查询参数          片段
+
+HTTP 协议主要特点
+简单快速：当客户端向服务器端发送请求时，只是简单的填写请求路径和请求方法即可，然后就可以通过浏览器或其他方式将该请求发送就行了
+灵活：HTTP 协议允许客户端和服务器端传输任意类型任意格式的数据对象
+无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接，采用这种方式可以节省传输时间。(当今多数服务器支持Keep-Alive功能，使用服务器支持长连接，解决无连接的问题)
+无状态：无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。即客户端发送HTTP请求后，服务器根据请求，会给我们发送数据，发送完后，不会记录信息。(使用 cookie 机制可以保持 session，解决无状态的问题)
+
+HTTP 请求报文由请求行、请求头、空行 和 请求体(请求数据) 4 个部分组成
+请求行
+请求行由请求方法、URL 和 HTTP 协议版本组成，它们之间用空格分开。
+GET / HTTP/1.1
+请求头
+请求头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。请求头通知服务器有关于客户端请求的信息，典型的请求头有：
+User-Agent：用户代理信息 - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 ...
+Accept：客户端可识别的内容类型列表 - text/html,application/xhtml+xml,application/xml
+Accept-Language：客户端可接受的自然语言 - zh-CN,zh;q=0.8,en;q=0.6,id;q=0.4
+Accept-Encoding：客户端可接受的编码压缩格式 - gzip, deflate, sdch, br
+Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机 - www.baidu.com
+connection：连接方式
+close：告诉WEB服务器或代理服务器，在完成本次请求的响应后，断开连接
+keep-alive：告诉WEB服务器或代理服务器。在完成本次请求的响应后，保持连接，以等待后续请求
+Cookie：存储于客户端扩展字段，向同一域名的服务端发送属于该域的cookie - PSTM=1490844191; BIDUPSID=2145FF54639208435F60E1E165379255;
+空行
+最后一个请求头之后是一个空行，发送回车符和换行符，通知服务器以下不再有请求头。
+请求体
+请求数据不在 GET 方法中使用，而是在 POST 方法中使用。与请求数据相关的最常使用的请求头是 Content-Type和 Content-Length。
+
+HTTP响应报文由状态行、响应头、空行和响应体4 个部分组成
+状态行
+状态行格式： HTTP-Version Status-Code Reason-Phrase CRLF
+HTTP-Version - HTTP 协议版本
+Status-Code - 状态码
+Reason-Phrase - 状态码描述
+CRLF - 回车/换行符
+响应头
+响应头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。
+响应头域允许服务器传递不能放在状态行的附加信息，这些域主要描述服务器的信息和Request-URI进一步的信息，典型的响应头有：
+Server：包含处理请求的原始服务器的软件信息
+Date：服务器日期
+Content-Type：返回的资源类型 (MIME)
+Connection：连接方式
+close：连接已经关闭
+keep-alive：连接已保持，在等待本次连接的后续请求
+Cache-Control：缓存控制
+Expires：设置过期时间
+Set-Cookie：设置 Cookie 信息
+空行
+最后一个响应头之后是一个空行，发送回车符和换行符，通知浏览器以下不再有响应头。
+
+Angular HttpModule 模块的核心功能，终于分析完了。最后我们来总结一下：
+当调用 Http 对象的 get()、post()、put() 等方法时，会返回一个 Observable<Response> 对象，仅当我们订阅该 Observable 对象时，才会正式发起 HTTP 请求。
+Angular 内部使用 Request 和 Response 对象来封装请求信息和响应信息。Request 类和 Response 类都是继承于 Body 类，Body 类中提供了四个方法用于数据转换：
+json(): any - 转换为 JSON 对象
+text(): string -
+arrayBuffer(): ArrayBuffer - 转换为 ArrayBuffer 对象
+blob(): Blob - 转化为 Blob 对象
+订阅 Observable<Response> 对象后，返回一个函数对象。调用该函数对象，我们可以移除 load、error 事件监听及取消 HTTP 请求。
+
+mergeMap
+this.http.get(this.apiUrl)
+      .map(res => res.json())
+      .mergeMap(users => {
+        this.username = users[6].username;
+        return this.http.get(`${this.apiUrl}?username=${this.username}`)
+          .map(res => res.json())
+      })
+      .subscribe(user => this.user = user);
+
+forkJoin,该操作符与 Promise.all() 实现的功能类似
+forkJoin 操作符接收一个 Observable 对象列表，然后并行地执行它们。
+一旦列表的 Observable 对象都发出值后，forkJoin 操作符返回的 Observable 对象会发出新的值，即包含所有 Observable 对象输出值的列表
+let post1 = this.http.get(`${this.apiUrl}/1`);
+    let post2 = this.http.get(`${this.apiUrl}/2`);
+
+    Observable.forkJoin([post1, post2])
+      .subscribe(results => {
+        this.post1 = results[0];
+        this.post2 = results[1];
+      });
+
+HttpClient
+需要注意的是，现在 JSON 是默认的数据格式，我们不需要再进行显式的解析。即我们不需要再使用以下代码：
+http.get(url).map(res => res.json()).subscribe(...)
+现在我们可以这样写：
+http.get(url).subscribe(...)
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+Form
+表单控件有以下 6 种状态：
+valid - 表单控件有效
+invalid - 表单控件无效
+pristine - 表单控件值未改变
+dirty - 表单控件值已改变
+touched - 表单控件已被访问过
+untouched - 表单控件未被访问过
 
 
 
