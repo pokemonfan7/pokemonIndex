@@ -821,7 +821,8 @@ Observable
 Observable 对象可以被重复订阅
 Observable 对象每次被订阅后，都会重新执行
 
-
+BehaviorSubject 跟 Subject 最大的不同就是 BehaviorSubject 是用来保存当前最新的值，而不是单纯的发送事件。
+BehaviorSubject 会记住最近一次发送的值，并把该值作为当前值保存在内部的属性中。
 
 
 
