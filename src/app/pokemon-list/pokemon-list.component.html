@@ -1,19 +1,19 @@
-<nz-input-group nzSearch [nzSuffix]="suffixIconButton" class="width">
+<div class="input-fixed">
   <input
+      class="form-control"
       type="text"
-      nz-input
       placeholder="输入宝可梦名字或者ID"
       [(ngModel)]="searchWord"
   >
-</nz-input-group>
-<ng-template #suffixIconButton>
-  <button nz-button nzType="primary" nzSearch (click)="searchPokemon(searchWord)"><i class="anticon anticon-search"></i></button>
-</ng-template>
-<button nz-button nzType="primary" (click)="surprisePokemon()">来点惊喜</button>
+  <button class="form-btn" (click)="searchPokemon(searchWord)">
+    <i class="anticon anticon-search"></i>
+  </button>
+  <button class="form-btn" (click)="surprisePokemon()">来点惊喜</button>
+</div>
 <div>
   <ul>
     <li *ngFor="let pokemon of pokemons">
-      <a [routerLink]="['/pokemon', pokemon.id]">{{ pokemon.id }}</a>
+      <a [routerLink]="['/pokemon/pokemon-list', pokemon.id]">{{ pokemon.id }}</a>
       <div>{{ pokemon.name }}</div>
     </li>
   </ul>

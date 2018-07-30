@@ -1,3 +1,6 @@
-.width {
-	width: 300px;
+.input-fixed {
+	position: fixed;
+	top: 66px;
+	left: 180px;
+	width: 500px;
 }

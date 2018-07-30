@@ -14,6 +14,7 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { PokemonItemComponent } from './pokemon-list/pokemon-item/pokemon-item.component';
 
 registerLocaleData(zh);
 
@@ -25,6 +26,7 @@ registerLocaleData(zh);
     PageNotFindComponent,
     PokemonDetailComponent,
     PokemonListComponent,
+    PokemonItemComponent,
   ],
   imports: [
     BrowserModule,
