@@ -1,4 +1,18 @@
-<button nz-button nzType="primary" [routerLink]="['/']">主页</button>
-<button nz-button nzType="primary" [routerLink]="['/pokemon/pokemon-list']">列表</button>
-<button nz-button nzType="primary" [routerLink]="['/pokemon/news']">新闻</button>
+<header id="nav-header">
+    <a class="logo" routerLink="['/']">Pokemon</a>
+</header>
+<nav id="nav-aside">
+  <ul>
+    <li><a href=""><i class="pokeball-icon">@</i>第一世代</a></li>
+    <li><a href=""><i class="pokeball-icon">@</i>第二世代</a></li>
+    <li><a href=""><i class="pokeball-icon">@</i>第三世代</a></li>
+    <li><a href=""><i class="pokeball-icon">@</i>第四世代</a></li>
+    <li><a href=""><i class="pokeball-icon">@</i>第五世代</a></li>
+    <li><a href=""><i class="pokeball-icon">@</i>第六世代</a></li>
+    <li><a href=""><i class="pokeball-icon">@</i>第七世代</a></li>
+  </ul>
+</nav>
+<!--<button nz-button nzType="primary" [routerLink]="['/']">主页</button>-->
+<!--<button nz-button nzType="primary" [routerLink]="['/pokemon/pokemon-list']">列表</button>-->
+<!--<button nz-button nzType="primary" [routerLink]="['/pokemon/news']">新闻</button>-->
 <router-outlet></router-outlet>

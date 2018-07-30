@@ -24,7 +24,7 @@ registerLocaleData(zh);
     NewsComponent,
     PageNotFindComponent,
     PokemonDetailComponent,
-    PokemonListComponent
+    PokemonListComponent,
   ],
   imports: [
     BrowserModule,
