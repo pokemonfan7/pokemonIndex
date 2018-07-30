@@ -1,3 +1,6 @@
-<p>
-  pokemon-item works!
-</p>
+<ng-container>
+  <a  class="item-content" [routerLink]="['/pokemon/pokemon-list', pokemon.id]">
+    <img [src]="" alt="">
+    <span class="item-name">{{pokemon.id + pokemon.name}}</span>
+  </a>
+</ng-container>

@@ -11,10 +11,9 @@
   <button class="form-btn" (click)="surprisePokemon()">来点惊喜</button>
 </div>
 <div>
-  <ul>
-    <li *ngFor="let pokemon of pokemons">
-      <a [routerLink]="['/pokemon/pokemon-list', pokemon.id]">{{ pokemon.id }}</a>
-      <div>{{ pokemon.name }}</div>
+  <ul class="flex-box">
+    <li class="item-list" *ngFor="let pokemon of pokemons">
+      <app-pokemon-item [pokemon]="pokemon"></app-pokemon-item>
     </li>
   </ul>
 </div>
