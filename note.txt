@@ -735,6 +735,8 @@ setValue() 方法相比 patchValue() 会更严格，会执行多个判断：
 
 Router
 根模块中使用 forRoot()，子模块中使用 forChild()
+因为在 AppModule 中，forRoot() 方法会导入路由模块中的指令和服务。
+但对于子模块来说，forChild() 方法仅会导入路由模块中定义的指令，而不会再次导入模块中定义的服务。
 
 { path: '/profile/:username', component: ProfileComponent }
 我们已经建立一个动态路由，此时最重要的事情就是如何获取路由参数。要访问当前路由的相关信息，我们需要先从 @angular/router 模块中导入 ActivatedRoute ，
