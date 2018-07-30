@@ -4,6 +4,7 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
 import { NewsComponent } from './news/news.component';
 import { PageNotFindComponent } from './page-not-find/page-not-find.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
 
 const routes: Routes = [
     {
@@ -13,15 +14,21 @@ const routes: Routes = [
     },
     {
         path: 'pokemon',
-        component: PokemonsComponent
-    },
-    {
-        path: 'pokemon/:id',
-        component: PokemonDetailComponent
-    },
-    {
-        path: 'news',
-        component: NewsComponent
+        component: PokemonsComponent,
+        children: [
+            {
+                path: 'pokemon-list',
+                component: PokemonListComponent
+            },
+            {
+                path: 'pokemon-list/:id',
+                component: PokemonDetailComponent
+            },
+            {
+                path: 'news',
+                component: NewsComponent
+            }
+        ]
     },
     {
         path: '404',
