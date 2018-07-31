@@ -831,7 +831,45 @@ BehaviorSubject 会记住最近一次发送的值，并把该值作为当前值保存在内部的属性中。
 
 
 
+NgModule
+declarations 和 providers 属性最令人困惑的是，它们没有相同的作用域和可见性 (scope / visibility)：
+declarations / components 是本地作用域 (private visibility)
+providers / services 是全局作用域 (public visibility)
+这意味着你声明的组件只能在当前模块中使用。如果你想要在外面使用声明的组件，你必须导出它们：
+@NgModule({
+  declarations: [SomeComponent, SomeDirective, SomePipe],
+  exports: [SomeComponent, SomeDirective, SomePipe]
+})
+反之，模块中的声明的服务，我们可以在所有模块中使用。
 
+components 和 services 拥有不同的作用域，了解这个区别很重要。如果我们的应用程序不仅仅包含一个模块，事情可能会变得很糟糕。
+Angular 框架内部也拆分成多个不同的模块，如 core、common、http 等等。为什么需要导入这些模块?
+因为组件和服务，拥有不同的作用域：
+--如果我们需要在模块中使用导入模块中声明的组件，那我们需要在每个使用的模块中导入对应的模块
+--如果我们只是使用模块中定义的服务，那我们只需要在主模块中导入对应的模块
+如果你不了解这些区别，你可能由于忘记导入某个模块，而出现组件不可用的错误。或者你为了使用某个模块中定义的服务，而多次导入同一个模块。
 
+Modules to import each time you need them
+CommonModule (包含 Angular 中定义的内建指令，如 ngIf、ngFor 等)，除了在主模块之外，不需要导入，因为我们已经在主模块中导入了 BrowserModule (此模块已导入了 CommonModule)。其它模块都必须手动导入该模块。
+FormsModule / ReactiveFormsModule
+BrowserAnimationsModule
+FlexLayoutModule
+MaterialModule 和 UI Modules (如 PrimeNg)
+Other Modules (定义 components、directives 或 pipes)
 
+Modules to import only once
+HttpModule
+Other Modules (仅提供服务)
 
+如何同时管理具有组件和服务的模块？这是一个比较复杂的问题。你可能已经接触过 RouterModule，该模块不仅提供了 <router-outlet> 、routerLink 指令，
+而且还提供了 ActivedRouter 服务 (用于获取 URL 参数)、Router 服务 (用于页面导航) 。
+幸运的是，这个问题是由模块本身来解决。 Angular CLI 会为我们自动生成路由文件，但你可能已经注意到，应用程序主模块的路由和子模块路由之间存在细微差别。
+对于 AppModule，我们这样使用：
+RouterModule.forRoot(routes)
+对于子模块，我们这样使用：
+RouterModule.forChild(routes)
+为什么呢？因为在 AppModule 中，forRoot() 方法会导入路由模块中的指令和服务。但对于子模块来说，forChild() 方法仅会导入路由模块中定义的指令，而不会再次导入模块中定义的服务。
+
+CoreModule 定义在根模块中，因为服务是全局作用域，所以只实例化一次（例如：store，全局只能有一个）
+
+ShareModule 定义全局公用的组件、指令、管道，用时就直接导入ShareModule

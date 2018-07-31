@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: [ './pokemon-item.component.less']
 })
 export class PokemonItemComponent implements OnInit {
-    @Input() pokemon
-    src: string
+    @Input() pokemon;
+    src: string;
 
     constructor() {
     }
