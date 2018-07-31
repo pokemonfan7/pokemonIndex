@@ -7,11 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PokemonItemComponent implements OnInit {
     @Input() pokemon
+    src: string
 
     constructor() {
     }
 
     ngOnInit() {
+        this.src = `/assets/pokemon/${this.pokemon.id}.png`;
     }
 
 }

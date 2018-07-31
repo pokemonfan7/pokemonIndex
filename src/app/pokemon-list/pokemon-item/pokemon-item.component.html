@@ -1,6 +1,13 @@
 <ng-container>
-  <a  class="item-content" [routerLink]="['/pokemon/pokemon-list', pokemon.id]">
-    <img [src]="" alt="">
-    <span class="item-name">{{pokemon.id + pokemon.name}}</span>
-  </a>
+  <figure class="img-content">
+    <a class="img-link" [routerLink]="['/pokemon/pokemon-list', pokemon.id]">
+      <img class="item-img" [src]="src" alt="">
+    </a>
+  </figure>
+  <div class="item-btn"></div>
+  <div class="item-info">
+    <span class="item-num">#{{pokemon.id}}</span>
+    <h5 class="item-name">{{pokemon.name}}</h5>
+    <!--type-->
+  </div>
 </ng-container>
