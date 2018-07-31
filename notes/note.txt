@@ -873,3 +873,12 @@ RouterModule.forChild(routes)
 CoreModule 定义在根模块中，因为服务是全局作用域，所以只实例化一次（例如：store，全局只能有一个）
 
 ShareModule 定义全局公用的组件、指令、管道，用时就直接导入ShareModule
+
+如你所见，HeroComponent 组件在 HeroesModule 以及 AnotherModule 中进行声明。在多个模块中使用同一个组件是允许的。
+但当这种情况发生时，我们应该考虑模块之间的关系是什么。如果一个模块作为另一个模块的子模块，那么针对上面的场景解决方案将是：
+--在子模块的 @NgModule.declaration 中声明 HeroComponent 组件
+--通过子模块的 @NgModule.exports 数组中导出该组件
+--在父模块的 @NgModule.imports 数组中导入子模块
+而对于其它情况，我们可以创建一个新的模块，如 SharedModule 模块。具体步骤如下：
+--在 SharedModule 中声明和导出 HeroComponent
+--在需要使用 HeroComponent 的模块中导入 SharedModule
