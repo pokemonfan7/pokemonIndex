@@ -15,6 +15,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonItemComponent } from './pokemon-list/pokemon-item/pokemon-item.component';
+import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(zh);
 
@@ -34,7 +35,8 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    SharedModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

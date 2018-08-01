@@ -1,19 +1,7 @@
-<div class="input-fixed">
-  <input
-      class="form-control"
-      type="text"
-      placeholder="输入宝可梦名字或者ID"
-      [(ngModel)]="searchWord"
-  >
-  <button class="form-btn" (click)="searchPokemon(searchWord)">
-    <i class="anticon anticon-search"></i>
-  </button>
-  <button class="form-btn" (click)="surprisePokemon()">来点惊喜</button>
-</div>
-<div>
-  <ul class="flex-box">
+<ng-container>
+  <ul class="list-content">
     <li class="item-list" *ngFor="let pokemon of pokemons">
       <app-pokemon-item [pokemon]="pokemon"></app-pokemon-item>
     </li>
   </ul>
-</div>
+</ng-container>
