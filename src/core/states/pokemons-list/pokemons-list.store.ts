@@ -14,7 +14,7 @@ export class SetPokemons {
 
 export class PokemonsListState {
     @Action(SetPokemons)
-    setPokemons(ctx, action) {
+    setPokemons(ctx: StateContext, action) {
         const state = ctx.getState();
         ctx.setState({
             pokemons: [ ...action.payload ]
