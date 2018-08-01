@@ -16,6 +16,7 @@ import zh from '@angular/common/locales/zh';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonItemComponent } from './pokemon-list/pokemon-item/pokemon-item.component';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from '../core/core.module';
 
 registerLocaleData(zh);
 
