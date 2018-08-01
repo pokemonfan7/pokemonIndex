@@ -3,6 +3,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { AllStates } from './states/all-state';
 
 const isDev = !environment.production;
 const modules = [
