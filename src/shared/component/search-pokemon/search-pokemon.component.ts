@@ -9,7 +9,7 @@ import { Store } from '@ngxs/store';
 })
 export class SearchPokemonComponent implements OnInit {
 
-    private searchWord;
+    private searchWord: string;
 
     constructor(
         private pokemonService: PokemonService,
@@ -23,15 +23,12 @@ export class SearchPokemonComponent implements OnInit {
     searchPokemon(v) {
         if (!v) {
             this.pokemonService.getAllPms();
-            this.store.selectSnapshot(state => state.pokemonsList.pokemon);
         } else {
-            this.pokemonService.getAllPms();
             this.pokemonService.searchPms(v);
         }
     }
 
     surprisePm() {
-        this.pokemonService.getAllPms();
         this.pokemonService.surprisePm();
     }
 }

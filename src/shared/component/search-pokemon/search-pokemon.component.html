@@ -2,11 +2,11 @@
   <input
       class="form-control"
       type="text"
-      placeholder="输入宝可梦"
+      placeholder="输入名称或序号"
       [(ngModel)]="searchWord"
   >
   <button class="form-btn" (click)="searchPokemon(searchWord)">
     <i class="anticon anticon-search"></i>
   </button>
-  <button class="form-btn" (click)="surprisePm()">来点惊喜</button>
+  <button class="form-btn" (click)="surprisePm()">抽取幸运PM</button>
 </ng-container>
