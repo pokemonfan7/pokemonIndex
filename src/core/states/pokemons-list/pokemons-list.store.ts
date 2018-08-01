@@ -1,4 +1,4 @@
-import { Action, State, StateContext } from '@ngxs/store';
+import { Action, State } from '@ngxs/store';
 
 export class SetPokemons {
     static readonly type = '[PokemonsList] get pokemons';
@@ -14,7 +14,7 @@ export class SetPokemons {
 
 export class PokemonsListState {
     @Action(SetPokemons)
-    setPokemons(ctx: StateContext, action) {
+    setPokemons(ctx, action) {
         const state = ctx.getState();
         ctx.setState({
             pokemons: [ ...action.payload ]

@@ -17,7 +17,7 @@ export class PokemonListComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.pokemonService.getAllPms();
+        this.pokemonService.getLocationPms(1, 151);
         this.store.select(state => state.pokemonsList.pokemons).subscribe(v => {
             this.pokemons = v;
         });
