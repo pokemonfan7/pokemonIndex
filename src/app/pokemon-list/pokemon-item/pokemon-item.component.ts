@@ -13,7 +13,7 @@ export class PokemonItemComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.src = `/assets/pokemon/${this.pokemon.id}.png`;
+        this.src = `/assets/pokemon/${this.pokemon.number}.png`;
     }
 
 }

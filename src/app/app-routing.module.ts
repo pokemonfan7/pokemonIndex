@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PokemonsComponent } from './pokemons/pokemons.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { NewsComponent } from './news/news.component';
 import { PageNotFindComponent } from './page-not-find/page-not-find.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
@@ -14,7 +14,7 @@ const routes: Routes = [
     },
     {
         path: 'pokemon',
-        component: PokemonsComponent,
+        component: HomePageComponent,
         children: [
             {
                 path: 'pokemon-list',

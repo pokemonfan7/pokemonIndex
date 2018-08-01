@@ -2,21 +2,22 @@ import { Action, State, StateContext } from '@ngxs/store';
 
 export class SetPokemons {
     static readonly type = '[PokemonsList] get pokemons';
-    constructor(public pokemons, public payload) {}
+    constructor( public payload) {}
 }
 
 @State({
-    name: 'pokemons-list',
+    name: 'pokemonsList',
     defaults: {
-        pokemons: {}
+        pokemons: []
     }
 })
 
 export class PokemonsListState {
     @Action(SetPokemons)
-    SetPokemons(ctx, action: SetPokemons) {
+    setPokemons(ctx, action) {
+        const state = ctx.getState();
         ctx.setState({
-            ...action.payload
+            pokemons: [ ...action.payload ]
         });
     }
 }

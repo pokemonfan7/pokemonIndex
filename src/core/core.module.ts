@@ -20,14 +20,10 @@ if (isDev) {
         ...modules
     ],
     providers: [
-        ...requestInterceptor,
-        ...responseInterceptor,
-        ...CoreServices,
     ],
 })
 
 export class CoreModule {
     constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-        throwIfAlreadyLoaded(parentModule, 'CoreModule');
     }
 }

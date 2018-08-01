@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pokemon, PokemonService } from '../shared/pokemon.service';
+import { Pokemon, PokemonService } from '../../shared/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -18,7 +18,7 @@ export class PokemonDetailComponent implements OnInit {
 
   ngOnInit() {
     const pokemonId: string = this.routerInfo.snapshot.params['id'];
-    this.pokemonDetail = this.pokemonService.getPokemonDetail(pokemonId);
+    this.pokemonDetail = this.pokemonService.getPmDetail(pokemonId);
   }
 
 }

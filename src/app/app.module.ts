@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PokemonsComponent } from './pokemons/pokemons.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { NewsComponent } from './news/news.component';
 import { PageNotFindComponent } from './page-not-find/page-not-find.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
@@ -15,7 +15,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonItemComponent } from './pokemon-list/pokemon-item/pokemon-item.component';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 
 registerLocaleData(zh);
@@ -23,12 +23,12 @@ registerLocaleData(zh);
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonsComponent,
-    NewsComponent,
     PageNotFindComponent,
-    PokemonDetailComponent,
+    HomePageComponent,
+    NewsComponent,
     PokemonListComponent,
     PokemonItemComponent,
+    PokemonDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +38,7 @@ registerLocaleData(zh);
     HttpClientModule,
     NgZorroAntdModule,
     SharedModule,
+    CoreModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
