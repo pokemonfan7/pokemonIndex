@@ -1,7 +1,8 @@
-import { Injectable, OnInit } from '@angular/core';
+import {  Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngxs/store';
 import { SetPokemons } from '../core/states/pokemons-list/pokemons-list.store';
-import { HttpClient } from '@angular/common/http';
+import { SelectedId } from '../core/states/selected-id/selected-id.store';
 
 @Injectable({
     providedIn: 'root'
@@ -56,7 +57,10 @@ export class PokemonService {
         new Pokemon(724, '724', '狙射树枭'),
     ];
 
-    constructor(private store: Store, private http: HttpClient) {
+    constructor(
+        private store: Store,
+        private http: HttpClient,
+        ) {
         this.http.get('http://localhost:3000/pokemon')
         .subscribe(val => {
             const pokemonArray = [];
@@ -73,16 +77,17 @@ export class PokemonService {
         this.store.dispatch(new SetPokemons(this.pokemons));
     }
 
-    getLocationPms(startId, endId) {
+    getLocationPms(startId, endId, selectId) {
+        this.store.dispatch(new SelectedId(selectId));
         this.getAllPms();
         const pokemons = this.store.selectSnapshot(state => state.pokemonsList.pokemons);
         const locationPms = pokemons.filter(pokemon => pokemon.id >= startId && pokemon.id <= endId);
         this.store.dispatch(new SetPokemons(locationPms));
     }
 
-    getPmDetail(num: string): Pokemon {
+    getPmDetail(id: string): Pokemon {
         this.getAllPms();
-        return this.store.selectSnapshot(state => state.pokemonsList.pokemons).find(pokemon => pokemon.number === num);
+        return this.store.selectSnapshot(state => state.pokemonsList.pokemons).find(pokemon => pokemon.id === Number(id));
     }
 
     searchPms(v) {
@@ -101,7 +106,7 @@ export class PokemonService {
         const numSets = [];
         const surprisePms = [];
         for (let i = 1; i < 15; i++) {
-            const n = Math.round(Math.random() * 25) + 1;
+            const n = Math.round(Math.random() * 805) + 1;
             if (numSets.indexOf(n) >= 0) {
                 i--;
             } else {

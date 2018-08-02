@@ -21,7 +21,7 @@ const routes: Routes = [
                 component: PokemonListComponent
             },
             {
-                path: 'pokemon-list/:number',
+                path: 'pokemon-list/:id',
                 component: PokemonDetailComponent
             },
             {

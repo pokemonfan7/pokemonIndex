@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../shared/pokemon.service';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-home-page',
@@ -8,15 +9,23 @@ import { PokemonService } from '../../shared/pokemon.service';
 })
 export class HomePageComponent implements OnInit {
 
-    selectId = 1;
+    selectId: number;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(
+      private store: Store,
+      private pokemonService: PokemonService,
+      private cdf: ChangeDetectorRef
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+      this.store.select(state => state.selectedId.selectId).subscribe(v => {
+          this.selectId = v;
+          this.cdf.detectChanges();
+      });
+  }
 
   locationPm(startId, endId, selectId) {
-      this.selectId = selectId;
-      this.pokemonService.getLocationPms(startId, endId);
+      this.pokemonService.getLocationPms(startId, endId, selectId);
   }
 }
 
