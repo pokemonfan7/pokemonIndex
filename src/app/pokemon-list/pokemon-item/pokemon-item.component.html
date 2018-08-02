@@ -8,6 +8,6 @@
   <div class="item-info">
     <span class="item-num">#{{pokemon.number}}</span>
     <h5 class="item-name">{{pokemon.name}}</h5>
-    <span class="pokemon-type pokemon-type-{{type}}" *ngFor="let type of pokemon.type">{{type}}</span>
+    <span class="pokemon-type pokemon-type-{{type}}" *ngFor="let type of pokemon.type">{{type | upperFirst}}</span>
   </div>
 </ng-container>

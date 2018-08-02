@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchPokemonComponent } from './component/search-pokemon/search-pokemon.component';
 import { FormsModule } from '@angular/forms';
+import { UpperFirstPipe } from './pipe/upperFirst';
+
+const PIPES = [
+    UpperFirstPipe
+];
 
 const COMPONENTS = [
     SearchPokemonComponent
@@ -13,10 +18,12 @@ const COMPONENTS = [
         FormsModule
     ],
     exports: [
+        ...PIPES,
         ...COMPONENTS,
     ],
     declarations: [
-        SearchPokemonComponent
+        ...PIPES,
+        ...COMPONENTS,
     ]
 })
 export class SharedModule {

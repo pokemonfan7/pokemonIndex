@@ -1,3 +1,7 @@
 <h1>{{ pokemonDetail.number }}</h1>
-<h3>{{ pokemonDetail.name }}</h3>
+<h1>{{ pokemonDetail.name }}</h1>
+<h1 *ngFor="let ability of pokemonDetail.abilities">特性：{{ ability }}</h1>
+<h1 *ngFor="let weak of pokemonDetail.weakness">被克制属性：{{ weak }}</h1>
+
+
 <button class="form-btn" (click)="backTo()">返回</button>

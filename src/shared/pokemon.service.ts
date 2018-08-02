@@ -57,19 +57,19 @@ export class PokemonService {
         new Pokemon(724, '724', '狙射树枭'),
     ];
 
-    constructor(
-        private store: Store,
-        private http: HttpClient,
-        ) {
+    constructor(private store: Store,
+                private http: HttpClient,
+                ) {
         this.http.get('http://localhost:3000/pokemon')
         .subscribe(val => {
+            val = val.reverse();
             const pokemonArray = [];
             val.forEach(allPm => {
                 if (pokemonArray.every(pItem => pItem.number !== allPm.number)) {
                     pokemonArray.push(allPm);
                 }
             });
-            this.pokemons = pokemonArray;
+            this.pokemons = pokemonArray.reverse();
         });
     }
 
