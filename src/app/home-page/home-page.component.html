@@ -7,13 +7,13 @@
 <nav id="nav-aside">
   <ul>
     <app-search-pokemon></app-search-pokemon>
-    <li><a [ngClass]="{active: activeBtn[0]}" (click)="locationPm(1,151)"><i class="pokeball-icon">@</i>关都</a></li>
-    <li><a [ngClass]="{active: activeBtn[1]}" (click)="locationPm(152,251)"><i class="pokeball-icon">@</i>城都</a></li>
-    <li><a [ngClass]="{active: activeBtn[2]}" (click)="locationPm(252,386)"><i class="pokeball-icon">@</i>丰缘</a></li>
-    <li><a [ngClass]="{active: activeBtn[3]}" (click)="locationPm(387,493)"><i class="pokeball-icon">@</i>神奥</a></li>
-    <li><a [ngClass]="{active: activeBtn[4]}" (click)="locationPm(494,649)"><i class="pokeball-icon">@</i>合众</a></li>
-    <li><a [ngClass]="{active: activeBtn[5]}" (click)="locationPm(650,721)"><i class="pokeball-icon">@</i>卡洛斯</a></li>
-    <li><a [ngClass]="{active: activeBtn[6]}" (click)="locationPm(722,806)"><i class="pokeball-icon">@</i>阿罗拉</a></li>
+    <li><a [ngClass]="{active: selectId === 1}" (click)="locationPm(1,151,1)"><i class="pokeball-icon">@</i>关都</a></li>
+    <li><a [ngClass]="{active: selectId === 2}" (click)="locationPm(152,251,2)"><i class="pokeball-icon">@</i>城都</a></li>
+    <li><a [ngClass]="{active: selectId === 3}" (click)="locationPm(252,386,3)"><i class="pokeball-icon">@</i>丰缘</a></li>
+    <li><a [ngClass]="{active: selectId === 4}" (click)="locationPm(387,493,4)"><i class="pokeball-icon">@</i>神奥</a></li>
+    <li><a [ngClass]="{active: selectId === 5}" (click)="locationPm(494,649,5)"><i class="pokeball-icon">@</i>合众</a></li>
+    <li><a [ngClass]="{active: selectId === 6}" (click)="locationPm(650,721,6)"><i class="pokeball-icon">@</i>卡洛斯</a></li>
+    <li><a [ngClass]="{active: selectId === 7}" (click)="locationPm(722,806,7)"><i class="pokeball-icon">@</i>阿罗拉</a></li>
   </ul>
 </nav>
 <main id="main-content">

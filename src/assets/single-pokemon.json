@@ -1,5 +1,5 @@
 {
-  "pokemon": [
+  "single-pokemon": [
     {
       "abilities": [
         "Overgrow"
@@ -66,32 +66,6 @@
       ],
       "number": "003",
       "height": 94,
-      "collectibles_slug": "venusaur",
-      "featured": "true",
-      "slug": "venusaur",
-      "name": "Venusaur",
-      "ThumbnailAltText": "Venusaur",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/003.png",
-      "id": 3,
-      "type": [
-        "grass",
-        "poison"
-      ]
-    },
-    {
-      "abilities": [
-        "Overgrow"
-      ],
-      "detailPageURL": "/us/pokedex/venusaur",
-      "weight": 220.5,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Ice",
-        "Psychic"
-      ],
-      "number": "003",
-      "height": 79,
       "collectibles_slug": "venusaur",
       "featured": "true",
       "slug": "venusaur",
@@ -179,56 +153,6 @@
     },
     {
       "abilities": [
-        "Tough Claws"
-      ],
-      "detailPageURL": "/us/pokedex/charizard",
-      "weight": 243.6,
-      "weakness": [
-        "Dragon",
-        "Rock",
-        "Ground"
-      ],
-      "number": "006",
-      "height": 67,
-      "collectibles_slug": "charizard",
-      "featured": "true",
-      "slug": "charizard",
-      "name": "Charizard",
-      "ThumbnailAltText": "Charizard",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png",
-      "id": 6,
-      "type": [
-        "fire",
-        "dragon"
-      ]
-    },
-    {
-      "abilities": [
-        "Blaze"
-      ],
-      "detailPageURL": "/us/pokedex/charizard",
-      "weight": 199.5,
-      "weakness": [
-        "Rock",
-        "Electric",
-        "Water"
-      ],
-      "number": "006",
-      "height": 67,
-      "collectibles_slug": "charizard",
-      "featured": "true",
-      "slug": "charizard",
-      "name": "Charizard",
-      "ThumbnailAltText": "Charizard",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png",
-      "id": 6,
-      "type": [
-        "fire",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Torrent"
       ],
       "detailPageURL": "/us/pokedex/squirtle",
@@ -282,29 +206,6 @@
       "weakness": [
         "Grass",
         "Electric"
-      ],
-      "number": "009",
-      "height": 63,
-      "collectibles_slug": "blastoise",
-      "featured": "true",
-      "slug": "blastoise",
-      "name": "Blastoise",
-      "ThumbnailAltText": "Blastoise",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png",
-      "id": 9,
-      "type": [
-        "water"
-      ]
-    },
-    {
-      "abilities": [
-        "Torrent"
-      ],
-      "detailPageURL": "/us/pokedex/blastoise",
-      "weight": 188.5,
-      "weakness": [
-        "Electric",
-        "Grass"
       ],
       "number": "009",
       "height": 63,
@@ -474,32 +375,6 @@
     },
     {
       "abilities": [
-        "Swarm"
-      ],
-      "detailPageURL": "/us/pokedex/beedrill",
-      "weight": 65,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Psychic",
-        "Rock"
-      ],
-      "number": "015",
-      "height": 39,
-      "collectibles_slug": "beedrill",
-      "featured": "true",
-      "slug": "beedrill",
-      "name": "Beedrill",
-      "ThumbnailAltText": "Beedrill",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/015.png",
-      "id": 15,
-      "type": [
-        "bug",
-        "poison"
-      ]
-    },
-    {
-      "abilities": [
         "Keen Eye",
         "Tangled Feet"
       ],
@@ -577,32 +452,6 @@
     },
     {
       "abilities": [
-        "Keen Eye",
-        "Tangled Feet"
-      ],
-      "detailPageURL": "/us/pokedex/pidgeot",
-      "weight": 87.1,
-      "weakness": [
-        "Electric",
-        "Ice",
-        "Rock"
-      ],
-      "number": "018",
-      "height": 59,
-      "collectibles_slug": "pidgeot",
-      "featured": "true",
-      "slug": "pidgeot",
-      "name": "Pidgeot",
-      "ThumbnailAltText": "Pidgeot",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/018.png",
-      "id": 18,
-      "type": [
-        "normal",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Gluttony",
         "Hustle"
       ],
@@ -629,29 +478,6 @@
     },
     {
       "abilities": [
-        "Guts",
-        "Run Away"
-      ],
-      "detailPageURL": "/us/pokedex/rattata",
-      "weight": 7.7,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "019",
-      "height": 12,
-      "collectibles_slug": "rattata",
-      "featured": "true",
-      "slug": "rattata",
-      "name": "Rattata",
-      "ThumbnailAltText": "Rattata",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png",
-      "id": 19,
-      "type": [
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
         "Gluttony",
         "Hustle"
       ],
@@ -673,29 +499,6 @@
       "id": 20,
       "type": [
         "dark",
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
-        "Guts",
-        "Run Away"
-      ],
-      "detailPageURL": "/us/pokedex/raticate",
-      "weight": 40.8,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "020",
-      "height": 28,
-      "collectibles_slug": "raticate",
-      "featured": "true",
-      "slug": "raticate",
-      "name": "Raticate",
-      "ThumbnailAltText": "Raticate",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/020.png",
-      "id": 20,
-      "type": [
         "normal"
       ]
     },
@@ -847,28 +650,6 @@
     },
     {
       "abilities": [
-        "Static"
-      ],
-      "detailPageURL": "/us/pokedex/raichu",
-      "weight": 66.1,
-      "weakness": [
-        "Ground"
-      ],
-      "number": "026",
-      "height": 31,
-      "collectibles_slug": "raichu",
-      "featured": "true",
-      "slug": "raichu",
-      "name": "Raichu",
-      "ThumbnailAltText": "Raichu",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/026.png",
-      "id": 26,
-      "type": [
-        "electric"
-      ]
-    },
-    {
-      "abilities": [
         "Snow Cloak"
       ],
       "detailPageURL": "/us/pokedex/sandshrew",
@@ -894,30 +675,6 @@
     },
     {
       "abilities": [
-        "Sand Veil"
-      ],
-      "detailPageURL": "/us/pokedex/sandshrew",
-      "weight": 26.5,
-      "weakness": [
-        "Grass",
-        "Ice",
-        "Water"
-      ],
-      "number": "027",
-      "height": 24,
-      "collectibles_slug": "sandshrew",
-      "featured": "true",
-      "slug": "sandshrew",
-      "name": "Sandshrew",
-      "ThumbnailAltText": "Sandshrew",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png",
-      "id": 27,
-      "type": [
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Snow Cloak"
       ],
       "detailPageURL": "/us/pokedex/sandslash",
@@ -939,30 +696,6 @@
       "type": [
         "ice",
         "steel"
-      ]
-    },
-    {
-      "abilities": [
-        "Sand Veil"
-      ],
-      "detailPageURL": "/us/pokedex/sandslash",
-      "weight": 65,
-      "weakness": [
-        "Grass",
-        "Ice",
-        "Water"
-      ],
-      "number": "028",
-      "height": 39,
-      "collectibles_slug": "sandslash",
-      "featured": "true",
-      "slug": "sandslash",
-      "name": "Sandslash",
-      "ThumbnailAltText": "Sandslash",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/028.png",
-      "id": 28,
-      "type": [
-        "ground"
       ]
     },
     {
@@ -1190,30 +923,6 @@
     },
     {
       "abilities": [
-        "Flash Fire"
-      ],
-      "detailPageURL": "/us/pokedex/vulpix",
-      "weight": 21.8,
-      "weakness": [
-        "Ground",
-        "Rock",
-        "Water"
-      ],
-      "number": "037",
-      "height": 24,
-      "collectibles_slug": "vulpix",
-      "featured": "true",
-      "slug": "vulpix",
-      "name": "Vulpix",
-      "ThumbnailAltText": "Vulpix",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png",
-      "id": 37,
-      "type": [
-        "fire"
-      ]
-    },
-    {
-      "abilities": [
         "Snow Cloak"
       ],
       "detailPageURL": "/us/pokedex/ninetales",
@@ -1236,30 +945,6 @@
       "type": [
         "ice",
         "fairy"
-      ]
-    },
-    {
-      "abilities": [
-        "Flash Fire"
-      ],
-      "detailPageURL": "/us/pokedex/ninetales",
-      "weight": 43.9,
-      "weakness": [
-        "Ground",
-        "Rock",
-        "Water"
-      ],
-      "number": "038",
-      "height": 43,
-      "collectibles_slug": "ninetales",
-      "featured": "true",
-      "slug": "ninetales",
-      "name": "Ninetales",
-      "ThumbnailAltText": "Ninetales",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/038.png",
-      "id": 38,
-      "type": [
-        "fire"
       ]
     },
     {
@@ -1583,31 +1268,6 @@
     },
     {
       "abilities": [
-        "Arena Trap",
-        "Sand Veil"
-      ],
-      "detailPageURL": "/us/pokedex/diglett",
-      "weight": 1.8,
-      "weakness": [
-        "Grass",
-        "Ice",
-        "Water"
-      ],
-      "number": "050",
-      "height": 8,
-      "collectibles_slug": "diglett",
-      "featured": "true",
-      "slug": "diglett",
-      "name": "Diglett",
-      "ThumbnailAltText": "Diglett",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/050.png",
-      "id": 50,
-      "type": [
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Sand Veil",
         "Tangling Hair"
       ],
@@ -1635,31 +1295,6 @@
     },
     {
       "abilities": [
-        "Arena Trap",
-        "Sand Veil"
-      ],
-      "detailPageURL": "/us/pokedex/dugtrio",
-      "weight": 73.4,
-      "weakness": [
-        "Grass",
-        "Ice",
-        "Water"
-      ],
-      "number": "051",
-      "height": 28,
-      "collectibles_slug": "dugtrio",
-      "featured": "true",
-      "slug": "dugtrio",
-      "name": "Dugtrio",
-      "ThumbnailAltText": "Dugtrio",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/051.png",
-      "id": 51,
-      "type": [
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Pickup",
         "Technician"
       ],
@@ -1681,29 +1316,6 @@
       "id": 52,
       "type": [
         "dark"
-      ]
-    },
-    {
-      "abilities": [
-        "Pickup",
-        "Technician"
-      ],
-      "detailPageURL": "/us/pokedex/meowth",
-      "weight": 9.3,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "052",
-      "height": 16,
-      "collectibles_slug": "meowth",
-      "featured": "true",
-      "slug": "meowth",
-      "name": "Meowth",
-      "ThumbnailAltText": "Meowth",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/052.png",
-      "id": 52,
-      "type": [
-        "normal"
       ]
     },
     {
@@ -1729,29 +1341,6 @@
       "id": 53,
       "type": [
         "dark"
-      ]
-    },
-    {
-      "abilities": [
-        "Limber",
-        "Technician"
-      ],
-      "detailPageURL": "/us/pokedex/persian",
-      "weight": 70.5,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "053",
-      "height": 39,
-      "collectibles_slug": "persian",
-      "featured": "true",
-      "slug": "persian",
-      "name": "Persian",
-      "ThumbnailAltText": "Persian",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/053.png",
-      "id": 53,
-      "type": [
-        "normal"
       ]
     },
     {
@@ -2054,31 +1643,6 @@
     },
     {
       "abilities": [
-        "Inner Focus",
-        "Synchronize"
-      ],
-      "detailPageURL": "/us/pokedex/alakazam",
-      "weight": 105.8,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Ghost"
-      ],
-      "number": "065",
-      "height": 59,
-      "collectibles_slug": "alakazam",
-      "featured": "true",
-      "slug": "alakazam",
-      "name": "Alakazam",
-      "ThumbnailAltText": "Alakazam",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/065.png",
-      "id": 65,
-      "type": [
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
         "Guts",
         "No Guard"
       ],
@@ -2311,35 +1875,6 @@
     },
     {
       "abilities": [
-        "Rock Head",
-        "Sturdy"
-      ],
-      "detailPageURL": "/us/pokedex/geodude",
-      "weight": 44.1,
-      "weakness": [
-        "Grass",
-        "Water",
-        "Fighting",
-        "Ground",
-        "Ice",
-        "Steel"
-      ],
-      "number": "074",
-      "height": 16,
-      "collectibles_slug": "geodude",
-      "featured": "true",
-      "slug": "geodude",
-      "name": "Geodude",
-      "ThumbnailAltText": "Geodude",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/074.png",
-      "id": 74,
-      "type": [
-        "rock",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Magnet Pull",
         "Sturdy"
       ],
@@ -2367,35 +1902,6 @@
     },
     {
       "abilities": [
-        "Rock Head",
-        "Sturdy"
-      ],
-      "detailPageURL": "/us/pokedex/graveler",
-      "weight": 231.5,
-      "weakness": [
-        "Grass",
-        "Water",
-        "Fighting",
-        "Ground",
-        "Ice",
-        "Steel"
-      ],
-      "number": "075",
-      "height": 39,
-      "collectibles_slug": "graveler",
-      "featured": "true",
-      "slug": "graveler",
-      "name": "Graveler",
-      "ThumbnailAltText": "Graveler",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/075.png",
-      "id": 75,
-      "type": [
-        "rock",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Magnet Pull",
         "Sturdy"
       ],
@@ -2419,35 +1925,6 @@
       "type": [
         "rock",
         "electric"
-      ]
-    },
-    {
-      "abilities": [
-        "Rock Head",
-        "Sturdy"
-      ],
-      "detailPageURL": "/us/pokedex/golem",
-      "weight": 661.4,
-      "weakness": [
-        "Grass",
-        "Water",
-        "Fighting",
-        "Ground",
-        "Ice",
-        "Steel"
-      ],
-      "number": "076",
-      "height": 55,
-      "collectibles_slug": "golem",
-      "featured": "true",
-      "slug": "golem",
-      "name": "Golem",
-      "ThumbnailAltText": "Golem",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/076.png",
-      "id": 76,
-      "type": [
-        "rock",
-        "ground"
       ]
     },
     {
@@ -2543,34 +2020,6 @@
       ],
       "number": "080",
       "height": 79,
-      "collectibles_slug": "slowbro",
-      "featured": "true",
-      "slug": "slowbro",
-      "name": "Slowbro",
-      "ThumbnailAltText": "Slowbro",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/080.png",
-      "id": 80,
-      "type": [
-        "water",
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Oblivious",
-        "Own Tempo"
-      ],
-      "detailPageURL": "/us/pokedex/slowbro",
-      "weight": 173.1,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Electric",
-        "Ghost",
-        "Grass"
-      ],
-      "number": "080",
-      "height": 63,
       "collectibles_slug": "slowbro",
       "featured": "true",
       "slug": "slowbro",
@@ -2790,30 +2239,6 @@
     },
     {
       "abilities": [
-        "Stench",
-        "Sticky Hold"
-      ],
-      "detailPageURL": "/us/pokedex/grimer",
-      "weight": 66.1,
-      "weakness": [
-        "Ground",
-        "Psychic"
-      ],
-      "number": "088",
-      "height": 35,
-      "collectibles_slug": "grimer",
-      "featured": "true",
-      "slug": "grimer",
-      "name": "Grimer",
-      "ThumbnailAltText": "Grimer",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/088.png",
-      "id": 88,
-      "type": [
-        "poison"
-      ]
-    },
-    {
-      "abilities": [
         "Gluttony",
         "Poison Touch"
       ],
@@ -2834,30 +2259,6 @@
       "type": [
         "poison",
         "dark"
-      ]
-    },
-    {
-      "abilities": [
-        "Stench",
-        "Sticky Hold"
-      ],
-      "detailPageURL": "/us/pokedex/muk",
-      "weight": 66.1,
-      "weakness": [
-        "Ground",
-        "Psychic"
-      ],
-      "number": "089",
-      "height": 47,
-      "collectibles_slug": "muk",
-      "featured": "true",
-      "slug": "muk",
-      "name": "Muk",
-      "ThumbnailAltText": "Muk",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/089.png",
-      "id": 89,
-      "type": [
-        "poison"
       ]
     },
     {
@@ -2975,31 +2376,6 @@
       ],
       "number": "094",
       "height": 55,
-      "collectibles_slug": "gengar",
-      "featured": "true",
-      "slug": "gengar",
-      "name": "Gengar",
-      "ThumbnailAltText": "Gengar",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/094.png",
-      "id": 94,
-      "type": [
-        "ghost",
-        "poison"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
-      "detailPageURL": "/us/pokedex/gengar",
-      "weight": 89.3,
-      "weakness": [
-        "Dark",
-        "Ghost",
-        "Psychic"
-      ],
-      "number": "094",
-      "height": 59,
       "collectibles_slug": "gengar",
       "featured": "true",
       "slug": "gengar",
@@ -3244,35 +2620,6 @@
     },
     {
       "abilities": [
-        "Chlorophyll"
-      ],
-      "detailPageURL": "/us/pokedex/exeggutor",
-      "weight": 264.6,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Fire",
-        "Flying",
-        "Ghost",
-        "Ice",
-        "Poison"
-      ],
-      "number": "103",
-      "height": 79,
-      "collectibles_slug": "exeggutor",
-      "featured": "true",
-      "slug": "exeggutor",
-      "name": "Exeggutor",
-      "ThumbnailAltText": "Exeggutor",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/103.png",
-      "id": 103,
-      "type": [
-        "grass",
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
         "Lightning Rod",
         "Rock Head"
       ],
@@ -3322,31 +2669,6 @@
       "type": [
         "fire",
         "ghost"
-      ]
-    },
-    {
-      "abilities": [
-        "Lightning Rod",
-        "Rock Head"
-      ],
-      "detailPageURL": "/us/pokedex/marowak",
-      "weight": 99.2,
-      "weakness": [
-        "Grass",
-        "Ice",
-        "Water"
-      ],
-      "number": "105",
-      "height": 39,
-      "collectibles_slug": "marowak",
-      "featured": "true",
-      "slug": "marowak",
-      "name": "Marowak",
-      "ThumbnailAltText": "Marowak",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/105.png",
-      "id": 105,
-      "type": [
-        "ground"
       ]
     },
     {
@@ -3580,29 +2902,6 @@
       ],
       "detailPageURL": "/us/pokedex/kangaskhan",
       "weight": 220.5,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "115",
-      "height": 87,
-      "collectibles_slug": "kangaskhan",
-      "featured": "true",
-      "slug": "kangaskhan",
-      "name": "Kangaskhan",
-      "ThumbnailAltText": "Kangaskhan",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/115.png",
-      "id": 115,
-      "type": [
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
-        "Early Bird",
-        "Scrappy"
-      ],
-      "detailPageURL": "/us/pokedex/kangaskhan",
-      "weight": 176.4,
       "weakness": [
         "Fighting"
       ],
@@ -3925,31 +3224,6 @@
     },
     {
       "abilities": [
-        "Hyper Cutter",
-        "Mold Breaker"
-      ],
-      "detailPageURL": "/us/pokedex/pinsir",
-      "weight": 121.3,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Rock"
-      ],
-      "number": "127",
-      "height": 59,
-      "collectibles_slug": "pinsir",
-      "featured": "true",
-      "slug": "pinsir",
-      "name": "Pinsir",
-      "ThumbnailAltText": "Pinsir",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/127.png",
-      "id": 127,
-      "type": [
-        "bug"
-      ]
-    },
-    {
-      "abilities": [
         "Anger Point",
         "Intimidate"
       ],
@@ -4019,30 +3293,6 @@
       "type": [
         "water",
         "dark"
-      ]
-    },
-    {
-      "abilities": [
-        "Intimidate"
-      ],
-      "detailPageURL": "/us/pokedex/gyarados",
-      "weight": 518.1,
-      "weakness": [
-        "Electric",
-        "Rock"
-      ],
-      "number": "130",
-      "height": 256,
-      "collectibles_slug": "gyarados",
-      "featured": "true",
-      "slug": "gyarados",
-      "name": "Gyarados",
-      "ThumbnailAltText": "Gyarados",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/130.png",
-      "id": 130,
-      "type": [
-        "water",
-        "flying"
       ]
     },
     {
@@ -4346,34 +3596,6 @@
     },
     {
       "abilities": [
-        "Pressure",
-        "Rock Head"
-      ],
-      "detailPageURL": "/us/pokedex/aerodactyl",
-      "weight": 130.1,
-      "weakness": [
-        "Electric",
-        "Ice",
-        "Rock",
-        "Steel",
-        "Water"
-      ],
-      "number": "142",
-      "height": 71,
-      "collectibles_slug": "aerodactyl",
-      "featured": "true",
-      "slug": "aerodactyl",
-      "name": "Aerodactyl",
-      "ThumbnailAltText": "Aerodactyl",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/142.png",
-      "id": 142,
-      "type": [
-        "rock",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Immunity",
         "Thick Fat"
       ],
@@ -4557,55 +3779,6 @@
       ],
       "number": "150",
       "height": 59,
-      "collectibles_slug": "mewtwo",
-      "featured": "true",
-      "slug": "mewtwo",
-      "name": "Mewtwo",
-      "ThumbnailAltText": "Mewtwo",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png",
-      "id": 150,
-      "type": [
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Steadfast"
-      ],
-      "detailPageURL": "/us/pokedex/mewtwo",
-      "weight": 280,
-      "weakness": [
-        "Ghost",
-        "Flying",
-        "Fairy"
-      ],
-      "number": "150",
-      "height": 91,
-      "collectibles_slug": "mewtwo",
-      "featured": "true",
-      "slug": "mewtwo",
-      "name": "Mewtwo",
-      "ThumbnailAltText": "Mewtwo",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png",
-      "id": 150,
-      "type": [
-        "psychic",
-        "fighting"
-      ]
-    },
-    {
-      "abilities": [
-        "Pressure"
-      ],
-      "detailPageURL": "/us/pokedex/mewtwo",
-      "weight": 269,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Ghost"
-      ],
-      "number": "150",
-      "height": 79,
       "collectibles_slug": "mewtwo",
       "featured": "true",
       "slug": "mewtwo",
@@ -5395,28 +4568,6 @@
     },
     {
       "abilities": [
-        "Static"
-      ],
-      "detailPageURL": "/us/pokedex/ampharos",
-      "weight": 135.6,
-      "weakness": [
-        "Ground"
-      ],
-      "number": "181",
-      "height": 55,
-      "collectibles_slug": "ampharos",
-      "featured": "true",
-      "slug": "ampharos",
-      "name": "Ampharos",
-      "ThumbnailAltText": "Ampharos",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/181.png",
-      "id": 181,
-      "type": [
-        "electric"
-      ]
-    },
-    {
-      "abilities": [
         "Chlorophyll"
       ],
       "detailPageURL": "/us/pokedex/bellossom",
@@ -6103,33 +5254,6 @@
     },
     {
       "abilities": [
-        "Rock Head",
-        "Sturdy"
-      ],
-      "detailPageURL": "/us/pokedex/steelix",
-      "weight": 881.8,
-      "weakness": [
-        "Fighting",
-        "Fire",
-        "Ground",
-        "Water"
-      ],
-      "number": "208",
-      "height": 362,
-      "collectibles_slug": "steelix",
-      "featured": "true",
-      "slug": "steelix",
-      "name": "Steelix",
-      "ThumbnailAltText": "Steelix",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/208.png",
-      "id": 208,
-      "type": [
-        "steel",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Intimidate",
         "Run Away"
       ],
@@ -6227,30 +5351,6 @@
     },
     {
       "abilities": [
-        "Swarm",
-        "Technician"
-      ],
-      "detailPageURL": "/us/pokedex/scizor",
-      "weight": 260.1,
-      "weakness": [
-        "Fire"
-      ],
-      "number": "212",
-      "height": 71,
-      "collectibles_slug": "scizor",
-      "featured": "true",
-      "slug": "scizor",
-      "name": "Scizor",
-      "ThumbnailAltText": "Scizor",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/212.png",
-      "id": 212,
-      "type": [
-        "bug",
-        "steel"
-      ]
-    },
-    {
-      "abilities": [
         "Gluttony",
         "Sturdy"
       ],
@@ -6289,33 +5389,6 @@
       ],
       "number": "214",
       "height": 67,
-      "collectibles_slug": "heracross",
-      "featured": "true",
-      "slug": "heracross",
-      "name": "Heracross",
-      "ThumbnailAltText": "Heracross",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/214.png",
-      "id": 214,
-      "type": [
-        "bug",
-        "fighting"
-      ]
-    },
-    {
-      "abilities": [
-        "Guts",
-        "Swarm"
-      ],
-      "detailPageURL": "/us/pokedex/heracross",
-      "weight": 119,
-      "weakness": [
-        "Flying",
-        "Fire",
-        "Psychic",
-        "Fairy"
-      ],
-      "number": "214",
-      "height": 59,
       "collectibles_slug": "heracross",
       "featured": "true",
       "slug": "heracross",
@@ -6704,33 +5777,6 @@
       ],
       "number": "229",
       "height": 75,
-      "collectibles_slug": "houndoom",
-      "featured": "true",
-      "slug": "houndoom",
-      "name": "Houndoom",
-      "ThumbnailAltText": "Houndoom",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/229.png",
-      "id": 229,
-      "type": [
-        "dark",
-        "fire"
-      ]
-    },
-    {
-      "abilities": [
-        "Early Bird",
-        "Flash Fire"
-      ],
-      "detailPageURL": "/us/pokedex/houndoom",
-      "weight": 77.2,
-      "weakness": [
-        "Fighting",
-        "Ground",
-        "Rock",
-        "Water"
-      ],
-      "number": "229",
-      "height": 55,
       "collectibles_slug": "houndoom",
       "featured": "true",
       "slug": "houndoom",
@@ -7212,35 +6258,6 @@
     },
     {
       "abilities": [
-        "Sand Stream"
-      ],
-      "detailPageURL": "/us/pokedex/tyranitar",
-      "weight": 445.3,
-      "weakness": [
-        "Fighting",
-        "Bug",
-        "Grass",
-        "Ground",
-        "Steel",
-        "Water",
-        "Fairy"
-      ],
-      "number": "248",
-      "height": 79,
-      "collectibles_slug": "tyranitar",
-      "featured": "true",
-      "slug": "tyranitar",
-      "name": "Tyranitar",
-      "ThumbnailAltText": "Tyranitar",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/248.png",
-      "id": 248,
-      "type": [
-        "rock",
-        "dark"
-      ]
-    },
-    {
-      "abilities": [
         "Pressure"
       ],
       "detailPageURL": "/us/pokedex/lugia",
@@ -7402,32 +6419,6 @@
     },
     {
       "abilities": [
-        "Overgrow"
-      ],
-      "detailPageURL": "/us/pokedex/sceptile",
-      "weight": 115.1,
-      "weakness": [
-        "Bug",
-        "Fire",
-        "Flying",
-        "Ice",
-        "Poison"
-      ],
-      "number": "254",
-      "height": 67,
-      "collectibles_slug": "sceptile",
-      "featured": "true",
-      "slug": "sceptile",
-      "name": "Sceptile",
-      "ThumbnailAltText": "Sceptile",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/254.png",
-      "id": 254,
-      "type": [
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
         "Blaze"
       ],
       "detailPageURL": "/us/pokedex/torchic",
@@ -7504,32 +6495,6 @@
     },
     {
       "abilities": [
-        "Blaze"
-      ],
-      "detailPageURL": "/us/pokedex/blaziken",
-      "weight": 114.6,
-      "weakness": [
-        "Flying",
-        "Ground",
-        "Psychic",
-        "Water"
-      ],
-      "number": "257",
-      "height": 75,
-      "collectibles_slug": "blaziken",
-      "featured": "true",
-      "slug": "blaziken",
-      "name": "Blaziken",
-      "ThumbnailAltText": "Blaziken",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/257.png",
-      "id": 257,
-      "type": [
-        "fire",
-        "fighting"
-      ]
-    },
-    {
-      "abilities": [
         "Torrent"
       ],
       "detailPageURL": "/us/pokedex/mudkip",
@@ -7585,29 +6550,6 @@
       ],
       "number": "260",
       "height": 75,
-      "collectibles_slug": "swampert",
-      "featured": "true",
-      "slug": "swampert",
-      "name": "Swampert",
-      "ThumbnailAltText": "Swampert",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/260.png",
-      "id": 260,
-      "type": [
-        "water",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
-        "Torrent"
-      ],
-      "detailPageURL": "/us/pokedex/swampert",
-      "weight": 180.6,
-      "weakness": [
-        "Grass"
-      ],
-      "number": "260",
-      "height": 59,
       "collectibles_slug": "swampert",
       "featured": "true",
       "slug": "swampert",
@@ -8183,32 +7125,6 @@
     },
     {
       "abilities": [
-        "Synchronize",
-        "Trace"
-      ],
-      "detailPageURL": "/us/pokedex/gardevoir",
-      "weight": 106.7,
-      "weakness": [
-        "Ghost",
-        "Steel",
-        "Poison"
-      ],
-      "number": "282",
-      "height": 63,
-      "collectibles_slug": "gardevoir",
-      "featured": "true",
-      "slug": "gardevoir",
-      "name": "Gardevoir",
-      "ThumbnailAltText": "Gardevoir",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/282.png",
-      "id": 282,
-      "type": [
-        "psychic",
-        "fairy"
-      ]
-    },
-    {
-      "abilities": [
         "Swift Swim"
       ],
       "detailPageURL": "/us/pokedex/surskit",
@@ -8700,30 +7616,6 @@
     },
     {
       "abilities": [
-        "Keen Eye",
-        "Stall"
-      ],
-      "detailPageURL": "/us/pokedex/sableye",
-      "weight": 24.3,
-      "weakness": [
-        "Fairy"
-      ],
-      "number": "302",
-      "height": 20,
-      "collectibles_slug": "sableye",
-      "featured": "true",
-      "slug": "sableye",
-      "name": "Sableye",
-      "ThumbnailAltText": "Sableye",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/302.png",
-      "id": 302,
-      "type": [
-        "dark",
-        "ghost"
-      ]
-    },
-    {
-      "abilities": [
         "Huge Power"
       ],
       "detailPageURL": "/us/pokedex/mawile",
@@ -8734,31 +7626,6 @@
       ],
       "number": "303",
       "height": 39,
-      "collectibles_slug": "mawile",
-      "featured": "true",
-      "slug": "mawile",
-      "name": "Mawile",
-      "ThumbnailAltText": "Mawile",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/303.png",
-      "id": 303,
-      "type": [
-        "steel",
-        "fairy"
-      ]
-    },
-    {
-      "abilities": [
-        "Hyper Cutter",
-        "Intimidate"
-      ],
-      "detailPageURL": "/us/pokedex/mawile",
-      "weight": 25.4,
-      "weakness": [
-        "Fire",
-        "Ground"
-      ],
-      "number": "303",
-      "height": 24,
       "collectibles_slug": "mawile",
       "featured": "true",
       "slug": "mawile",
@@ -8849,32 +7716,6 @@
     },
     {
       "abilities": [
-        "Rock Head",
-        "Sturdy"
-      ],
-      "detailPageURL": "/us/pokedex/aggron",
-      "weight": 793.7,
-      "weakness": [
-        "Fighting",
-        "Ground",
-        "Water"
-      ],
-      "number": "306",
-      "height": 83,
-      "collectibles_slug": "aggron",
-      "featured": "true",
-      "slug": "aggron",
-      "name": "Aggron",
-      "ThumbnailAltText": "Aggron",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/306.png",
-      "id": 306,
-      "type": [
-        "steel",
-        "rock"
-      ]
-    },
-    {
-      "abilities": [
         "Pure Power"
       ],
       "detailPageURL": "/us/pokedex/meditite",
@@ -8925,31 +7766,6 @@
     },
     {
       "abilities": [
-        "Pure Power"
-      ],
-      "detailPageURL": "/us/pokedex/medicham",
-      "weight": 69.4,
-      "weakness": [
-        "Flying",
-        "Ghost",
-        "Fairy"
-      ],
-      "number": "308",
-      "height": 51,
-      "collectibles_slug": "medicham",
-      "featured": "true",
-      "slug": "medicham",
-      "name": "Medicham",
-      "ThumbnailAltText": "Medicham",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/308.png",
-      "id": 308,
-      "type": [
-        "fighting",
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
         "Lightning Rod",
         "Static"
       ],
@@ -8982,29 +7798,6 @@
       ],
       "number": "310",
       "height": 71,
-      "collectibles_slug": "manectric",
-      "featured": "true",
-      "slug": "manectric",
-      "name": "Manectric",
-      "ThumbnailAltText": "Manectric",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/310.png",
-      "id": 310,
-      "type": [
-        "electric"
-      ]
-    },
-    {
-      "abilities": [
-        "Lightning Rod",
-        "Static"
-      ],
-      "detailPageURL": "/us/pokedex/manectric",
-      "weight": 88.6,
-      "weakness": [
-        "Ground"
-      ],
-      "number": "310",
-      "height": 59,
       "collectibles_slug": "manectric",
       "featured": "true",
       "slug": "manectric",
@@ -9241,33 +8034,6 @@
     },
     {
       "abilities": [
-        "Rough Skin"
-      ],
-      "detailPageURL": "/us/pokedex/sharpedo",
-      "weight": 195.8,
-      "weakness": [
-        "Bug",
-        "Electric",
-        "Fighting",
-        "Grass",
-        "Fairy"
-      ],
-      "number": "319",
-      "height": 71,
-      "collectibles_slug": "sharpedo",
-      "featured": "true",
-      "slug": "sharpedo",
-      "name": "Sharpedo",
-      "ThumbnailAltText": "Sharpedo",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/319.png",
-      "id": 319,
-      "type": [
-        "water",
-        "dark"
-      ]
-    },
-    {
-      "abilities": [
         "Oblivious",
         "Water Veil"
       ],
@@ -9351,31 +8117,6 @@
       ],
       "number": "323",
       "height": 98,
-      "collectibles_slug": "camerupt",
-      "featured": "true",
-      "slug": "camerupt",
-      "name": "Camerupt",
-      "ThumbnailAltText": "Camerupt",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/323.png",
-      "id": 323,
-      "type": [
-        "fire",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
-        "Magma Armor",
-        "Solid Rock"
-      ],
-      "detailPageURL": "/us/pokedex/camerupt",
-      "weight": 485,
-      "weakness": [
-        "Water",
-        "Ground"
-      ],
-      "number": "323",
-      "height": 75,
       "collectibles_slug": "camerupt",
       "featured": "true",
       "slug": "camerupt",
@@ -9664,32 +8405,6 @@
       "type": [
         "dragon",
         "fairy"
-      ]
-    },
-    {
-      "abilities": [
-        "Natural Cure"
-      ],
-      "detailPageURL": "/us/pokedex/altaria",
-      "weight": 45.4,
-      "weakness": [
-        "Ice",
-        "Dragon",
-        "Rock",
-        "Fairy"
-      ],
-      "number": "334",
-      "height": 43,
-      "collectibles_slug": "altaria",
-      "featured": "true",
-      "slug": "altaria",
-      "name": "Altaria",
-      "ThumbnailAltText": "Altaria",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/334.png",
-      "id": 334,
-      "type": [
-        "dragon",
-        "flying"
       ]
     },
     {
@@ -10126,75 +8841,6 @@
     },
     {
       "abilities": [
-        "Forecast"
-      ],
-      "detailPageURL": "/us/pokedex/castform",
-      "weight": 1.8,
-      "weakness": [
-        "Grass",
-        "Electric"
-      ],
-      "number": "351",
-      "height": 12,
-      "collectibles_slug": "castform",
-      "featured": "true",
-      "slug": "castform",
-      "name": "Castform",
-      "ThumbnailAltText": "Castform",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/351.png",
-      "id": 351,
-      "type": [
-        "water"
-      ]
-    },
-    {
-      "abilities": [
-        "Forecast"
-      ],
-      "detailPageURL": "/us/pokedex/castform",
-      "weight": 1.8,
-      "weakness": [
-        "Water",
-        "Rock",
-        "Ground"
-      ],
-      "number": "351",
-      "height": 12,
-      "collectibles_slug": "castform",
-      "featured": "true",
-      "slug": "castform",
-      "name": "Castform",
-      "ThumbnailAltText": "Castform",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/351.png",
-      "id": 351,
-      "type": [
-        "fire"
-      ]
-    },
-    {
-      "abilities": [
-        "Forecast"
-      ],
-      "detailPageURL": "/us/pokedex/castform",
-      "weight": 1.8,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "351",
-      "height": 12,
-      "collectibles_slug": "castform",
-      "featured": "true",
-      "slug": "castform",
-      "name": "Castform",
-      "ThumbnailAltText": "Castform",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/351.png",
-      "id": 351,
-      "type": [
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
         "Color Change"
       ],
       "detailPageURL": "/us/pokedex/kecleon",
@@ -10251,30 +8897,6 @@
       ],
       "number": "354",
       "height": 47,
-      "collectibles_slug": "banette",
-      "featured": "true",
-      "slug": "banette",
-      "name": "Banette",
-      "ThumbnailAltText": "Banette",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/354.png",
-      "id": 354,
-      "type": [
-        "ghost"
-      ]
-    },
-    {
-      "abilities": [
-        "Frisk",
-        "Insomnia"
-      ],
-      "detailPageURL": "/us/pokedex/banette",
-      "weight": 27.6,
-      "weakness": [
-        "Dark",
-        "Ghost"
-      ],
-      "number": "354",
-      "height": 43,
       "collectibles_slug": "banette",
       "featured": "true",
       "slug": "banette",
@@ -10410,31 +9032,6 @@
     },
     {
       "abilities": [
-        "Pressure",
-        "Super Luck"
-      ],
-      "detailPageURL": "/us/pokedex/absol",
-      "weight": 103.6,
-      "weakness": [
-        "Fighting",
-        "Bug",
-        "Fairy"
-      ],
-      "number": "359",
-      "height": 47,
-      "collectibles_slug": "absol",
-      "featured": "true",
-      "slug": "absol",
-      "name": "Absol",
-      "ThumbnailAltText": "Absol",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/359.png",
-      "id": 359,
-      "type": [
-        "dark"
-      ]
-    },
-    {
-      "abilities": [
         "Shadow Tag"
       ],
       "detailPageURL": "/us/pokedex/wynaut",
@@ -10497,32 +9094,6 @@
       ],
       "number": "362",
       "height": 83,
-      "collectibles_slug": "glalie",
-      "featured": "true",
-      "slug": "glalie",
-      "name": "Glalie",
-      "ThumbnailAltText": "Glalie",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/362.png",
-      "id": 362,
-      "type": [
-        "ice"
-      ]
-    },
-    {
-      "abilities": [
-        "Ice Body",
-        "Inner Focus"
-      ],
-      "detailPageURL": "/us/pokedex/glalie",
-      "weight": 565.5,
-      "weakness": [
-        "Fire",
-        "Fighting",
-        "Rock",
-        "Steel"
-      ],
-      "number": "362",
-      "height": 59,
       "collectibles_slug": "glalie",
       "featured": "true",
       "slug": "glalie",
@@ -10810,32 +9381,6 @@
     },
     {
       "abilities": [
-        "Intimidate"
-      ],
-      "detailPageURL": "/us/pokedex/salamence",
-      "weight": 226.2,
-      "weakness": [
-        "Ice",
-        "Dragon",
-        "Rock",
-        "Fairy"
-      ],
-      "number": "373",
-      "height": 59,
-      "collectibles_slug": "salamence",
-      "featured": "true",
-      "slug": "salamence",
-      "name": "Salamence",
-      "ThumbnailAltText": "Salamence",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/373.png",
-      "id": 373,
-      "type": [
-        "dragon",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Clear Body"
       ],
       "detailPageURL": "/us/pokedex/beldum",
@@ -10900,32 +9445,6 @@
       ],
       "number": "376",
       "height": 98,
-      "collectibles_slug": "metagross",
-      "featured": "true",
-      "slug": "metagross",
-      "name": "Metagross",
-      "ThumbnailAltText": "Metagross",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/376.png",
-      "id": 376,
-      "type": [
-        "steel",
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Clear Body"
-      ],
-      "detailPageURL": "/us/pokedex/metagross",
-      "weight": 1212.5,
-      "weakness": [
-        "Fire",
-        "Ground",
-        "Ghost",
-        "Dark"
-      ],
-      "number": "376",
-      "height": 63,
       "collectibles_slug": "metagross",
       "featured": "true",
       "slug": "metagross",
@@ -11045,34 +9564,6 @@
       "abilities": [
         "Levitate"
       ],
-      "detailPageURL": "/us/pokedex/latias",
-      "weight": 88.2,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Dragon",
-        "Ghost",
-        "Ice",
-        "Fairy"
-      ],
-      "number": "380",
-      "height": 55,
-      "collectibles_slug": "latias",
-      "featured": "true",
-      "slug": "latias",
-      "name": "Latias",
-      "ThumbnailAltText": "Latias",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/380.png",
-      "id": 380,
-      "type": [
-        "dragon",
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
       "detailPageURL": "/us/pokedex/latios",
       "weight": 154.3,
       "weakness": [
@@ -11085,34 +9576,6 @@
       ],
       "number": "381",
       "height": 91,
-      "collectibles_slug": "latios",
-      "featured": "true",
-      "slug": "latios",
-      "name": "Latios",
-      "ThumbnailAltText": "Latios",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/381.png",
-      "id": 381,
-      "type": [
-        "dragon",
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
-      "detailPageURL": "/us/pokedex/latios",
-      "weight": 132.3,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Dragon",
-        "Ghost",
-        "Ice",
-        "Fairy"
-      ],
-      "number": "381",
-      "height": 79,
       "collectibles_slug": "latios",
       "featured": "true",
       "slug": "latios",
@@ -11150,29 +9613,6 @@
     },
     {
       "abilities": [
-        "Drizzle"
-      ],
-      "detailPageURL": "/us/pokedex/kyogre",
-      "weight": 776,
-      "weakness": [
-        "Electric",
-        "Grass"
-      ],
-      "number": "382",
-      "height": 177,
-      "collectibles_slug": "kyogre",
-      "featured": "true",
-      "slug": "kyogre",
-      "name": "Kyogre",
-      "ThumbnailAltText": "Kyogre",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/382.png",
-      "id": 382,
-      "type": [
-        "water"
-      ]
-    },
-    {
-      "abilities": [
         "Desolate Land"
       ],
       "detailPageURL": "/us/pokedex/groudon",
@@ -11197,30 +9637,6 @@
     },
     {
       "abilities": [
-        "Drought"
-      ],
-      "detailPageURL": "/us/pokedex/groudon",
-      "weight": 2094.4,
-      "weakness": [
-        "Grass",
-        "Ice",
-        "Water"
-      ],
-      "number": "383",
-      "height": 138,
-      "collectibles_slug": "groudon",
-      "featured": "true",
-      "slug": "groudon",
-      "name": "Groudon",
-      "ThumbnailAltText": "Groudon",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/383.png",
-      "id": 383,
-      "type": [
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Delta Stream"
       ],
       "detailPageURL": "/us/pokedex/rayquaza",
@@ -11233,32 +9649,6 @@
       ],
       "number": "384",
       "height": 425,
-      "collectibles_slug": "rayquaza",
-      "featured": "true",
-      "slug": "rayquaza",
-      "name": "Rayquaza",
-      "ThumbnailAltText": "Rayquaza",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/384.png",
-      "id": 384,
-      "type": [
-        "dragon",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
-        "Air Lock"
-      ],
-      "detailPageURL": "/us/pokedex/rayquaza",
-      "weight": 455.2,
-      "weakness": [
-        "Ice",
-        "Dragon",
-        "Rock",
-        "Fairy"
-      ],
-      "number": "384",
-      "height": 276,
       "collectibles_slug": "rayquaza",
       "featured": "true",
       "slug": "rayquaza",
@@ -11294,78 +9684,6 @@
       "id": 385,
       "type": [
         "steel",
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Pressure"
-      ],
-      "detailPageURL": "/us/pokedex/deoxys",
-      "weight": 134,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Ghost"
-      ],
-      "number": "386",
-      "height": 67,
-      "collectibles_slug": "deoxys",
-      "featured": "true",
-      "slug": "deoxys",
-      "name": "Deoxys",
-      "ThumbnailAltText": "Deoxys",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/386.png",
-      "id": 386,
-      "type": [
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Pressure"
-      ],
-      "detailPageURL": "/us/pokedex/deoxys",
-      "weight": 134,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Ghost"
-      ],
-      "number": "386",
-      "height": 67,
-      "collectibles_slug": "deoxys",
-      "featured": "true",
-      "slug": "deoxys",
-      "name": "Deoxys",
-      "ThumbnailAltText": "Deoxys",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/386.png",
-      "id": 386,
-      "type": [
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Pressure"
-      ],
-      "detailPageURL": "/us/pokedex/deoxys",
-      "weight": 134,
-      "weakness": [
-        "Bug",
-        "Dark",
-        "Ghost"
-      ],
-      "number": "386",
-      "height": 67,
-      "collectibles_slug": "deoxys",
-      "featured": "true",
-      "slug": "deoxys",
-      "name": "Deoxys",
-      "ThumbnailAltText": "Deoxys",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/386.png",
-      "id": 386,
-      "type": [
         "psychic"
       ]
     },
@@ -12041,54 +10359,6 @@
     },
     {
       "abilities": [
-        "Shed Skin"
-      ],
-      "detailPageURL": "/us/pokedex/burmy",
-      "weight": 7.5,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Rock"
-      ],
-      "number": "412",
-      "height": 8,
-      "collectibles_slug": "burmy",
-      "featured": "true",
-      "slug": "burmy",
-      "name": "Burmy",
-      "ThumbnailAltText": "Burmy",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/412.png",
-      "id": 412,
-      "type": [
-        "bug"
-      ]
-    },
-    {
-      "abilities": [
-        "Shed Skin"
-      ],
-      "detailPageURL": "/us/pokedex/burmy",
-      "weight": 7.5,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Rock"
-      ],
-      "number": "412",
-      "height": 8,
-      "collectibles_slug": "burmy",
-      "featured": "true",
-      "slug": "burmy",
-      "name": "Burmy",
-      "ThumbnailAltText": "Burmy",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/412.png",
-      "id": 412,
-      "type": [
-        "bug"
-      ]
-    },
-    {
-      "abilities": [
         "Anticipation"
       ],
       "detailPageURL": "/us/pokedex/wormadam",
@@ -12108,60 +10378,6 @@
       "type": [
         "bug",
         "steel"
-      ]
-    },
-    {
-      "abilities": [
-        "Anticipation"
-      ],
-      "detailPageURL": "/us/pokedex/wormadam",
-      "weight": 14.3,
-      "weakness": [
-        "Fire",
-        "Water",
-        "Ice",
-        "Flying"
-      ],
-      "number": "413",
-      "height": 20,
-      "collectibles_slug": "wormadam",
-      "featured": "true",
-      "slug": "wormadam",
-      "name": "Wormadam",
-      "ThumbnailAltText": "Wormadam",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/413.png",
-      "id": 413,
-      "type": [
-        "bug",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
-        "Anticipation"
-      ],
-      "detailPageURL": "/us/pokedex/wormadam",
-      "weight": 14.3,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Ice",
-        "Poison",
-        "Bug",
-        "Rock"
-      ],
-      "number": "413",
-      "height": 20,
-      "collectibles_slug": "wormadam",
-      "featured": "true",
-      "slug": "wormadam",
-      "name": "Wormadam",
-      "ThumbnailAltText": "Wormadam",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/413.png",
-      "id": 413,
-      "type": [
-        "bug",
-        "grass"
       ]
     },
     {
@@ -12368,32 +10584,6 @@
     },
     {
       "abilities": [
-        "Flower Gift"
-      ],
-      "detailPageURL": "/us/pokedex/cherrim",
-      "weight": 20.5,
-      "weakness": [
-        "Bug",
-        "Fire",
-        "Flying",
-        "Ice",
-        "Poison"
-      ],
-      "number": "421",
-      "height": 20,
-      "collectibles_slug": "cherrim",
-      "featured": "true",
-      "slug": "cherrim",
-      "name": "Cherrim",
-      "ThumbnailAltText": "Cherrim",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/421.png",
-      "id": 421,
-      "type": [
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
         "Sticky Hold",
         "Storm Drain"
       ],
@@ -12414,54 +10604,6 @@
       "id": 422,
       "type": [
         "water"
-      ]
-    },
-    {
-      "abilities": [
-        "Sticky Hold",
-        "Storm Drain"
-      ],
-      "detailPageURL": "/us/pokedex/shellos",
-      "weight": 13.9,
-      "weakness": [
-        "Electric",
-        "Grass"
-      ],
-      "number": "422",
-      "height": 12,
-      "collectibles_slug": "shellos",
-      "featured": "true",
-      "slug": "shellos",
-      "name": "Shellos",
-      "ThumbnailAltText": "Shellos",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/422.png",
-      "id": 422,
-      "type": [
-        "water"
-      ]
-    },
-    {
-      "abilities": [
-        "Sticky Hold",
-        "Storm Drain"
-      ],
-      "detailPageURL": "/us/pokedex/gastrodon",
-      "weight": 65.9,
-      "weakness": [
-        "Grass"
-      ],
-      "number": "423",
-      "height": 35,
-      "collectibles_slug": "gastrodon",
-      "featured": "true",
-      "slug": "gastrodon",
-      "name": "Gastrodon",
-      "ThumbnailAltText": "Gastrodon",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/423.png",
-      "id": 423,
-      "type": [
-        "water",
-        "ground"
       ]
     },
     {
@@ -12614,29 +10756,6 @@
       "type": [
         "normal",
         "fighting"
-      ]
-    },
-    {
-      "abilities": [
-        "Cute Charm",
-        "Klutz"
-      ],
-      "detailPageURL": "/us/pokedex/lopunny",
-      "weight": 73.4,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "428",
-      "height": 47,
-      "collectibles_slug": "lopunny",
-      "featured": "true",
-      "slug": "lopunny",
-      "name": "Lopunny",
-      "ThumbnailAltText": "Lopunny",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/428.png",
-      "id": 428,
-      "type": [
-        "normal"
       ]
     },
     {
@@ -13063,31 +11182,6 @@
     },
     {
       "abilities": [
-        "Sand Veil"
-      ],
-      "detailPageURL": "/us/pokedex/garchomp",
-      "weight": 209.4,
-      "weakness": [
-        "Ice",
-        "Dragon",
-        "Fairy"
-      ],
-      "number": "445",
-      "height": 75,
-      "collectibles_slug": "garchomp",
-      "featured": "true",
-      "slug": "garchomp",
-      "name": "Garchomp",
-      "ThumbnailAltText": "Garchomp",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/445.png",
-      "id": 445,
-      "type": [
-        "dragon",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Pickup",
         "Thick Fat"
       ],
@@ -13147,32 +11241,6 @@
       ],
       "number": "448",
       "height": 51,
-      "collectibles_slug": "lucario",
-      "featured": "true",
-      "slug": "lucario",
-      "name": "Lucario",
-      "ThumbnailAltText": "Lucario",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/448.png",
-      "id": 448,
-      "type": [
-        "fighting",
-        "steel"
-      ]
-    },
-    {
-      "abilities": [
-        "Inner Focus",
-        "Steadfast"
-      ],
-      "detailPageURL": "/us/pokedex/lucario",
-      "weight": 119,
-      "weakness": [
-        "Fighting",
-        "Fire",
-        "Ground"
-      ],
-      "number": "448",
-      "height": 47,
       "collectibles_slug": "lucario",
       "featured": "true",
       "slug": "lucario",
@@ -13481,35 +11549,6 @@
       ],
       "number": "460",
       "height": 106,
-      "collectibles_slug": "abomasnow",
-      "featured": "true",
-      "slug": "abomasnow",
-      "name": "Abomasnow",
-      "ThumbnailAltText": "Abomasnow",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/460.png",
-      "id": 460,
-      "type": [
-        "grass",
-        "ice"
-      ]
-    },
-    {
-      "abilities": [
-        "Snow Warning"
-      ],
-      "detailPageURL": "/us/pokedex/abomasnow",
-      "weight": 298.7,
-      "weakness": [
-        "Fire",
-        "Bug",
-        "Fighting",
-        "Flying",
-        "Poison",
-        "Rock",
-        "Steel"
-      ],
-      "number": "460",
-      "height": 87,
       "collectibles_slug": "abomasnow",
       "featured": "true",
       "slug": "abomasnow",
@@ -13911,31 +11950,6 @@
     },
     {
       "abilities": [
-        "Steadfast"
-      ],
-      "detailPageURL": "/us/pokedex/gallade",
-      "weight": 114.6,
-      "weakness": [
-        "Flying",
-        "Ghost",
-        "Fairy"
-      ],
-      "number": "475",
-      "height": 63,
-      "collectibles_slug": "gallade",
-      "featured": "true",
-      "slug": "gallade",
-      "name": "Gallade",
-      "ThumbnailAltText": "Gallade",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/475.png",
-      "id": 475,
-      "type": [
-        "psychic",
-        "fighting"
-      ]
-    },
-    {
-      "abilities": [
         "Magnet Pull",
         "Sturdy"
       ],
@@ -14034,126 +12048,6 @@
       "type": [
         "electric",
         "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
-      "detailPageURL": "/us/pokedex/rotom",
-      "weight": 0.7,
-      "weakness": [
-        "Rock",
-        "Ice"
-      ],
-      "number": "479",
-      "height": 12,
-      "collectibles_slug": "rotom",
-      "featured": "true",
-      "slug": "rotom",
-      "name": "Rotom",
-      "ThumbnailAltText": "Rotom",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/479.png",
-      "id": 479,
-      "type": [
-        "electric",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
-      "detailPageURL": "/us/pokedex/rotom",
-      "weight": 0.7,
-      "weakness": [
-        "Fire",
-        "Rock",
-        "Fighting"
-      ],
-      "number": "479",
-      "height": 12,
-      "collectibles_slug": "rotom",
-      "featured": "true",
-      "slug": "rotom",
-      "name": "Rotom",
-      "ThumbnailAltText": "Rotom",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/479.png",
-      "id": 479,
-      "type": [
-        "electric",
-        "ice"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
-      "detailPageURL": "/us/pokedex/rotom",
-      "weight": 0.7,
-      "weakness": [
-        "Grass"
-      ],
-      "number": "479",
-      "height": 12,
-      "collectibles_slug": "rotom",
-      "featured": "true",
-      "slug": "rotom",
-      "name": "Rotom",
-      "ThumbnailAltText": "Rotom",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/479.png",
-      "id": 479,
-      "type": [
-        "electric",
-        "water"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
-      "detailPageURL": "/us/pokedex/rotom",
-      "weight": 0.7,
-      "weakness": [
-        "Water",
-        "Rock"
-      ],
-      "number": "479",
-      "height": 12,
-      "collectibles_slug": "rotom",
-      "featured": "true",
-      "slug": "rotom",
-      "name": "Rotom",
-      "ThumbnailAltText": "Rotom",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/479.png",
-      "id": 479,
-      "type": [
-        "electric",
-        "fire"
-      ]
-    },
-    {
-      "abilities": [
-        "Levitate"
-      ],
-      "detailPageURL": "/us/pokedex/rotom",
-      "weight": 0.7,
-      "weakness": [
-        "Ghost",
-        "Dark"
-      ],
-      "number": "479",
-      "height": 12,
-      "collectibles_slug": "rotom",
-      "featured": "true",
-      "slug": "rotom",
-      "name": "Rotom",
-      "ThumbnailAltText": "Rotom",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/479.png",
-      "id": 479,
-      "type": [
-        "electric",
-        "ghost"
       ]
     },
     {
@@ -14352,33 +12246,6 @@
     },
     {
       "abilities": [
-        "Pressure"
-      ],
-      "detailPageURL": "/us/pokedex/giratina",
-      "weight": 1653.5,
-      "weakness": [
-        "Dark",
-        "Dragon",
-        "Ghost",
-        "Ice",
-        "Fairy"
-      ],
-      "number": "487",
-      "height": 177,
-      "collectibles_slug": "giratina",
-      "featured": "true",
-      "slug": "giratina",
-      "name": "Giratina",
-      "ThumbnailAltText": "Giratina",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/487.png",
-      "id": 487,
-      "type": [
-        "ghost",
-        "dragon"
-      ]
-    },
-    {
-      "abilities": [
         "Levitate"
       ],
       "detailPageURL": "/us/pokedex/cresselia",
@@ -14500,32 +12367,6 @@
     },
     {
       "abilities": [
-        "Natural Cure"
-      ],
-      "detailPageURL": "/us/pokedex/shaymin",
-      "weight": 4.6,
-      "weakness": [
-        "Bug",
-        "Fire",
-        "Flying",
-        "Ice",
-        "Poison"
-      ],
-      "number": "492",
-      "height": 8,
-      "collectibles_slug": "shaymin",
-      "featured": "true",
-      "slug": "shaymin",
-      "name": "Shaymin",
-      "ThumbnailAltText": "Shaymin",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/492.png",
-      "id": 492,
-      "type": [
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
         "Multitype"
       ],
       "detailPageURL": "/us/pokedex/arceus",
@@ -14545,412 +12386,6 @@
       "id": 493,
       "type": [
         "fairy"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Fairy",
-        "Bug",
-        "Fighting"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "dark"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Fairy",
-        "Ice",
-        "Dragon"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "dragon"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Fire",
-        "Steel",
-        "Fighting",
-        "Rock"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "ice"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Ghost",
-        "Dark",
-        "Bug"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Ground"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "electric"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Poison",
-        "Ice",
-        "Bug"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Grass",
-        "Electric"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "water"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Water",
-        "Rock",
-        "Ground"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "fire"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Fire",
-        "Fighting",
-        "Ground"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "steel"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Ghost",
-        "Dark"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "ghost"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Rock"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "bug"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Water",
-        "Steel",
-        "Grass",
-        "Fighting",
-        "Ground"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "rock"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Water",
-        "Grass",
-        "Ice"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Psychic",
-        "Ground"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "poison"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Electric",
-        "Ice",
-        "Rock"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Psychic",
-        "Flying",
-        "Fairy"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "fighting"
-      ]
-    },
-    {
-      "abilities": [
-        "Multitype"
-      ],
-      "detailPageURL": "/us/pokedex/arceus",
-      "weight": 705.5,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "493",
-      "height": 126,
-      "collectibles_slug": "arceus",
-      "featured": "true",
-      "slug": "arceus",
-      "name": "Arceus",
-      "ThumbnailAltText": "Arceus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/493.png",
-      "id": 493,
-      "type": [
-        "normal"
       ]
     },
     {
@@ -15900,29 +13335,6 @@
     },
     {
       "abilities": [
-        "Healer",
-        "Regenerator"
-      ],
-      "detailPageURL": "/us/pokedex/audino",
-      "weight": 68.3,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "531",
-      "height": 43,
-      "collectibles_slug": "audino",
-      "featured": "true",
-      "slug": "audino",
-      "name": "Audino",
-      "ThumbnailAltText": "Audino",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/531.png",
-      "id": 531,
-      "type": [
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
         "Guts",
         "Sheer Force"
       ],
@@ -16422,30 +13834,6 @@
     },
     {
       "abilities": [
-        "Adaptability",
-        "Reckless"
-      ],
-      "detailPageURL": "/us/pokedex/basculin",
-      "weight": 39.7,
-      "weakness": [
-        "Grass",
-        "Electric"
-      ],
-      "number": "550",
-      "height": 39,
-      "collectibles_slug": "basculin",
-      "featured": "true",
-      "slug": "basculin",
-      "name": "Basculin",
-      "ThumbnailAltText": "Basculin",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/550.png",
-      "id": 550,
-      "type": [
-        "water"
-      ]
-    },
-    {
-      "abilities": [
         "Intimidate",
         "Moxie"
       ],
@@ -16580,30 +13968,6 @@
       "type": [
         "fire",
         "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Sheer Force"
-      ],
-      "detailPageURL": "/us/pokedex/darmanitan",
-      "weight": 204.8,
-      "weakness": [
-        "Water",
-        "Ground",
-        "Rock"
-      ],
-      "number": "555",
-      "height": 51,
-      "collectibles_slug": "darmanitan",
-      "featured": "true",
-      "slug": "darmanitan",
-      "name": "Darmanitan",
-      "ThumbnailAltText": "Darmanitan",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/555.png",
-      "id": 555,
-      "type": [
-        "fire"
       ]
     },
     {
@@ -17370,93 +14734,6 @@
         "Chlorophyll",
         "Sap Sipper"
       ],
-      "detailPageURL": "/us/pokedex/deerling",
-      "weight": 43,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Fighting",
-        "Poison",
-        "Ice",
-        "Bug"
-      ],
-      "number": "585",
-      "height": 24,
-      "collectibles_slug": "deerling",
-      "featured": "true",
-      "slug": "deerling",
-      "name": "Deerling",
-      "ThumbnailAltText": "Deerling",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/585.png",
-      "id": 585,
-      "type": [
-        "normal",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Chlorophyll",
-        "Sap Sipper"
-      ],
-      "detailPageURL": "/us/pokedex/deerling",
-      "weight": 43,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Fighting",
-        "Poison",
-        "Ice",
-        "Bug"
-      ],
-      "number": "585",
-      "height": 24,
-      "collectibles_slug": "deerling",
-      "featured": "true",
-      "slug": "deerling",
-      "name": "Deerling",
-      "ThumbnailAltText": "Deerling",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/585.png",
-      "id": 585,
-      "type": [
-        "normal",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Chlorophyll",
-        "Sap Sipper"
-      ],
-      "detailPageURL": "/us/pokedex/deerling",
-      "weight": 43,
-      "weakness": [
-        "Fire",
-        "Ice",
-        "Fighting",
-        "Poison",
-        "Flying",
-        "Bug"
-      ],
-      "number": "585",
-      "height": 24,
-      "collectibles_slug": "deerling",
-      "featured": "true",
-      "slug": "deerling",
-      "name": "Deerling",
-      "ThumbnailAltText": "Deerling",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/585.png",
-      "id": 585,
-      "type": [
-        "normal",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Chlorophyll",
-        "Sap Sipper"
-      ],
       "detailPageURL": "/us/pokedex/sawsbuck",
       "weight": 203.9,
       "weakness": [
@@ -17465,93 +14742,6 @@
         "Fighting",
         "Poison",
         "Ice",
-        "Bug"
-      ],
-      "number": "586",
-      "height": 75,
-      "collectibles_slug": "sawsbuck",
-      "featured": "true",
-      "slug": "sawsbuck",
-      "name": "Sawsbuck",
-      "ThumbnailAltText": "Sawsbuck",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/586.png",
-      "id": 586,
-      "type": [
-        "normal",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Chlorophyll",
-        "Sap Sipper"
-      ],
-      "detailPageURL": "/us/pokedex/sawsbuck",
-      "weight": 203.9,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Fighting",
-        "Poison",
-        "Ice",
-        "Bug"
-      ],
-      "number": "586",
-      "height": 75,
-      "collectibles_slug": "sawsbuck",
-      "featured": "true",
-      "slug": "sawsbuck",
-      "name": "Sawsbuck",
-      "ThumbnailAltText": "Sawsbuck",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/586.png",
-      "id": 586,
-      "type": [
-        "normal",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Chlorophyll",
-        "Sap Sipper"
-      ],
-      "detailPageURL": "/us/pokedex/sawsbuck",
-      "weight": 203.9,
-      "weakness": [
-        "Fire",
-        "Flying",
-        "Fighting",
-        "Poison",
-        "Ice",
-        "Bug"
-      ],
-      "number": "586",
-      "height": 75,
-      "collectibles_slug": "sawsbuck",
-      "featured": "true",
-      "slug": "sawsbuck",
-      "name": "Sawsbuck",
-      "ThumbnailAltText": "Sawsbuck",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/586.png",
-      "id": 586,
-      "type": [
-        "normal",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Chlorophyll",
-        "Sap Sipper"
-      ],
-      "detailPageURL": "/us/pokedex/sawsbuck",
-      "weight": 203.9,
-      "weakness": [
-        "Fire",
-        "Ice",
-        "Fighting",
-        "Poison",
-        "Flying",
         "Bug"
       ],
       "number": "586",
@@ -18965,30 +16155,6 @@
     },
     {
       "abilities": [
-        "Prankster"
-      ],
-      "detailPageURL": "/us/pokedex/tornadus",
-      "weight": 138.9,
-      "weakness": [
-        "Electric",
-        "Ice",
-        "Rock"
-      ],
-      "number": "641",
-      "height": 59,
-      "collectibles_slug": "tornadus",
-      "featured": "true",
-      "slug": "tornadus",
-      "name": "Tornadus",
-      "ThumbnailAltText": "Tornadus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/641.png",
-      "id": 641,
-      "type": [
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Volt Absorb"
       ],
       "detailPageURL": "/us/pokedex/thundurus",
@@ -18999,30 +16165,6 @@
       ],
       "number": "642",
       "height": 118,
-      "collectibles_slug": "thundurus",
-      "featured": "true",
-      "slug": "thundurus",
-      "name": "Thundurus",
-      "ThumbnailAltText": "Thundurus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/642.png",
-      "id": 642,
-      "type": [
-        "electric",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
-        "Prankster"
-      ],
-      "detailPageURL": "/us/pokedex/thundurus",
-      "weight": 134.5,
-      "weakness": [
-        "Ice",
-        "Rock"
-      ],
-      "number": "642",
-      "height": 59,
       "collectibles_slug": "thundurus",
       "featured": "true",
       "slug": "thundurus",
@@ -19112,30 +16254,6 @@
     },
     {
       "abilities": [
-        "Sand Force"
-      ],
-      "detailPageURL": "/us/pokedex/landorus",
-      "weight": 149.9,
-      "weakness": [
-        "Ice",
-        "Water"
-      ],
-      "number": "645",
-      "height": 59,
-      "collectibles_slug": "landorus",
-      "featured": "true",
-      "slug": "landorus",
-      "name": "Landorus",
-      "ThumbnailAltText": "Landorus",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/645.png",
-      "id": 645,
-      "type": [
-        "ground",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Teravolt"
       ],
       "detailPageURL": "/us/pokedex/kyurem",
@@ -19159,87 +16277,6 @@
       "type": [
         "dragon",
         "ice"
-      ]
-    },
-    {
-      "abilities": [
-        "Turboblaze"
-      ],
-      "detailPageURL": "/us/pokedex/kyurem",
-      "weight": 716.5,
-      "weakness": [
-        "Fighting",
-        "Rock",
-        "Dragon",
-        "Steel",
-        "Fairy"
-      ],
-      "number": "646",
-      "height": 142,
-      "collectibles_slug": "kyurem",
-      "featured": "true",
-      "slug": "kyurem",
-      "name": "Kyurem",
-      "ThumbnailAltText": "Kyurem",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/646.png",
-      "id": 646,
-      "type": [
-        "dragon",
-        "ice"
-      ]
-    },
-    {
-      "abilities": [
-        "Pressure"
-      ],
-      "detailPageURL": "/us/pokedex/kyurem",
-      "weight": 716.5,
-      "weakness": [
-        "Fighting",
-        "Rock",
-        "Dragon",
-        "Steel",
-        "Fairy"
-      ],
-      "number": "646",
-      "height": 118,
-      "collectibles_slug": "kyurem",
-      "featured": "true",
-      "slug": "kyurem",
-      "name": "Kyurem",
-      "ThumbnailAltText": "Kyurem",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/646.png",
-      "id": 646,
-      "type": [
-        "dragon",
-        "ice"
-      ]
-    },
-    {
-      "abilities": [
-        "Justified"
-      ],
-      "detailPageURL": "/us/pokedex/keldeo",
-      "weight": 106.9,
-      "weakness": [
-        "Flying",
-        "Grass",
-        "Electric",
-        "Fairy",
-        "Psychic"
-      ],
-      "number": "647",
-      "height": 55,
-      "collectibles_slug": "keldeo",
-      "featured": "true",
-      "slug": "keldeo",
-      "name": "Keldeo",
-      "ThumbnailAltText": "Keldeo",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/647.png",
-      "id": 647,
-      "type": [
-        "water",
-        "fighting"
       ]
     },
     {
@@ -19293,30 +16330,6 @@
       "type": [
         "normal",
         "fighting"
-      ]
-    },
-    {
-      "abilities": [
-        "Serene Grace"
-      ],
-      "detailPageURL": "/us/pokedex/meloetta",
-      "weight": 14.3,
-      "weakness": [
-        "Bug",
-        "Dark"
-      ],
-      "number": "648",
-      "height": 24,
-      "collectibles_slug": "meloetta",
-      "featured": "true",
-      "slug": "meloetta",
-      "name": "Meloetta",
-      "ThumbnailAltText": "Meloetta",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/648.png",
-      "id": 648,
-      "type": [
-        "normal",
-        "psychic"
       ]
     },
     {
@@ -19546,33 +16559,6 @@
     {
       "abilities": [
         "Battle Bond"
-      ],
-      "detailPageURL": "/us/pokedex/greninja",
-      "weight": 88.2,
-      "weakness": [
-        "Fairy",
-        "Grass",
-        "Electric",
-        "Fighting",
-        "Bug"
-      ],
-      "number": "658",
-      "height": 59,
-      "collectibles_slug": "greninja",
-      "featured": "true",
-      "slug": "greninja",
-      "name": "Greninja",
-      "ThumbnailAltText": "Greninja",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/658.png",
-      "id": 658,
-      "type": [
-        "water",
-        "dark"
-      ]
-    },
-    {
-      "abilities": [
-        "Torrent"
       ],
       "detailPageURL": "/us/pokedex/greninja",
       "weight": 88.2,
@@ -19855,33 +16841,6 @@
     },
     {
       "abilities": [
-        "Rivalry",
-        "Unnerve"
-      ],
-      "detailPageURL": "/us/pokedex/pyroar",
-      "weight": 179.7,
-      "weakness": [
-        "Water",
-        "Rock",
-        "Fighting",
-        "Ground"
-      ],
-      "number": "668",
-      "height": 59,
-      "collectibles_slug": "pyroar",
-      "featured": "true",
-      "slug": "pyroar",
-      "name": "Pyroar",
-      "ThumbnailAltText": "Pyroar",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/668.png",
-      "id": 668,
-      "type": [
-        "fire",
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
         "Flower Veil"
       ],
       "detailPageURL": "/us/pokedex/flabebe",
@@ -20076,72 +17035,6 @@
     },
     {
       "abilities": [
-        "Fur Coat"
-      ],
-      "detailPageURL": "/us/pokedex/furfrou",
-      "weight": 61.7,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "676",
-      "height": 47,
-      "collectibles_slug": "furfrou",
-      "featured": "true",
-      "slug": "furfrou",
-      "name": "Furfrou",
-      "ThumbnailAltText": "Furfrou",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/676.png",
-      "id": 676,
-      "type": [
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
-        "Fur Coat"
-      ],
-      "detailPageURL": "/us/pokedex/furfrou",
-      "weight": 61.7,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "676",
-      "height": 47,
-      "collectibles_slug": "furfrou",
-      "featured": "true",
-      "slug": "furfrou",
-      "name": "Furfrou",
-      "ThumbnailAltText": "Furfrou",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/676.png",
-      "id": 676,
-      "type": [
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
-        "Fur Coat"
-      ],
-      "detailPageURL": "/us/pokedex/furfrou",
-      "weight": 61.7,
-      "weakness": [
-        "Fighting"
-      ],
-      "number": "676",
-      "height": 47,
-      "collectibles_slug": "furfrou",
-      "featured": "true",
-      "slug": "furfrou",
-      "name": "Furfrou",
-      "ThumbnailAltText": "Furfrou",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/676.png",
-      "id": 676,
-      "type": [
-        "normal"
-      ]
-    },
-    {
-      "abilities": [
         "Infiltrator",
         "Keen Eye"
       ],
@@ -20161,31 +17054,6 @@
       "ThumbnailAltText": "Espurr",
       "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/677.png",
       "id": 677,
-      "type": [
-        "psychic"
-      ]
-    },
-    {
-      "abilities": [
-        "Infiltrator",
-        "Keen Eye"
-      ],
-      "detailPageURL": "/us/pokedex/meowstic",
-      "weight": 18.7,
-      "weakness": [
-        "Ghost",
-        "Dark",
-        "Bug"
-      ],
-      "number": "678",
-      "height": 24,
-      "collectibles_slug": "meowstic",
-      "featured": "true",
-      "slug": "meowstic",
-      "name": "Meowstic",
-      "ThumbnailAltText": "Meowstic",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/678.png",
-      "id": 678,
       "type": [
         "psychic"
       ]
@@ -20262,32 +17130,6 @@
       "ThumbnailAltText": "Doublade",
       "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/680.png",
       "id": 680,
-      "type": [
-        "steel",
-        "ghost"
-      ]
-    },
-    {
-      "abilities": [
-        "Stance Change"
-      ],
-      "detailPageURL": "/us/pokedex/aegislash",
-      "weight": 116.8,
-      "weakness": [
-        "Fire",
-        "Ghost",
-        "Dark",
-        "Ground"
-      ],
-      "number": "681",
-      "height": 67,
-      "collectibles_slug": "aegislash",
-      "featured": "true",
-      "slug": "aegislash",
-      "name": "Aegislash",
-      "ThumbnailAltText": "Aegislash",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/681.png",
-      "id": 681,
       "type": [
         "steel",
         "ghost"
@@ -21066,90 +17908,6 @@
         "Frisk",
         "Pickup"
       ],
-      "detailPageURL": "/us/pokedex/pumpkaboo",
-      "weight": 16.5,
-      "weakness": [
-        "Ghost",
-        "Fire",
-        "Flying",
-        "Dark",
-        "Ice"
-      ],
-      "number": "710",
-      "height": 20,
-      "collectibles_slug": "pumpkaboo",
-      "featured": "true",
-      "slug": "pumpkaboo",
-      "name": "Pumpkaboo",
-      "ThumbnailAltText": "Pumpkaboo",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/710.png",
-      "id": 710,
-      "type": [
-        "ghost",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Frisk",
-        "Pickup"
-      ],
-      "detailPageURL": "/us/pokedex/pumpkaboo",
-      "weight": 7.7,
-      "weakness": [
-        "Ghost",
-        "Fire",
-        "Flying",
-        "Dark",
-        "Ice"
-      ],
-      "number": "710",
-      "height": 12,
-      "collectibles_slug": "pumpkaboo",
-      "featured": "true",
-      "slug": "pumpkaboo",
-      "name": "Pumpkaboo",
-      "ThumbnailAltText": "Pumpkaboo",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/710.png",
-      "id": 710,
-      "type": [
-        "ghost",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Frisk",
-        "Pickup"
-      ],
-      "detailPageURL": "/us/pokedex/pumpkaboo",
-      "weight": 11,
-      "weakness": [
-        "Ghost",
-        "Fire",
-        "Flying",
-        "Dark",
-        "Ice"
-      ],
-      "number": "710",
-      "height": 16,
-      "collectibles_slug": "pumpkaboo",
-      "featured": "true",
-      "slug": "pumpkaboo",
-      "name": "Pumpkaboo",
-      "ThumbnailAltText": "Pumpkaboo",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/710.png",
-      "id": 710,
-      "type": [
-        "ghost",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Frisk",
-        "Pickup"
-      ],
       "detailPageURL": "/us/pokedex/gourgeist",
       "weight": 86,
       "weakness": [
@@ -21161,90 +17919,6 @@
       ],
       "number": "711",
       "height": 67,
-      "collectibles_slug": "gourgeist",
-      "featured": "true",
-      "slug": "gourgeist",
-      "name": "Gourgeist",
-      "ThumbnailAltText": "Gourgeist",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/711.png",
-      "id": 711,
-      "type": [
-        "ghost",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Frisk",
-        "Pickup"
-      ],
-      "detailPageURL": "/us/pokedex/gourgeist",
-      "weight": 30.9,
-      "weakness": [
-        "Ghost",
-        "Fire",
-        "Flying",
-        "Dark",
-        "Ice"
-      ],
-      "number": "711",
-      "height": 43,
-      "collectibles_slug": "gourgeist",
-      "featured": "true",
-      "slug": "gourgeist",
-      "name": "Gourgeist",
-      "ThumbnailAltText": "Gourgeist",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/711.png",
-      "id": 711,
-      "type": [
-        "ghost",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Frisk",
-        "Pickup"
-      ],
-      "detailPageURL": "/us/pokedex/gourgeist",
-      "weight": 20.9,
-      "weakness": [
-        "Ghost",
-        "Fire",
-        "Flying",
-        "Dark",
-        "Ice"
-      ],
-      "number": "711",
-      "height": 28,
-      "collectibles_slug": "gourgeist",
-      "featured": "true",
-      "slug": "gourgeist",
-      "name": "Gourgeist",
-      "ThumbnailAltText": "Gourgeist",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/711.png",
-      "id": 711,
-      "type": [
-        "ghost",
-        "grass"
-      ]
-    },
-    {
-      "abilities": [
-        "Frisk",
-        "Pickup"
-      ],
-      "detailPageURL": "/us/pokedex/gourgeist",
-      "weight": 27.6,
-      "weakness": [
-        "Ghost",
-        "Fire",
-        "Flying",
-        "Dark",
-        "Ice"
-      ],
-      "number": "711",
-      "height": 35,
       "collectibles_slug": "gourgeist",
       "featured": "true",
       "slug": "gourgeist",
@@ -21439,57 +18113,6 @@
     },
     {
       "abilities": [
-        "Aura Break",
-        "Power Construct"
-      ],
-      "detailPageURL": "/us/pokedex/zygarde",
-      "weight": 73.9,
-      "weakness": [
-        "Fairy",
-        "Ice",
-        "Dragon"
-      ],
-      "number": "718",
-      "height": 47,
-      "collectibles_slug": "zygarde",
-      "featured": "true",
-      "slug": "zygarde",
-      "name": "Zygarde",
-      "ThumbnailAltText": "Zygarde",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/718.png",
-      "id": 718,
-      "type": [
-        "dragon",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
-        "Aura Break"
-      ],
-      "detailPageURL": "/us/pokedex/zygarde",
-      "weight": 672.4,
-      "weakness": [
-        "Fairy",
-        "Ice",
-        "Dragon"
-      ],
-      "number": "718",
-      "height": 197,
-      "collectibles_slug": "zygarde",
-      "featured": "true",
-      "slug": "zygarde",
-      "name": "Zygarde",
-      "ThumbnailAltText": "Zygarde",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/718.png",
-      "id": 718,
-      "type": [
-        "dragon",
-        "ground"
-      ]
-    },
-    {
-      "abilities": [
         "Magic Bounce"
       ],
       "detailPageURL": "/us/pokedex/diancie",
@@ -21502,32 +18125,6 @@
       ],
       "number": "719",
       "height": 43,
-      "collectibles_slug": "diancie",
-      "featured": "true",
-      "slug": "diancie",
-      "name": "Diancie",
-      "ThumbnailAltText": "Diancie",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/719.png",
-      "id": 719,
-      "type": [
-        "rock",
-        "fairy"
-      ]
-    },
-    {
-      "abilities": [
-        "Clear Body"
-      ],
-      "detailPageURL": "/us/pokedex/diancie",
-      "weight": 19.4,
-      "weakness": [
-        "Steel",
-        "Water",
-        "Grass",
-        "Ground"
-      ],
-      "number": "719",
-      "height": 28,
       "collectibles_slug": "diancie",
       "featured": "true",
       "slug": "diancie",
@@ -21562,30 +18159,6 @@
       "type": [
         "psychic",
         "dark"
-      ]
-    },
-    {
-      "abilities": [
-        "Magician"
-      ],
-      "detailPageURL": "/us/pokedex/hoopa",
-      "weight": 19.8,
-      "weakness": [
-        "Ghost",
-        "Dark"
-      ],
-      "number": "720",
-      "height": 20,
-      "collectibles_slug": "hoopa",
-      "featured": "true",
-      "slug": "hoopa",
-      "name": "Hoopa",
-      "ThumbnailAltText": "Hoopa",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/720.png",
-      "id": 720,
-      "type": [
-        "psychic",
-        "ghost"
       ]
     },
     {
@@ -22118,82 +18691,6 @@
     },
     {
       "abilities": [
-        "Dancer"
-      ],
-      "detailPageURL": "/us/pokedex/oricorio",
-      "weight": 7.5,
-      "weakness": [
-        "Ghost",
-        "Dark",
-        "Electric",
-        "Ice",
-        "Rock"
-      ],
-      "number": "741",
-      "height": 24,
-      "collectibles_slug": "oricorio",
-      "featured": "true",
-      "slug": "oricorio",
-      "name": "Oricorio",
-      "ThumbnailAltText": "Oricorio",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/741.png",
-      "id": 741,
-      "type": [
-        "psychic",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
-        "Dancer"
-      ],
-      "detailPageURL": "/us/pokedex/oricorio",
-      "weight": 7.5,
-      "weakness": [
-        "Ice",
-        "Rock"
-      ],
-      "number": "741",
-      "height": 24,
-      "collectibles_slug": "oricorio",
-      "featured": "true",
-      "slug": "oricorio",
-      "name": "Oricorio",
-      "ThumbnailAltText": "Oricorio",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/741.png",
-      "id": 741,
-      "type": [
-        "electric",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
-        "Dancer"
-      ],
-      "detailPageURL": "/us/pokedex/oricorio",
-      "weight": 7.5,
-      "weakness": [
-        "Water",
-        "Electric",
-        "Rock"
-      ],
-      "number": "741",
-      "height": 24,
-      "collectibles_slug": "oricorio",
-      "featured": "true",
-      "slug": "oricorio",
-      "name": "Oricorio",
-      "ThumbnailAltText": "Oricorio",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/741.png",
-      "id": 741,
-      "type": [
-        "fire",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Honey Gather",
         "Shield Dust"
       ],
@@ -22304,33 +18801,6 @@
     },
     {
       "abilities": [
-        "Keen Eye",
-        "Sand Rush"
-      ],
-      "detailPageURL": "/us/pokedex/lycanroc",
-      "weight": 55.1,
-      "weakness": [
-        "Water",
-        "Steel",
-        "Grass",
-        "Fighting",
-        "Ground"
-      ],
-      "number": "745",
-      "height": 31,
-      "collectibles_slug": "lycanroc",
-      "featured": "true",
-      "slug": "lycanroc",
-      "name": "Lycanroc",
-      "ThumbnailAltText": "Lycanroc",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/745.png",
-      "id": 745,
-      "type": [
-        "rock"
-      ]
-    },
-    {
-      "abilities": [
         "Schooling"
       ],
       "detailPageURL": "/us/pokedex/wishiwashi",
@@ -22341,29 +18811,6 @@
       ],
       "number": "746",
       "height": 323,
-      "collectibles_slug": "wishiwashi",
-      "featured": "true",
-      "slug": "wishiwashi",
-      "name": "Wishiwashi",
-      "ThumbnailAltText": "Wishiwashi",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/746.png",
-      "id": 746,
-      "type": [
-        "water"
-      ]
-    },
-    {
-      "abilities": [
-        "Schooling"
-      ],
-      "detailPageURL": "/us/pokedex/wishiwashi",
-      "weight": 0.7,
-      "weakness": [
-        "Grass",
-        "Electric"
-      ],
-      "number": "746",
-      "height": 8,
       "collectibles_slug": "wishiwashi",
       "featured": "true",
       "slug": "wishiwashi",
@@ -23095,33 +19542,6 @@
     },
     {
       "abilities": [
-        "Shields Down"
-      ],
-      "detailPageURL": "/us/pokedex/minior",
-      "weight": 88.2,
-      "weakness": [
-        "Steel",
-        "Water",
-        "Electric",
-        "Ice",
-        "Rock"
-      ],
-      "number": "774",
-      "height": 12,
-      "collectibles_slug": "minior",
-      "featured": "true",
-      "slug": "minior",
-      "name": "Minior",
-      "ThumbnailAltText": "Minior",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/774.png",
-      "id": 774,
-      "type": [
-        "rock",
-        "flying"
-      ]
-    },
-    {
-      "abilities": [
         "Comatose"
       ],
       "detailPageURL": "/us/pokedex/komala",
@@ -23780,80 +20200,6 @@
       "type": [
         "psychic",
         "dragon"
-      ]
-    },
-    {
-      "abilities": [
-        "Prism Armor"
-      ],
-      "detailPageURL": "/us/pokedex/necrozma",
-      "weight": 771.6,
-      "weakness": [
-        "Ghost",
-        "Dark"
-      ],
-      "number": "800",
-      "height": 165,
-      "collectibles_slug": "necrozma",
-      "featured": "true",
-      "slug": "necrozma",
-      "name": "Necrozma",
-      "ThumbnailAltText": "Necrozma",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/800.png",
-      "id": 800,
-      "type": [
-        "psychic",
-        "ghost"
-      ]
-    },
-    {
-      "abilities": [
-        "Prism Armor"
-      ],
-      "detailPageURL": "/us/pokedex/necrozma",
-      "weight": 1014.1,
-      "weakness": [
-        "Ghost",
-        "Fire",
-        "Dark",
-        "Ground"
-      ],
-      "number": "800",
-      "height": 150,
-      "collectibles_slug": "necrozma",
-      "featured": "true",
-      "slug": "necrozma",
-      "name": "Necrozma",
-      "ThumbnailAltText": "Necrozma",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/800.png",
-      "id": 800,
-      "type": [
-        "psychic",
-        "steel"
-      ]
-    },
-    {
-      "abilities": [
-        "Prism Armor"
-      ],
-      "detailPageURL": "/us/pokedex/necrozma",
-      "weight": 507.1,
-      "weakness": [
-        "Ghost",
-        "Dark",
-        "Bug"
-      ],
-      "number": "800",
-      "height": 94,
-      "collectibles_slug": "necrozma",
-      "featured": "true",
-      "slug": "necrozma",
-      "name": "Necrozma",
-      "ThumbnailAltText": "Necrozma",
-      "ThumbnailImage": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/800.png",
-      "id": 800,
-      "type": [
-        "psychic"
       ]
     },
     {

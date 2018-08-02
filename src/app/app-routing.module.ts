@@ -4,7 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NewsComponent } from './news/news.component';
 import { PageNotFindComponent } from './page-not-find/page-not-find.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
-import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 
 const routes: Routes = [
     {
@@ -21,7 +21,7 @@ const routes: Routes = [
                 component: PokemonListComponent
             },
             {
-                path: 'pokemon-list/:id',
+                path: 'pokemon-list/:number',
                 component: PokemonDetailComponent
             },
             {

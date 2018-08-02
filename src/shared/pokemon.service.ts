@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { SetPokemons } from '../core/states/pokemons-list/pokemons-list.store';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
@@ -55,7 +56,17 @@ export class PokemonService {
         new Pokemon(724, '724', '狙射树枭'),
     ];
 
-    constructor(private store: Store) {
+    constructor(private store: Store, private http: HttpClient) {
+        this.http.get('http://localhost:3000/pokemon')
+        .subscribe(val => {
+            const pokemonArray = [];
+            val.forEach(allPm => {
+                if (pokemonArray.every(pItem => pItem.number !== allPm.number)) {
+                    pokemonArray.push(allPm);
+                }
+            });
+            this.pokemons = pokemonArray;
+        });
     }
 
     getAllPms() {
@@ -76,7 +87,7 @@ export class PokemonService {
 
     searchPms(v) {
         this.getAllPms();
-        if (Number(v)) {
+        if (Number(v) || Number(v) === 0) {
             const searchPm = this.store.selectSnapshot(state => state.pokemonsList.pokemons).filter(pokemon => pokemon.number.indexOf(v) >= 0);
             this.store.dispatch(new SetPokemons(searchPm));
         } else {

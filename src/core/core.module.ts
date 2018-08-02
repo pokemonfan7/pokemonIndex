@@ -4,6 +4,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AllStates } from './states/all-state';
+import { requestInterceptor } from './http/request.interceptor';
 
 const isDev = !environment.production;
 const modules = [
@@ -20,6 +21,7 @@ if (isDev) {
         ...modules
     ],
     providers: [
+        // ...requestInterceptor,
     ],
 })
 
