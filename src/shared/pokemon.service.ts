@@ -59,7 +59,7 @@ export class PokemonService {
 
   constructor(private store: Store,
               private http: HttpClient,) {
-    this.http.get('http://localhost:3000/pokemon')
+    this.http.get('/assets/pokemons.json')
     .subscribe((res: PokemonJson[]) => {
       res.reverse();
       const pokemonArray = [];
