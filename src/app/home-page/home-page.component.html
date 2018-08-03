@@ -1,19 +1,61 @@
 <header id="nav-header">
     <a class="logo" [routerLink]="['/']">Pokemon</a>
     <a class="nav-list" [routerLink]="['/']">主页</a>
-    <a class="nav-list" [routerLink]="['/pokemon/pokemon-list']">列表</a>
+    <a class="nav-list" [routerLink]="['/pokemon/pokemon-list/gen1']">列表</a>
     <a class="nav-list" [routerLink]="['/pokemon/news']">新闻</a>
 </header>
 <nav id="nav-aside">
   <ul>
     <app-search-pokemon></app-search-pokemon>
-    <li><a [ngClass]="{active: selectId === 1}" (click)="locationPm(1,151,1)"><i class="pokeball-icon">@</i>关都</a></li>
-    <li><a [ngClass]="{active: selectId === 2}" (click)="locationPm(152,251,2)"><i class="pokeball-icon">@</i>城都</a></li>
-    <li><a [ngClass]="{active: selectId === 3}" (click)="locationPm(252,386,3)"><i class="pokeball-icon">@</i>丰缘</a></li>
-    <li><a [ngClass]="{active: selectId === 4}" (click)="locationPm(387,493,4)"><i class="pokeball-icon">@</i>神奥</a></li>
-    <li><a [ngClass]="{active: selectId === 5}" (click)="locationPm(494,649,5)"><i class="pokeball-icon">@</i>合众</a></li>
-    <li><a [ngClass]="{active: selectId === 6}" (click)="locationPm(650,721,6)"><i class="pokeball-icon">@</i>卡洛斯</a></li>
-    <li><a [ngClass]="{active: selectId === 7}" (click)="locationPm(722,806,7)"><i class="pokeball-icon">@</i>阿罗拉</a></li>
+    <li>
+      <a [routerLink]="['/pokemon/pokemon-list/gen1']"
+         [ngClass]="{active: selectId === 1}"
+         (click)="locationPm('pokemonGen1', 1)">
+        <i class="pokeball-icon">@</i>关都
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/pokemon/pokemon-list/gen2']"
+         [ngClass]="{active: selectId === 2}"
+         (click)="locationPm('pokemonGen2', 2)">
+        <i class="pokeball-icon">@</i>城都
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/pokemon/pokemon-list/gen3']"
+         [ngClass]="{active: selectId === 3}"
+         (click)="locationPm('pokemonGen3', 3)">
+        <i class="pokeball-icon">@</i>丰缘
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/pokemon/pokemon-list/gen4']"
+         [ngClass]="{active: selectId === 4}"
+         (click)="locationPm('pokemonGen4', 4)">
+        <i class="pokeball-icon">@</i>神奥
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/pokemon/pokemon-list/gen5']"
+         [ngClass]="{active: selectId === 5}"
+         (click)="locationPm('pokemonGen5', 5)">
+        <i class="pokeball-icon">@</i>合众
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/pokemon/pokemon-list/gen6']"
+         [ngClass]="{active: selectId === 6}"
+         (click)="locationPm('pokemonGen6', 6)">
+        <i class="pokeball-icon">@</i>卡洛斯
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/pokemon/pokemon-list/gen7']"
+         [ngClass]="{active: selectId === 7}"
+         (click)="locationPm('pokemonGen7', 7)">
+        <i class="pokeball-icon">@</i>阿罗拉
+      </a>
+    </li>
   </ul>
 </nav>
 <main id="main-content">

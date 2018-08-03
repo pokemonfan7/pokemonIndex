@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pokemon, PokemonService } from '../../shared/pokemon.service';
+import { PokemonJson, PokemonService } from '../../shared/pokemon.service';
 import { Location } from '@angular/common';
 
 @Component({
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class PokemonDetailComponent implements OnInit {
 
-  private pokemonDetail: Pokemon;
+  private pokemonDetail: PokemonJson;
 
   constructor(
     private routerInfo: ActivatedRoute,

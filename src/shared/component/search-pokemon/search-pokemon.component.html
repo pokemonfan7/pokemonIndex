@@ -5,8 +5,8 @@
       placeholder="输入名称或序号"
       [(ngModel)]="searchWord"
   >
-  <button class="form-btn" (click)="searchPokemon(searchWord)">
+  <button [routerLink]="['/pokemon/pokemon-list']" class="form-btn" (click)="searchPokemon(searchWord)">
     <i class="anticon anticon-search"></i>
   </button>
-  <button class="form-btn" (click)="surprisePm()">抽取幸运PM</button>
+  <button [routerLink]="['/pokemon/pokemon-list']" class="form-btn" (click)="surprisePm()">抽取幸运PM</button>
 </ng-container>

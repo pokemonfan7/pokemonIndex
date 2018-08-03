@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../pokemon.service';
-import { Store } from '@ngxs/store';
 
 @Component({
     selector: 'app-search-pokemon',
@@ -13,19 +12,13 @@ export class SearchPokemonComponent implements OnInit {
 
     constructor(
         private pokemonService: PokemonService,
-        private store: Store
-    ) {
-    }
+    ) {}
 
     ngOnInit() {
     }
 
     searchPokemon(v) {
-        if (!v) {
-            this.pokemonService.getAllPms();
-        } else {
-            this.pokemonService.searchPms(v);
-        }
+      this.pokemonService.searchPms(v);
     }
 
     surprisePm() {

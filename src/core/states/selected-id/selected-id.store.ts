@@ -8,7 +8,7 @@ export class SelectedId {
 @State({
     name: 'selectedId',
     defaults: {
-        selectId: 1
+        selectId: 0
     }
 })
 

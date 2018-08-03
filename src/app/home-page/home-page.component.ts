@@ -24,8 +24,8 @@ export class HomePageComponent implements OnInit {
       });
   }
 
-  locationPm(startId, endId, selectId) {
-      this.pokemonService.getLocationPms(startId, endId, selectId);
+  locationPm(gen, selectId) {
+      this.pokemonService.getLocationPms(gen, selectId);
   }
 }
 

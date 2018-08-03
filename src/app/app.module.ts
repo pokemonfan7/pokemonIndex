@@ -14,9 +14,15 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { PokemonItemComponent } from './pokemon-list/pokemon-item/pokemon-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
+import { Gen1Component } from './pokemon-list/gen1/gen1.component';
+import { Gen2Component } from './pokemon-list/gen2/gen2.component';
+import { Gen3Component } from './pokemon-list/gen3/gen3.component';
+import { Gen4Component } from './pokemon-list/gen4/gen4.component';
+import { Gen5Component } from './pokemon-list/gen5/gen5.component';
+import { Gen6Component } from './pokemon-list/gen6/gen6.component';
+import { Gen7Component } from './pokemon-list/gen7/gen7.component';
 
 registerLocaleData(zh);
 
@@ -27,8 +33,14 @@ registerLocaleData(zh);
     HomePageComponent,
     NewsComponent,
     PokemonListComponent,
-    PokemonItemComponent,
     PokemonDetailComponent,
+    Gen1Component,
+    Gen2Component,
+    Gen3Component,
+    Gen4Component,
+    Gen5Component,
+    Gen6Component,
+    Gen7Component,
   ],
   imports: [
     BrowserModule,
