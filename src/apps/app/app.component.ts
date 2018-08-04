@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonJson } from '../shared/pokemon.service';
+import { PokemonJson } from '../../shared/pokemon.service';
 import { Store } from '@ngxs/store';
 import { HttpClient } from '@angular/common/http';
-import { SetPokemons } from '../core/states/pokemons-list/pokemons-list.store';
+import { SetPokemons } from '../../core/states/pokemons-list/pokemons-list.store';
 
 @Component({
   selector: 'app-root',

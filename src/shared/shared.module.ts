@@ -4,7 +4,7 @@ import { SearchPokemonComponent } from './component/search-pokemon/search-pokemo
 import { FormsModule } from '@angular/forms';
 import { UpperFirstPipe } from './pipe/upperFirst';
 import { PokemonItemComponent } from './component/pokemon-item/pokemon-item.component';
-import { AppRoutingModule } from '../app/app-routing.module';
+import { AppRoutingModule } from '../apps/app/app-routing.module';
 
 const PIPES = [
     UpperFirstPipe

@@ -4,7 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "pokemonIndex": {
-      "root": "",
+      "root": "src/apps",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
@@ -13,18 +13,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pokemonIndex",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "./dist/pokemonIndex",
+            "index": "./src/apps/index.html",
+            "main": "./src/apps/main.ts",
+            "polyfills": "./src/apps/polyfills.ts",
+            "tsConfig": "./src/apps/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              { "glob": "**/*", "input": "src/apps/assets", "output": "/assets/" },
+              { "glob": "favicon.ico", "input": "src/apps/", "output": "/" }
             ],
             "styles": [
               "node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
-              "src/styles.less"
+              "./src/apps/styles.less"
             ],
             "scripts": []
           },
@@ -68,18 +68,18 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "./src/apps/test.ts",
+            "polyfills": "./src/apps/polyfills.ts",
+            "tsConfig": "./src/apps/tsconfig.spec.json",
+            "karmaConfig": "./src/apps/karma.conf.js",
             "styles": [
               "node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
-              "src/styles.less"
+              "./src/apps/styles.less"
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "./src/apps/favicon.ico",
+              "./src/apps/assets"
             ]
           }
         },
@@ -87,8 +87,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "./src/apps/tsconfig.app.json",
+              "./src/apps/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

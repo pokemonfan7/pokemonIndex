@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { NewsComponent } from './news/news.component';
-import { PageNotFindComponent } from './page-not-find/page-not-find.component';
-import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
-import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { Gen1Component } from './pokemon-list/gen1/gen1.component';
-import { Gen2Component } from './pokemon-list/gen2/gen2.component';
-import { Gen3Component } from './pokemon-list/gen3/gen3.component';
-import { Gen4Component } from './pokemon-list/gen4/gen4.component';
-import { Gen5Component } from './pokemon-list/gen5/gen5.component';
-import { Gen6Component } from './pokemon-list/gen6/gen6.component';
-import { Gen7Component } from './pokemon-list/gen7/gen7.component';
+import { HomePageComponent } from '../../business/home-page/home-page.component';
+import { NewsComponent } from '../../business/news/news.component';
+import { PageNotFindComponent } from '../../business/page-not-find/page-not-find.component';
+import { PokemonDetailComponent } from '../../business/pokemon-detail/pokemon-detail.component';
+import { PokemonListComponent } from '../../business/pokemon-list/pokemon-list.component';
+import { Gen1Component } from '../../business/pokemon-list/gen1/gen1.component';
+import { Gen2Component } from '../../business/pokemon-list/gen2/gen2.component';
+import { Gen3Component } from '../../business/pokemon-list/gen3/gen3.component';
+import { Gen4Component } from '../../business/pokemon-list/gen4/gen4.component';
+import { Gen5Component } from '../../business/pokemon-list/gen5/gen5.component';
+import { Gen6Component } from '../../business/pokemon-list/gen6/gen6.component';
+import { Gen7Component } from '../../business/pokemon-list/gen7/gen7.component';
 
 const routes: Routes = [
   {
