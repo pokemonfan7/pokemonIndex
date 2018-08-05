@@ -6,6 +6,7 @@ import {UpperFirstPipe} from './pipe/upperFirst';
 import {PokemonItemComponent} from './component/pokemon-item/pokemon-item.component';
 import {PageNotFindComponent} from '../business/page-not-find/page-not-find.component';
 import { RouterModule } from '@angular/router';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 const PIPES = [
   UpperFirstPipe
@@ -22,6 +23,7 @@ const COMPONENTS = [
     CommonModule,
     FormsModule,
     RouterModule,
+    LazyLoadImageModule,
   ],
   exports: [
     ...PIPES,

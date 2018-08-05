@@ -13,7 +13,6 @@ import zh from '@angular/common/locales/zh';
 import { SharedModule } from '../../shared/shared.module';
 import { CoreModule } from '../../core/core.module';
 
-
 registerLocaleData(zh);
 
 @NgModule({
