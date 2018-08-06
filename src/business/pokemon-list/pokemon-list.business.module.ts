@@ -2,14 +2,21 @@ import { NgModule } from '@angular/core';
 import {PokemonListComponent} from './pokemon-list.component';
 import {SharedModule} from '../../shared/shared.module';
 import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: PokemonListComponent,
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule,
-  ],
+    RouterModule.forChild(routes),
+],
   declarations: [
     PokemonListComponent,
   ]
