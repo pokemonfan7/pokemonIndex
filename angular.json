@@ -23,7 +23,6 @@
               { "glob": "favicon.ico", "input": "src/apps/", "output": "/" }
             ],
             "styles": [
-              "node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
               "./src/apps/styles.less"
             ],
             "scripts": []
@@ -73,7 +72,6 @@
             "tsConfig": "./src/apps/tsconfig.spec.json",
             "karmaConfig": "./src/apps/karma.conf.js",
             "styles": [
-              "node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
               "./src/apps/styles.less"
             ],
             "scripts": [],
