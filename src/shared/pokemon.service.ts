@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Store } from '@ngxs/store';
-import { RandomPokemon } from '../core/states/pokemons-list/pokemons-list.store';
-import { SelectedId } from '../core/states/selected-id/selected-id.store';
+import {Injectable} from '@angular/core';
+import {Store} from '@ngxs/store';
+import {RandomPokemon} from '../core/states/pokemons-list/pokemons-list.store';
+import {SelectedId} from '../core/states/selected-id/selected-id.store';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(
+  {providedIn: 'root'}
+)
 export class PokemonService {
 
   constructor(private store: Store) {
@@ -42,36 +42,25 @@ export class PokemonService {
       }
     }
     numSets.forEach(
-        n => surprisePms.push(
-            this.store.selectSnapshot(state => state.pokemonsList.pokemons).find(pokemon => pokemon.id === n)
-        )
+      n => surprisePms.push(
+        this.store.selectSnapshot(state => state.pokemonsList.pokemons).find(pokemon => pokemon.id === n)
+      )
     );
     console.log(surprisePms);
     this.store.dispatch(new RandomPokemon(surprisePms));
   }
 }
 
-export class Pokemon {
-  constructor(public id: number,
-              public number: string,
-              public name: string) {
-  }
-}
-
 export class PokemonJson {
-  constructor(public abilities: string[],
-              public detailPageURL: string,
-              public weight: number,
-              public weakness: string[],
-              public number: string,
-              public height: number,
-              public collectibles_slug: string,
-              public featured: string,
-              public slug: string,
-              public name: string,
-              public ThumbnailAltText: string,
-              public ThumbnailImage: string,
-              public id: number,
-              public type: string[]) {
-  }
+  constructor(
+    public abilities: string[],
+    public weight: number,
+    public weakness: string[],
+    public number: string,
+    public height: number,
+    public featured: string,
+    public name: string,
+    public id: number,
+    public type: string[]
+  ) { }
 }
