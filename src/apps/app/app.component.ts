@@ -17,16 +17,10 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.http.get('/assets/pokemons.json')
+    this.http.get('/assets/final.json')
     .subscribe((res: PokemonJson[]) => {
-      res.reverse();
-      const pokemonArray = [];
-      res.forEach(allPm => {
-        if (pokemonArray.every(pItem => pItem.number !== allPm.number)) {
-          pokemonArray.push(allPm);
-        }
-      });
-      const pokemons = pokemonArray.reverse();
+      console.log(res);
+      const pokemons = res;
       this.store.dispatch(new SetPokemons(pokemons));
     });
   }

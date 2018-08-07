@@ -7,15 +7,20 @@ import {PokemonItemComponent} from './component/pokemon-item/pokemon-item.compon
 import {PageNotFindComponent} from '../business/page-not-find/page-not-find.component';
 import { RouterModule } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { NumInputDirective } from './directive/num-input.directive';
 
 const PIPES = [
-  UpperFirstPipe
+  UpperFirstPipe,
+];
+
+const DIRECTIVES = [
+  NumInputDirective,
 ];
 
 const COMPONENTS = [
   SearchPokemonComponent,
   PokemonItemComponent,
-  PageNotFindComponent
+  PageNotFindComponent,
 ];
 
 @NgModule({
@@ -27,10 +32,12 @@ const COMPONENTS = [
   ],
   exports: [
     ...PIPES,
+    ...DIRECTIVES,
     ...COMPONENTS,
   ],
   declarations: [
     ...PIPES,
+    ...DIRECTIVES,
     ...COMPONENTS,
   ]
 })
