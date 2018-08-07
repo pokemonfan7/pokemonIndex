@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PokemonItemComponent implements OnInit {
     @Input() pokemon;
     src: string;
-    defaultSrc = '/assets/pokemon/body_bg.png';
+    defaultSrc = '/assets/pokemon/132.png';
 
     constructor() {
     }
