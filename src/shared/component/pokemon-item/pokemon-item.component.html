@@ -1,7 +1,7 @@
 <ng-container>
   <figure class="img-content">
     <a class="img-link" [routerLink]="['/pokemon/pokemon-list', pokemon.id]">
-      <img class="item-img" alt="" [lazyLoad]="src" [offset]="100">
+      <img class="item-img" alt="" [defaultImage]="defaultSrc" [lazyLoad]="src" [offset]="100">
     </a>
   </figure>
   <div class="item-btn"></div>
