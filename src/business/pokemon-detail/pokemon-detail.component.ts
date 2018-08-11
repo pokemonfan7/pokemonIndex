@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class PokemonDetailComponent implements OnInit {
 
-  private pokemonDetail: PokemonJson;
+  pokemonDetail: PokemonJson;
 
   constructor(
     private routerInfo: ActivatedRoute,

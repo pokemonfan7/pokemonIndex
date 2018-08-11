@@ -7,7 +7,7 @@ import { PokemonJson, PokemonService } from '../../../shared/pokemon.service';
 })
 export class Gen5Component implements OnInit {
 
-  private pokemons: PokemonJson[];
+  pokemons: PokemonJson[];
 
   constructor(private pokemonService: PokemonService) {}
 

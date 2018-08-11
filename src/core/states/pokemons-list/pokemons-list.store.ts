@@ -40,7 +40,7 @@ export class PokemonsListState {
       pokemonGen4: [ ...action.payload.slice(386, 493) ],
       pokemonGen5: [ ...action.payload.slice(493, 649) ],
       pokemonGen6: [ ...action.payload.slice(649, 721) ],
-      pokemonGen7: [ ...action.payload.slice(721, 806) ],
+      pokemonGen7: [ ...action.payload.slice(721, 807) ],
     });
   }
 
