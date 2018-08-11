@@ -4,10 +4,11 @@
       <img class="item-img" alt="" [defaultImage]="defaultSrc" [lazyLoad]="src" [offset]="100">
     </a>
   </figure>
-  <div class="item-btn"></div>
+  <!--<div class="item-btn"></div>-->
   <div class="item-info">
     <span class="item-num">#{{pokemon.number}}</span>
-    <h5 class="item-name">{{pokemon.name}}</h5>
+    <h5 class="item-name">{{pokemon.chName}}</h5>
+    <h5 class="item-en-name">{{pokemon.name}}</h5>
     <span class="pokemon-type pokemon-type-{{type}}" *ngFor="let type of pokemon.type">{{type | upperFirst}}</span>
   </div>
 </ng-container>

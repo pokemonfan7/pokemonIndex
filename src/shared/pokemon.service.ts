@@ -25,7 +25,7 @@ export class PokemonService {
       const searchPm = this.store.selectSnapshot(state => state.pokemonsList.pokemons).filter(pokemon => pokemon.number.indexOf(v) >= 0);
       this.store.dispatch(new RandomPokemon(searchPm));
     } else {
-      const searchPm = this.store.selectSnapshot(state => state.pokemonsList.pokemons).filter(pokemon => pokemon.name.indexOf(v) >= 0);
+      const searchPm = this.store.selectSnapshot(state => state.pokemonsList.pokemons).filter(pokemon => pokemon.chName.indexOf(v) >= 0);
       this.store.dispatch(new RandomPokemon(searchPm));
     }
   }

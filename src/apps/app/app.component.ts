@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.http.get('/assets/final.json')
+    this.http.get('/assets/chfinal.json')
     .subscribe((res: PokemonJson[]) => {
       console.log(res);
       const pokemons = res;
