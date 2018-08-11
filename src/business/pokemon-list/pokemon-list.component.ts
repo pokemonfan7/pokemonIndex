@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-    private pokemons: PokemonJson[];
+    pokemons: PokemonJson[];
     private subs: Subscription[] = [];
 
     constructor(private store: Store) {}
