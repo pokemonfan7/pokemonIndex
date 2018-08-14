@@ -6,3 +6,15 @@ new Array(3).fill(7)  //  [7,7,7]  ES6新增方法
 
 自定义表单验证器
 http interceptor拦截器
+
+*ngFor="let timezone of timezones$ | async"
+
+if (timezones) {
+            timezones$ = Observable.create(observer => {
+                observer.next(timezones)
+                observer.complete()
+            })
+
+websocket
+
+    icons = new Array(12).fill(1).map((item, index) => index)

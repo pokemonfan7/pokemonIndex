@@ -16,7 +16,6 @@ export class PokemonListComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         const randomSub = this.store.select(state => state.pokemonsList.randomPokemon).subscribe(v => {
-          console.log(v);
           this.pokemons = v;
         });
         this.subs.push(randomSub);

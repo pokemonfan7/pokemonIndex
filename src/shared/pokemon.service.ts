@@ -46,7 +46,6 @@ export class PokemonService {
         this.store.selectSnapshot(state => state.pokemonsList.pokemons).find(pokemon => pokemon.id === n)
       )
     );
-    console.log(surprisePms);
     this.store.dispatch(new RandomPokemon(surprisePms));
   }
 }
