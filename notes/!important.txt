@@ -18,3 +18,5 @@ if (timezones) {
 websocket
 
     icons = new Array(12).fill(1).map((item, index) => index)
+
+entryComponents
