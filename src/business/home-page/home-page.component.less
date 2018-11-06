@@ -12,7 +12,7 @@
     height: 66px;
     line-height: 66px;
     font-size: 24px;
-    color: #209e91;
+    color: #fff;
     white-space: nowrap;
   }
 
@@ -21,7 +21,8 @@
     height: 66px;
     line-height: 66px;
     font-size: 24px;
-    color: #209e91;
+    font-weight: 100;
+    color: #fff;
     white-space: nowrap;
   }
 }
@@ -65,7 +66,12 @@
 }
 
 #main-content {
-  margin: 66px 0 0 180px;
+  width: calc(~"100vw - 180px");
+  height: calc(~"100vh - 66px");
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 
 .active {
