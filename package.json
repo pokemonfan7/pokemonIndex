@@ -6,7 +6,7 @@
     "start": "ng serve --hmr --open --project=pokemonIndex --host 0.0.0.0 --port=4000 --proxy-config ./proxy.dev.conf.json",
     "build": "ng build --prod --project=pokemonIndex --aot --build-optimizer --extract-css && npm run package",
     "precommit": "npm run lint",
-    "commit-msg": "commitlint -E $GIT_PARAMS",
+    "commit-msg": "commitlint -e $GIT_PARAMS",
     "lint": "ng lint",
     "package": "tar zcvf dist.tar.gz dist"
   },
