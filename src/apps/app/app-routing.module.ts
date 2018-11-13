@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PageNotFindComponent } from '../../business/page-not-find/page-not-find.component';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { PageNotFindComponent } from '../../business/page-not-find/page-not-find.component'
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
     redirectTo: '404',
     pathMatch: 'full'
   },
-];
+]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

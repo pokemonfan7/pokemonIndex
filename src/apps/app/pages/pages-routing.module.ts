@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core'
+import {RouterModule, Routes} from '@angular/router'
 
 export const routes: Routes = [
   {
@@ -11,7 +11,7 @@ export const routes: Routes = [
     path: 'pokemon',
     loadChildren: './home-page/home-page.module#HomePageModule',
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
