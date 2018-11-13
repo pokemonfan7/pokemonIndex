@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PokemonJson, PokemonService } from '../../shared/pokemon.service';
-import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+import { PokemonJson, PokemonService } from '../../shared/pokemon.service'
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class PokemonDetailComponent implements OnInit {
 
-  pokemonDetail: PokemonJson;
+  pokemonDetail: PokemonJson
 
   constructor(
     private routerInfo: ActivatedRoute,
@@ -19,11 +19,11 @@ export class PokemonDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const pokemonId: string = this.routerInfo.snapshot.params['id'];
-    this.pokemonDetail = this.pokemonService.getPmDetail(pokemonId);
+    const pokemonId: string = this.routerInfo.snapshot.params['id']
+    this.pokemonDetail = this.pokemonService.getPmDetail(pokemonId)
   }
 
     backTo() {
-      this.location.back();
+      this.location.back()
     }
 }

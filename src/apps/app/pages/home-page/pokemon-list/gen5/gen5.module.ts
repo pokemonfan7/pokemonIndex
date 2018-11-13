@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import {Gen5BusinessModule} from '../../../../../../business/pokemon-list/gen5/gen5.business.module';
+import { NgModule } from '@angular/core'
+import {Gen5BusinessModule} from '../../../../../../business/pokemon-list/gen5/gen5.business.module'
 
 @NgModule({
   imports: [

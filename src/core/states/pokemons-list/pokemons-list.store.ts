@@ -1,14 +1,14 @@
-import { Action, State } from '@ngxs/store';
+import { Action, State } from '@ngxs/store'
 
 export class SetPokemons {
-  static readonly type = '[PokemonsList] get all pokemons';
+  static readonly type = '[PokemonsList] get all pokemons'
 
   constructor(public payload) {
   }
 }
 
 export class RandomPokemon {
-  static readonly type = '[RandomPokemons] get surprise and search pokemons';
+  static readonly type = '[RandomPokemons] get surprise and search pokemons'
 
   constructor(public payload) {
   }
@@ -41,15 +41,15 @@ export class PokemonsListState {
       pokemonGen5: [ ...action.payload.slice(493, 649) ],
       pokemonGen6: [ ...action.payload.slice(649, 721) ],
       pokemonGen7: [ ...action.payload.slice(721, 807) ],
-    });
+    })
   }
 
   @Action(RandomPokemon)
   randomPokemon(ctx, action) {
-    const state = ctx.getState();
+    const state = ctx.getState()
     ctx.setState({
       ...state,
       randomPokemon: [ ...action.payload ],
-    });
+    })
   }
 }

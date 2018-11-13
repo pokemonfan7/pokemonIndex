@@ -1,7 +1,7 @@
-import { Action, State } from '@ngxs/store';
+import { Action, State } from '@ngxs/store'
 
 export class SelectedId {
-    static readonly type = '[SelectedId] set selected id';
+    static readonly type = '[SelectedId] set selected id'
     constructor(public payload) {}
 }
 
@@ -15,9 +15,9 @@ export class SelectedId {
 export class SelectedIdState {
     @Action(SelectedId)
     setPokemons(ctx, action) {
-        const state = ctx.getState();
+        const state = ctx.getState()
         ctx.setState({
             selectId: action.payload
-        });
+        })
     }
 }

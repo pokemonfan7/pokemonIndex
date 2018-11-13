@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
     name: 'upperFirst'
@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class UpperFirstPipe implements PipeTransform {
     transform(text: string) {
-        return text.slice(0, 1).toUpperCase() + text.slice(1);
+        return text.slice(0, 1).toUpperCase() + text.slice(1)
     }
 }

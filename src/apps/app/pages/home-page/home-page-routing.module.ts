@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {HomePageComponent} from '../../../../business/home-page/home-page.component';
-import {NewsComponent} from '../../../../business/news/news.component';
+import { NgModule } from '@angular/core'
+import {RouterModule, Routes} from '@angular/router'
+import {HomePageComponent} from '../../../../business/home-page/home-page.component'
+import {NewsComponent} from '../../../../business/news/news.component'
 
 export const routes: Routes = [
   {
@@ -50,7 +50,7 @@ export const routes: Routes = [
       }
     ]
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
