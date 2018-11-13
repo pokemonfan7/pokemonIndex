@@ -9,11 +9,6 @@
     "lint": "ng lint --force pokemonIndex",
     "package": "tar zcvf dist.tar.gz dist"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
