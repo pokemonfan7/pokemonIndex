@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PokemonJson, PokemonService } from '../../../shared/pokemon.service';
+import { Component, OnInit } from '@angular/core'
+import { PokemonJson, PokemonService } from '../../../shared/pokemon.service'
 
 @Component({
   selector: 'app-gen2',
@@ -7,11 +7,11 @@ import { PokemonJson, PokemonService } from '../../../shared/pokemon.service';
 })
 export class Gen2Component implements OnInit {
 
-  pokemons: PokemonJson[];
+  pokemons: PokemonJson[]
 
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit() {
-    this.pokemons = this.pokemonService.getLocationPms('pokemonGen2', 2);
+    this.pokemons = this.pokemonService.getLocationPms('pokemonGen2', 2)
   }
 }

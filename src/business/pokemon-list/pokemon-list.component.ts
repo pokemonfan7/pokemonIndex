@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import { PokemonJson } from '../../shared/pokemon.service';
-import { Store } from '@ngxs/store';
-import {Subscription} from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core'
+import { PokemonJson } from '../../shared/pokemon.service'
+import { Store } from '@ngxs/store'
+import {Subscription} from 'rxjs'
 
 @Component({
     selector: 'app-pokemon-list',
@@ -9,19 +9,19 @@ import {Subscription} from 'rxjs';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-    pokemons: PokemonJson[];
-    private subs: Subscription[] = [];
+    pokemons: PokemonJson[]
+    private subs: Subscription[] = []
 
     constructor(private store: Store) {}
 
     ngOnInit() {
         const randomSub = this.store.select(state => state.pokemonsList.randomPokemon).subscribe(v => {
-          this.pokemons = v;
-        });
-        this.subs.push(randomSub);
+          this.pokemons = v
+        })
+        this.subs.push(randomSub)
     }
 
     ngOnDestroy() {
-      this.subs.forEach(sub => sub.unsubscribe());
+      this.subs.forEach(sub => sub.unsubscribe())
     }
 }

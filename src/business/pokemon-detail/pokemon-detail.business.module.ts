@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import {PokemonDetailComponent} from './pokemon-detail.component';
-import {CommonModule} from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core'
+import {PokemonDetailComponent} from './pokemon-detail.component'
+import {CommonModule} from '@angular/common'
+import {RouterModule, Routes} from '@angular/router'
 
 export const routes: Routes = [
   {
     path: '',
     component: PokemonDetailComponent
   }
-];
+]
 
 @NgModule({
   imports: [

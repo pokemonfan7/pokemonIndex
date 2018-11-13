@@ -1,7 +1,7 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import { PokemonService } from '../../shared/pokemon.service';
-import { Store } from '@ngxs/store';
-import {Subscription} from 'rxjs';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core'
+import { PokemonService } from '../../shared/pokemon.service'
+import { Store } from '@ngxs/store'
+import {Subscription} from 'rxjs'
 
 @Component({
   selector: 'app-home-page',
@@ -10,8 +10,8 @@ import {Subscription} from 'rxjs';
 })
 export class HomePageComponent implements OnInit, OnDestroy {
 
-    selectId: number;
-    subs: Subscription[] = [];
+    selectId: number
+    subs: Subscription[] = []
 
   constructor(
       private store: Store,
@@ -21,18 +21,18 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
       const selectSub = this.store.select(state => state.selectedId.selectId).subscribe(v => {
-          this.selectId = v;
-          this.cdf.detectChanges();
-      });
-      this.subs.push(selectSub);
+          this.selectId = v
+          this.cdf.detectChanges()
+      })
+      this.subs.push(selectSub)
   }
 
   locationPm(gen, selectId) {
-      this.pokemonService.getLocationPms(gen, selectId);
+      this.pokemonService.getLocationPms(gen, selectId)
   }
 
   ngOnDestroy() {
-    this.subs.forEach(sub => sub.unsubscribe());
+    this.subs.forEach(sub => sub.unsubscribe())
   }
 }
 
