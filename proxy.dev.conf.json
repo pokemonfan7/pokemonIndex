@@ -1,0 +1,22 @@
+[
+  {
+    "context": [
+      "/api/**"
+    ],
+    "ws": false,
+    "target": "http://www.cloudhawkgps.id/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  {
+    "context": [
+      "/push/**"
+    ],
+    "ws": true,
+    "target": "http://www.cloudhawkgps.id/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+]
