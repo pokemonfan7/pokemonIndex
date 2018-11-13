@@ -8,7 +8,8 @@
     "precommit": "npm run lint",
     "commitmsg": "commitlint -x @commitlint/config-conventional -e $GIT_PARAMS",
     "lint": "ng lint --force --project=pokemonIndex",
-    "package": "tar zcvf dist.tar.gz dist"
+    "package": "tar zcvf dist.tar.gz dist",
+    "hhh": "jjj"
   },
   "private": true,
   "dependencies": {
