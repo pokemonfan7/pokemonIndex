@@ -5,13 +5,13 @@
     "reinstall": "rm -rf node_modules/ && npm i",
     "start": "ng serve --hmr --open --project=pokemonIndex --host 0.0.0.0 --port=4000 --proxy-config ./proxy.dev.conf.json",
     "build": "ng build --prod --project=pokemonIndex --aot --build-optimizer --extract-css && npm run package",
-    "precommit": "npm run lint",
     "lint": "ng lint --force --project=pokemonIndex",
     "package": "tar zcvf dist.tar.gz dist"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "precommit": "npm run lint"
     }
   },
   "private": true,
