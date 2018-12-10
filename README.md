@@ -27,5 +27,26 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ```
-var a = 123
+<nz-table #basicTable [nzData]="dataSet">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data.name}}</td>
+      <td>{{data.age}}</td>
+      <td>{{data.address}}</td>
+      <td>
+        <a>Action 一 {{data.name}}</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
 ```
