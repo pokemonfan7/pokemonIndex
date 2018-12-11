@@ -335,11 +335,11 @@ Object.fromEntries(new URLSearchParams('foo=bar&baz=qux'))
 注意，super关键字表示原型对象时，只能用在对象的方法之中，用在其他地方都会报错。
 
 #### 遍历对象
-1. for...in
-2. Object.keys(obj)
-3. Object.getOwnPropertyNames(obj)
-4. Object.getOwnPropertySymbols(obj)
-5. Reflect.ownKeys(obj)
+1. for...in  循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。
+2. Object.keys(obj)  返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。
+3. Object.getOwnPropertyNames(obj)  返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。
+4. Object.getOwnPropertySymbols(obj)  返回一个数组，包含对象自身的所有 Symbol 属性的键名。
+5. Reflect.ownKeys(obj)  返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。
 
 以上的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。
 
