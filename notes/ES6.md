@@ -1,12 +1,12 @@
-### Object.seal()、Object.freeze()
+## Object.seal()、Object.freeze()
 - `Object.seal()`密封的对象可以改变它们现有的属性。
 - `Object.freeze()`冻结的对象中现有属性是不可变的。
 
-### 声明变量
+## 声明变量
 - ES5:`var` `function`
 - ES6:`let` `const` `import` `class`
 
-### String(字符串)
+## String(字符串)
 - includes(): 返回布尔值，表示是否找到了参数字符串。支持第二个参数，表示开始搜索的位置。针对从第n个位置直到字符串结束。
 - startsWith(): 返回布尔值，表示参数字符串是否在原字符串的头部。支持第二个参数，表示开始搜索的位置。针对从第n个位置直到字符串结束。
 - endsWith(): 返回布尔值，表示参数字符串是否在原字符串的尾部。支持第二个参数，表示开始搜索的位置。针对前n个字符。
@@ -29,22 +29,22 @@
    - `'x'.padEnd(5, 'ab') // 'xabab'`
    - `'x'.padEnd(4, 'ab') // 'xaba'`
 
-### number(数字)
+## number(数字)
 - Number.isFinite(): 用来检查一个数值是否为有限的（finite），即不是Infinity。如果参数类型不是数值，一律返回false。
 - Number.isNaN(): 用来检查一个值是否为NaN。如果参数类型不是NaN，Number.isNaN一律返回false。
 
-#### 指数运算符(**)
+### 指数运算符(**)
 - 2 ** 2 // 4
 - 2 ** 3 // 8
 
-#### Math对象拓展
+### Math对象拓展
 - Math.trunc(): 用于去除一个数的小数部分，返回整数部分。
 - Math.cbrt(): 用于计算一个数的立方根。
 - Math.hypot(): 返回所有参数的平方和的平方根。
    - Math.hypot(3, 4)  // 5
 
-### function(函数)
-#### 函数参数的默认值
+## function(函数)
+### 函数参数的默认值
 一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。
 等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。
 ```javascript
@@ -74,7 +74,7 @@ foo()
 // Error: Missing parameter
 ```
 
-#### rest参数
+### rest参数
 ES6 引入 rest 参数（形式为...变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。
 rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
 ```javascript
@@ -90,7 +90,7 @@ push(a, 1, 2, 3)
 ```
 注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。
 
-#### 函数name属性
+### 函数name属性
 函数的name属性，返回该函数的函数名。
 ```javascript
 var f = function () {};
@@ -102,8 +102,8 @@ f.name // ""
 f.name // "f"
 ```
 
-### Array(数组)
-#### 扩展运算符(...)
+## Array(数组)
+### 扩展运算符(...)
 - 扩展运算符的应用
    1. 复制数组
    2. 合并数组(不过，...和concat都是浅拷贝，使用的时候需要注意。数组中有对象时，是对象的引用)
@@ -136,7 +136,7 @@ f.name // "f"
       [...go()] // [1, 2, 3]
       ```
 
-#### Array.from
+### Array.from
 Array.from方法用于将两类对象转为真正的数组：
 类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。
 
@@ -156,7 +156,7 @@ Array.from([1, 2, 3], (x) => x * x)
 // [1, 4, 9]
 ```
 
-#### Array.of
+### Array.of
 Array.of方法用于将一组值，转换为数组。
 ```javascript
 Array.of(3, 11, 8) // [3,11,8]
@@ -168,7 +168,7 @@ Array(3) // [, , ,]
 Array(3, 11, 8) // [3, 11, 8]
 ```
 
-#### find()、findIndex()
+### find()、findIndex()
 这两个方法都可以接受第二个参数，用来绑定回调函数的this对象。
 ```javascript
 function f(v){
@@ -179,7 +179,7 @@ let person = {name: 'John', age: 20};
 ```
 另外，这两个方法都可以发现NaN，弥补了数组的indexOf方法的不足。
 
-#### fill()
+### fill()
 fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
 ```javascript
 ['a', 'b', 'c'].fill(7, 1, 2)
@@ -187,7 +187,7 @@ fill方法还可以接受第二个和第三个参数，用于指定填充的起�
 ```
 注意，如果填充的类型为对象，那么被赋值的是同一个内存地址的对象，而不是深拷贝对象。
 
-#### keys()、values()、entries()
+### keys()、values()、entries()
 keys()是对键名的遍历
 values()是对键值的遍历
 entries()是对键值对的遍历
@@ -211,7 +211,7 @@ for (let [index, elem] of ['a', 'b'].entries()) {
 // 1 "b"
 ```
 
-#### includes()
+### includes()
 Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。
 indexOf方法有两个缺点:
 1. 不够语义化，它的含义是找到参数值的第一个出现位置，所以要去比较是否不等于-1，表达起来不够直观。
@@ -222,7 +222,7 @@ indexOf方法有两个缺点:
 Map 结构的has方法，是用来查找键名的，比如Map.prototype.has(key)、WeakMap.prototype.has(key)、Reflect.has(target, propertyKey)。
 Set 结构的has方法，是用来查找值的，比如Set.prototype.has(value)、WeakSet.prototype.has(value)。
 
-#### flat()、flatMap()
+### flat()、flatMap()
 数组的成员有时还是数组，Array.prototype.flat()用于将嵌套的数组“拉平”，变成一维的数组。
 该方法返回一个新数组，对原数据没有影响。
 ```javascript
@@ -243,10 +243,10 @@ flatMap()方法对原数组的每个成员执行一个函数（相当于执行Ar
 ```
 flatMap()只能展开一层数组。
 
-#### 数组空位
+### 数组空位
 由于空位的处理规则非常不统一，所以建议避免出现空位。
 
-#### reduce替代filter+map
+### reduce替代filter+map
 ```javascript
 const characters = [
   { name: 'ironman', env: 'marvel' },
@@ -263,8 +263,8 @@ acc;
 )
 ```
 
-### Object(对象)
-#### 可枚举性
+## Object(对象)
+### 可枚举性
 对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。
 Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象。
 ```javascript
@@ -282,7 +282,7 @@ for...in会返回继承的属性
 总的来说，操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。
 所以，尽量不要用for...in循环，而用Object.keys()代替。
 
-#### Object.is()
+### Object.is()
 Object.is用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。
 不同之处只有两个：一是+0不等于-0，二是NaN等于自身。
 ```javascript
@@ -293,7 +293,7 @@ Object.is(+0, -0) // false
 Object.is(NaN, NaN) // true
 ```
 
-#### Object.assign()
+### Object.assign()
 Object.assign方法的第一个参数是目标对象，后面的参数都是源对象。
 
 其他类型的值（数值、字符串、布尔值、null、undefined）不在首参数，不会报错。
@@ -308,12 +308,12 @@ console.log(obj); // { "0": "a", "1": "b", "2": "c" }
 ```
 Object.assign拷贝的属性是有限制的，只拷贝源对象的自身属性（不拷贝继承属性），也不拷贝不可枚举的属性（enumerable: false）。
 
-#### Object.setPrototypeOf()、Object.getPrototypeOf()
+### Object.setPrototypeOf()、Object.getPrototypeOf()
 Object.setPrototypeOf()方法的作用与__proto__相同，用来设置一个对象的prototype对象，返回参数对象本身。它是 ES6 正式推荐的设置原型对象的方法。
 
 Object.getPrototypeOf()方法与Object.setPrototypeOf方法配套，用于读取一个对象的原型对象。
 
-#### Object.fromEntries() !目前仅火狐支持
+### Object.fromEntries() !目前仅火狐支持
 Object.fromEntries()方法是Object.entries()的逆操作，用于将一个键值对数组转为对象。
 ```javascript
 Object.fromEntries([
@@ -330,11 +330,11 @@ Object.fromEntries(new URLSearchParams('foo=bar&baz=qux'))
 // { foo: "bar", baz: "qux" }
 ```
 
-#### super
+### super
 我们知道，this关键字总是指向函数所在的当前对象，ES6 又新增了另一个类似的关键字super，指向当前对象的原型对象。
 注意，super关键字表示原型对象时，只能用在对象的方法之中，用在其他地方都会报错。
 
-#### 遍历对象
+### 遍历对象
 1. for...in  循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。
 2. Object.keys(obj)  返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。
 3. Object.getOwnPropertyNames(obj)  返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。
@@ -347,7 +347,7 @@ Object.fromEntries(new URLSearchParams('foo=bar&baz=qux'))
 其次遍历所有字符串键，按照加入时间升序排列。
 最后遍历所有 Symbol 键，按照加入时间升序排列。
 
-### Set
+## Set
 ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
 
 Set 本身是一个构造函数，用来生成 Set 数据结构。
@@ -364,7 +364,7 @@ const items = new Set([1, 2, 3, 4, 5]);
 const array = Array.from(items);
 ```
 
-#### Set的实例属性和方法
+### Set的实例属性和方法
 Set 结构的实例有以下属性:
 1. Set.prototype.constructor：构造函数，默认就是Set函数。
 2. Set.prototype.size：返回Set实例的成员总数。
@@ -423,8 +423,8 @@ let difference = new Set([...a].filter(x => !b.has(x)));
 // Set {1}
 ```
 
-### Map
-#### Map的实例属性和方法
+## Map
+### Map的实例属性和方法
 Map 结构的实例有以下属性:
 1. size 属性：size属性返回 Map 结构的成员总数。
 
@@ -540,7 +540,7 @@ const map2 = new Map(
 // 产生 Map 结构 {2 => '_a', 4 => '_b', 6 => '_c'}
 ```
 
-#### 与其他数据结构的互相转换
+## 与其他数据结构的互相转换
 1. Map转为数组
 Map 转为数组最方便的方法，就是使用扩展运算符（...）。
 ```javascript
@@ -635,7 +635,7 @@ jsonToMap('[[true,7],[{"foo":3},["abc"]]]')
 // Map {true => 7, Object {foo: 3} => ['abc']}
 ```
 
-#### Iterator
+## Iterator
 Iterator 接口的目的，就是为所有数据结构，提供了一种统一的访问机制，即for...of循环。当使用for...of循环遍历某种数据结构时，
 该循环会自动去寻找 Iterator 接口。
 
