@@ -1,4 +1,4 @@
-#### Dependency Injection(依赖注入)
+## Dependency Injection(依赖注入)
 angular是一个控制反转（IOC，Inversion of Control）的容器，使用依赖注入（DI，Dependency Injection）来实现控制反转。
 在NgModule中的providers中添加注入的类（服务），当在组件的constructor中注入类（服务时），providers会自动实例化对象并添加进组件里。
 
@@ -31,7 +31,7 @@ provide属性是token（一个标志），useclass属性是实例化的类，在
 总而言之，如果是`Type`类型的参数，推荐使用下面的方式：
 constructor(private http: Http) { }
 
-#### NgModule
+## NgModule
 declarations 和 providers 属性最令人困惑的是，它们没有相同的作用域和可见性 (scope / visibility)：
 declarations / components 是本地作用域 (private visibility)
 providers / services 是全局作用域 (public visibility)
@@ -85,7 +85,7 @@ ShareModule 定义全局公用的组件、指令、管道，用时就直接导�
 --在 SharedModule 中声明和导出 HeroComponent
 --在需要使用 HeroComponent 的模块中导入 SharedModule
 
-#### http
+## http
 HTTP
                        权限                 路径
         ┌──────┴────────┐┌─┴─┐
@@ -94,60 +94,65 @@ HTTP
   协议        用户信息      主机名    端口                查询参数          片段
 
 HTTP 协议主要特点
-简单快速：当客户端向服务器端发送请求时，只是简单的填写请求路径和请求方法即可，然后就可以通过浏览器或其他方式将该请求发送就行了
-灵活：HTTP 协议允许客户端和服务器端传输任意类型任意格式的数据对象
-无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接，采用这种方式可以节省传输时间。(当今多数服务器支持Keep-Alive功能，使用服务器支持长连接，解决无连接的问题)
-无状态：无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。即客户端发送HTTP请求后，服务器根据请求，会给我们发送数据，发送完后，不会记录信息。(使用 cookie 机制可以保持 session，解决无状态的问题)
+- 简单快速：当客户端向服务器端发送请求时，只是简单的填写请求路径和请求方法即可，然后就可以通过浏览器或其他方式将该请求发送就行了
+- 灵活：HTTP 协议允许客户端和服务器端传输任意类型任意格式的数据对象
+- 无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接，采用这种方式可以节省传输时间。(当今多数服务器支持Keep-Alive功能，使用服务器支持长连接，解决无连接的问题)
+- 无状态：无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。即客户端发送HTTP请求后，服务器根据请求，会给我们发送数据，发送完后，不会记录信息。(使用 cookie 机制可以保持 session，解决无状态的问题)
 
 HTTP 请求报文由请求行、请求头、空行 和 请求体(请求数据) 4 个部分组成
+
 请求行
 请求行由请求方法、URL 和 HTTP 协议版本组成，它们之间用空格分开。
 GET / HTTP/1.1
+
 请求头
 请求头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。请求头通知服务器有关于客户端请求的信息，典型的请求头有：
-User-Agent：用户代理信息 - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 ...
-Accept：客户端可识别的内容类型列表 - text/html,application/xhtml+xml,application/xml
-Accept-Language：客户端可接受的自然语言 - zh-CN,zh;q=0.8,en;q=0.6,id;q=0.4
-Accept-Encoding：客户端可接受的编码压缩格式 - gzip, deflate, sdch, br
-Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机 - www.baidu.com
-connection：连接方式
-close：告诉WEB服务器或代理服务器，在完成本次请求的响应后，断开连接
-keep-alive：告诉WEB服务器或代理服务器。在完成本次请求的响应后，保持连接，以等待后续请求
-Cookie：存储于客户端扩展字段，向同一域名的服务端发送属于该域的cookie - PSTM=1490844191; BIDUPSID=2145FF54639208435F60E1E165379255;
-空行
+- User-Agent：用户代理信息 - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 ...
+- Accept：客户端可识别的内容类型列表 - text/html,application/xhtml+xml,application/xml
+- Accept-Language：客户端可接受的自然语言 - zh-CN,zh;q=0.8,en;q=0.6,id;q=0.4
+- Accept-Encoding：客户端可接受的编码压缩格式 - gzip, deflate, sdch, br
+- Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机 - www.baidu.com
+- connection：连接方式
+- close：告诉WEB服务器或代理服务器，在完成本次请求的响应后，断开连接
+- keep-alive：告诉WEB服务器或代理服务器。在完成本次请求的响应后，保持连接，以等待后续请求
+- Cookie：存储于客户端扩展字段，向同一域名的服务端发送属于该域的cookie - PSTM=1490844191; BIDUPSID=2145FF54639208435F60E1E165379255;
+- 空行
 最后一个请求头之后是一个空行，发送回车符和换行符，通知服务器以下不再有请求头。
+
 请求体
 请求数据不在 GET 方法中使用，而是在 POST 方法中使用。与请求数据相关的最常使用的请求头是 Content-Type和 Content-Length。
 
 HTTP响应报文由状态行、响应头、空行和响应体4 个部分组成
+
 状态行
 状态行格式： HTTP-Version Status-Code Reason-Phrase CRLF
-HTTP-Version - HTTP 协议版本
-Status-Code - 状态码
-Reason-Phrase - 状态码描述
-CRLF - 回车/换行符
+- HTTP-Version - HTTP 协议版本
+- Status-Code - 状态码
+- Reason-Phrase - 状态码描述
+- CRLF - 回车/换行符
+
 响应头
 响应头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。
 响应头域允许服务器传递不能放在状态行的附加信息，这些域主要描述服务器的信息和Request-URI进一步的信息，典型的响应头有：
-Server：包含处理请求的原始服务器的软件信息
-Date：服务器日期
-Content-Type：返回的资源类型 (MIME)
-Connection：连接方式
-close：连接已经关闭
-keep-alive：连接已保持，在等待本次连接的后续请求
-Cache-Control：缓存控制
-Expires：设置过期时间
-Set-Cookie：设置 Cookie 信息
-空行
+- Server：包含处理请求的原始服务器的软件信息
+- Date：服务器日期
+- Content-Type：返回的资源类型 (MIME)
+- Connection：连接方式
+- close：连接已经关闭
+- keep-alive：连接已保持，在等待本次连接的后续请求
+- Cache-Control：缓存控制
+- Expires：设置过期时间
+- Set-Cookie：设置 Cookie 信息
+- 空行
 最后一个响应头之后是一个空行，发送回车符和换行符，通知浏览器以下不再有响应头。
 
-#### httpClient
+## HttpClient
 当调用 Http 对象的 get()、post()、put() 等方法时，会返回一个 Observable<Response> 对象，仅当我们订阅该 Observable 对象时，才会正式发起 HTTP 请求。
 Angular 内部使用 Request 和 Response 对象来封装请求信息和响应信息。Request 类和 Response 类都是继承于 Body 类，Body 类中提供了四个方法用于数据转换：
-json(): any - 转换为 JSON 对象
-text(): string -
-arrayBuffer(): ArrayBuffer - 转换为 ArrayBuffer 对象
-blob(): Blob - 转化为 Blob 对象
+- json(): any - 转换为 JSON 对象
+- text(): string -
+- arrayBuffer(): ArrayBuffer - 转换为 ArrayBuffer 对象
+- blob(): Blob - 转化为 Blob 对象
 订阅 Observable<Response> 对象后，返回一个函数对象。调用该函数对象，我们可以移除 load、error 事件监听及取消 HTTP 请求。
 
 url 支持自动传参的，如：
@@ -163,7 +168,7 @@ http.get(url).subscribe(...)
 
 http调用接口会自动取消订阅，不需要取消订阅
 
-#### 生命周期钩子
+## 生命周期钩子
 指令与组件共有的钩子
 - ngOnChanges
 - ngOnInit
@@ -194,13 +199,13 @@ constructor VS ngOnInit
 如在组件获取输入属性之后，需执行组件初始化操作等。
 类中的静态属性(static)是属于`AppComponent`构造函数的，而成员属性是属于`AppComponent`实例。
 
-#### ViewEncapsulation
+## ViewEncapsulation
 ViewEncapsulation 允许设置三个可选的值：
 ViewEncapsulation.Emulated - 无 Shadow DOM，但是通过 Angular 提供的样式包装机制来封装组件，使得组件的样式不受外部影响。这是 Angular 的默认设置。
 ViewEncapsulation.Native - 使用原生的 Shadow DOM 特性
 ViewEncapsulation.None - 无 Shadow DOM，并且也无样式包装
 
-#### @Input()
+## @Input()
 @Input('bindingPropertyName')
 Input 装饰器支持一个可选的参数，用来指定组件绑定属性的名称。如果没有指定，则默认使用 @Input 装饰器，装饰的属性名。
 
@@ -249,7 +254,7 @@ export class CounterComponent {
 
 项目开发中尽量通过 @Input 装饰器定义无状态的组件，即组件仅依赖于输入属性，这样会大大提高组件可复用性
 
-#### EventEmitter
+## EventEmitter
 EventEmitter 用来触发自定义事件，具体使用示例如下：
 ```javascript
 let numberEmitter: EventEmitter<number> = new EventEmitter<number>();
@@ -275,7 +280,7 @@ countChange(event: number) {
   }
 ```
 
-#### @Output()
+## @Output()
 `Output`装饰器支持一个可选的参数，用来指定组件绑定属性的名称。如果没有指定，则默认使用`@Output`装饰器，装饰的属性名。
 
 @Output vs outputs
@@ -285,7 +290,7 @@ countChange(event: number) {
    - outputs 定义在指令的 metadata 信息中，开发者对指令的输入属性一目了然。此外对于未选用 TypeScript 作为开发语言的开发者，也只能在 metadata 中定义指令的输入属性。
    - @Output 属于属性装饰器，通过它我们可以一起定义属性的访问描述符 (public、private、protected)：@Output('countChange') change: EventEmitter<number> = new EventEmitter<number>();
 
-#### ng-content
+## ng-content
 ```HTML
 son.component:
 <div style="border: 1px solid #666;margin: 4px;">
@@ -307,7 +312,7 @@ parent.component:
 </son>
 ```
 
-#### ContentChild、ViewChild
+## ContentChild、ViewChild
 `ContentChild`与`ViewChild`的异同点
 - 相同点
 都是属性装饰器
@@ -319,7 +324,7 @@ ViewChild 用来从模板视图中获取匹配的元素
 在父组件的 ngAfterContentInit 生命周期钩子中才能成功获取通过 ContentChild 查询的元素
 在父组件的 ngAfterViewInit 生命周期钩子中才能成功获取通过 ViewChild 查询的元素
 
-#### 宿主元素
+## 宿主元素
 宿主元素的概念同时适用于指令和组件。对于指令来说，这个概念是相当简单的。应用指令的元素，就是宿主元素。
 ```javascript
  @HostListener('click', ['$event.target'])
@@ -357,7 +362,7 @@ HostBinding 是属性装饰器，用来动态设置宿主元素的属性值。
     }
 ```
 
-#### ElementRef
+## ElementRef
 ElementRef的应用
 我们先来介绍一下整体需求，我们想在页面成功渲染后，获取页面中的`div`元素，并改变该`div`元素的背景颜色。接下来我们来一步步，实现这个需求。
 
@@ -388,8 +393,8 @@ export class AppComponent {
 }
 ```
 
-#### renderer2
-render2常用方法
+## renderer2
+renderer2常用方法
 ```javascript
 export abstract class Renderer2 {
   abstract createElement(name: string, namespace?: string|null): any;
@@ -411,14 +416,14 @@ export abstract class Renderer2 {
 }
 ```
 
-#### TemplateRef、ViewContainerRef
+## TemplateRef、ViewContainerRef
 TemplateRef：用于表示内嵌的 template 模板元素，通过 TemplateRef 实例，我们可以方便创建内嵌视图(Embedded Views)，且可以轻松地访问到通过 ElementRef 封装后的 nativeElement。
 需要注意的是组件视图中的 template 模板元素，经过渲染后会被替换成 comment 元素。
 
 ViewContainerRef：用于表示一个视图容器，可添加一个或多个视图。通过 ViewContainerRef 实例，我们可以基于 TemplateRef 实例创建内嵌视图，并能指定内嵌视图的插入位置，
 也可以方便对视图容器中已有的视图进行管理。简而言之，ViewContainerRef 的主要作用是创建和管理内嵌视图或组件视图。
 
-#### 类的概念
+## 类的概念
 虽然 JavaScript 中有类的概念，但是可能大多数 JavaScript 程序员并不是非常熟悉类，这里对类相关的概念做一个简单的介绍。
 类 (Class)：一种面向对象计算机编程语言的构造，是创建对象的蓝图，描述了所创建的对象共同的属性和方法。
 对象 (Object)：类的实例，通过 new 创建
@@ -432,7 +437,7 @@ ViewContainerRef：用于表示一个视图容器，可添加一个或多个视�
 抽象类（Abstract Class）：抽象类是供其他类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现
 接口（Interfaces）：不同类之间公有的属性或方法，可以抽象成一个接口。接口可以被类实现（implements）。一个类只能继承自另一个类，但是可以实现多个接口。
 
-#### 组件继承
+## 组件继承
 组件继承涉及以下的内容：
 - Metadata：如 @Input()、@Output()、@ContentChild/Children、@ViewChild/Children 等。在派生类中定义的元数据将覆盖继承链中的任何先前的元数据，否则将使用基类元数据。
 - Constructor：如果派生类未声明构造函数，它将使用基类的构造函数。这意味着在基类构造函数注入的所有服务，子组件都能访问到。
@@ -440,7 +445,7 @@ ViewContainerRef：用于表示一个视图容器，可添加一个或多个视�
 
 需要注意的是，模板是不能被继承的 ，因此共享的 DOM 结构或行为需要单独处理。子组件是不能继承父组件装饰器中元数据。
 
-#### 变化检测
+## 变化检测
 `Change Detection`(变化检测) 是`Angular`中最重要的一个特性。当组件中的数据发生变化的时候，`Angular`能检测到数据变化并自动刷新视图反映出相应的变化。
 现在我们来总结一下，引起模型变化的三类事件源：
 - Events：click, mouseover, keyup ...
@@ -491,7 +496,7 @@ angular中存在组件树，每个组件有变化检测，形成了变化检测�
 总结一下变化检测的原理：Angular 应用是一个响应系统，变化检测总是从根组件到子组件这样一个从上到下的顺序开始执行，它是一棵线性的有向树，默认情况下，变化检测系统将会走遍整棵树，
 但我们可以使用`OnPush`变化检测策略，在结合`Observables`对象，进而利用`ChangeDetectorRef`实例提供的方法，来实现局部的变化检测，最终提高系统的整体性能。
 
-#### Provider
+## Provider
 在`Angular`中我们使用`Provider`来描述与`Token`关联的依赖对象的创建方式。`Angular`中依赖对象的创建方式有四种，它们分别是：
 - useClass
 - useValue
@@ -537,7 +542,7 @@ export function configFactory(config: AppConfig) {
 export class CoreModule { }
 ```
 
-#### Directive
+## Directive
 ngIf
 - ngIf 指令用于根据表达式的值，在指定位置渲染 then 或 else 模板的内容。
 - then 模板除非绑定到不同的值，否则默认是 ngIf 指令关联的内联模板。
@@ -612,7 +617,7 @@ export class DebounceClickDirective implements OnInit, OnDestroy {
 - <ng-template>：使用 * 语法糖的结构指令，最终都会转换为 <ng-template> 或 <template> 模板指令，模板内的内容如果不进行处理，是不会在页面中显示的。
 - <ng-container>：是一个逻辑容器，可用于对节点进行分组，但不作为 DOM 树中的节点，它将被渲染为 HTML中的 comment 元素，它可用于避免添加额外的元素来使用结构指令。
 
-#### Decorator(装饰器)
+## Decorator(装饰器)
 装饰器是一个表达式,该表达式被执行后，返回一个函数,函数的入参分别为 targe、name 和 descriptor
 执行该函数后，可能返回 descriptor 对象，用于配置 target 对象　
 装饰器的分类
@@ -631,7 +636,7 @@ Angular内置装饰器分类：
 - 参数装饰器
    @Inject、@Optional、@Self、@SkipSelf、@Host
 
-#### Pipe
+## Pipe
 用来对输入的数据进行处理，如大小写转换、数值和日期格式化等。
 Angular内建管道及分类
 ---String -> String
@@ -710,7 +715,7 @@ export class ObservableAsyncPipeComponent {
 }
 ```
 
-#### RxJS
+## RxJS
 RxJS 是基于观察者模式和迭代器模式以函数式编程思维来实现的。RxJS 中含有两个基本概念：Observables 与 Observer。
 Observables 作为被观察者，是一个值或事件的流集合；而 Observer 则作为观察者，根据 Observables 进行处理。
 Observables 与 Observer 之间的订阅发布关系(观察者模式) 如下：
@@ -758,7 +763,7 @@ let post1 = this.http.get(`${this.apiUrl}/1`);
       });
 ```
 
-#### Form
+## Form
 表单控件有以下 6 种状态：
 - valid - 表单控件有效
 - invalid - 表单控件无效
@@ -817,7 +822,7 @@ setValue() 方法相比 patchValue() 会更严格，会执行多个判断：
 - 判断控件是否存在
 而 patchValue() 方法，会先使用 this.controls[name] 进行过滤，只更新参数 value 中设定控件的值。
 
-#### Router
+## Router
 根模块中使用`forRoot()``，子模块中使用`forChild()``
 因为在`AppModule`中，`forRoot()`方法会导入路由模块中的指令和服务。
 但对于子模块来说，`forChild()`方法仅会导入路由模块中定义的指令，而不会再次导入模块中定义的服务。
