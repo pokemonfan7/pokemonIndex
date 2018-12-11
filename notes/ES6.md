@@ -6,7 +6,7 @@
 - ES5:`var` `function`
 - ES6:`let` `const` `import` `class`
 
-### String
+### String(字符串)
 - includes(): 返回布尔值，表示是否找到了参数字符串。支持第二个参数，表示开始搜索的位置。针对从第n个位置直到字符串结束。
 - startsWith(): 返回布尔值，表示参数字符串是否在原字符串的头部。支持第二个参数，表示开始搜索的位置。针对从第n个位置直到字符串结束。
 - endsWith(): 返回布尔值，表示参数字符串是否在原字符串的尾部。支持第二个参数，表示开始搜索的位置。针对前n个字符。
@@ -29,7 +29,7 @@
    - `'x'.padEnd(5, 'ab') // 'xabab'`
    - `'x'.padEnd(4, 'ab') // 'xaba'`
 
-### number
+### number(数字)
 - Number.isFinite(): 用来检查一个数值是否为有限的（finite），即不是Infinity。如果参数类型不是数值，一律返回false。
 - Number.isNaN(): 用来检查一个值是否为NaN。如果参数类型不是NaN，Number.isNaN一律返回false。
 
@@ -43,7 +43,7 @@
 - Math.hypot(): 返回所有参数的平方和的平方根。
    - Math.hypot(3, 4)  // 5
 
-### function
+### function(函数)
 #### 函数参数的默认值
 一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。
 等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。
@@ -102,7 +102,7 @@ f.name // ""
 f.name // "f"
 ```
 
-### Array
+### Array(数组)
 #### 扩展运算符(...)
 - 扩展运算符的应用
    1. 复制数组
@@ -263,7 +263,7 @@ acc;
 )
 ```
 
-### Object
+### Object(对象)
 #### 可枚举性
 对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。
 Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象。
