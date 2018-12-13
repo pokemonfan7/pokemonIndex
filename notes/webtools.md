@@ -32,6 +32,9 @@ HTML面板中可以使用`Ctrl`+`c`,或者点击DOM前面的省略号
 ## console.dir
 输出DOM节点等
 
+## console.time()、console.timeEnd()
+查看代码执行时间，例如异步时间，可传入参数来记录多个间隔，例如:console.time('total')、console.timeEnd('total')
+
 ## 通过`h`隐藏DOM元素
 
 ## HTML面板可拖拽DOM元素
@@ -45,4 +48,7 @@ HTML面板中可以使用`Ctrl`+`c`,或者点击DOM前面的省略号
 ## 使用`Command`(命令)菜单
 - 在`Chrome`的调试打开的情况下 按下 [ Ctrl]+[Shift]+[P] (or [⌘]+[Shift]+[P] on Mac)
 - 或者使用DevTools 的 dropdown 按钮的这个选项
-### 切换theme主题
+### theme | 切换主题
+### time | 显示console时间戳
+
+## 
