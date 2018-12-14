@@ -5,7 +5,7 @@
 - visualviewport: 当前显示在屏幕上的页面，即浏览器可视区域的宽度。
 - idealviewport: 为浏览器定义的可完美适配移动端的理想 viewport，固定不变，可以认为是设备视口宽度。比如 iphone 7 为 375px, iphone 7p 为 414px。
 
-###
+### viewport设置
 `<meta name='viewport' content='width=device-width,initial-scale=1,user-scale=no' />`
 通过对 meta 标签三个 viewport 的设置，最终使页面完美展示。下面详细的阐释其具体含义:
 - width 设置的是 layoutviewport 的宽度
