@@ -1,3 +1,6 @@
+## TrackBy
+ngFor中可以控制视图重新渲染
+
 ## Dependency Injection(依赖注入)
 angular是一个控制反转（IOC，Inversion of Control）的容器，使用依赖注入（DI，Dependency Injection）来实现控制反转。
 在NgModule中的providers中添加注入的类（服务），当在组件的constructor中注入类（服务时），providers会自动实例化对象并添加进组件里。
