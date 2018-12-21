@@ -54,7 +54,7 @@
 
 - flex-grow扩展比率
 
-剩余空间是正值的时，伸缩项目相对于伸缩容器里其他伸缩项目能分配到空间比例,若没写该属性，则为0，0代表不参与扩展
+   剩余空间是正值的时，伸缩项目相对于伸缩容器里其他伸缩项目能分配到空间比例,若没写该属性，则为0，0代表不参与扩展
 
 - flex-shrink缩小比例
 此时剩余空间是不足时都将等比例缩小，0 表示不参加收缩比例，若没写该属性，则为1
@@ -89,9 +89,9 @@
 - align-self
 允许单个项目有与其他项目不一样的对齐方式
    - auto | flex-start | flex-end | center | baseline | stretch，这6个值，除了auto，其他都与align-items属性完全一致，可覆盖align-items属性
+   
+   默认值auto，表示继承父级元素的align-items，如果没有父级，则则等同于stretch
 
-默认值auto，表示继承父级元素的align-items，如果没有父级，则则等同于stretch
-
-当这两个属性遇到了flex-direction: column / column-reverse  整个顺序就都变了。
+   当这两个属性遇到了flex-direction: column / column-reverse  整个顺序就都变了。
 
 
