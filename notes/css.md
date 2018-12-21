@@ -61,25 +61,25 @@ display：flex弹性布局
 缩写    flex: none 或者 [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]（||后面的属性可不写）
 - flex-direction
 排列方式，决定主轴位置（水平方向）：
-row | row-reverse | column | column-reverse
-从左起 | 水平从右起 | 垂直从上起 | 垂直从下起
+   - row | row-reverse | column | column-reverse
+   - 从左起 | 水平从右起 | 垂直从上起 | 垂直从下起
 - flex-wrap
-nowrap | wrap | wrap-reverse
-单行 | 换行(宽度不够自动换行) | 换行并反转
+   - nowrap | wrap | wrap-reverse
+   - 单行 | 换行(宽度不够自动换行) | 换行并反转
 - justify-content（水平对齐方式）
-flex-start | flex-end | center | space-between | space-around;
-左对齐 | 右对齐 | 居中对齐 | 两端对齐(之间的间隔相等) | 每个项目两侧的间隔相等
+   - flex-start | flex-end | center | space-between | space-around;
+   - 左对齐 | 右对齐 | 居中对齐 | 两端对齐(之间的间隔相等) | 每个项目两侧的间隔相等
 - align-items（垂直对齐方式）
-flex-start | flex-end | center | baseline | stretch
-起点对齐 | 终点对齐 | 中点对齐 | 基线对齐 | 默认值(未设置高度或设为auto，将占满整个容器的高度)
+   - flex-start | flex-end | center | baseline | stretch
+   - 起点对齐 | 终点对齐 | 中点对齐 | 基线对齐 | 默认值(未设置高度或设为auto，将占满整个容器的高度)
 - align-content （多行对齐方式）
 需要多行才行
 多根轴线的对齐方式
-flex-start | flex-end | center | space-between | space-around | stretch
-左对齐 | 右对齐 | 居中对齐 | 两端对齐(之间的间隔相等) | 每个项目两侧的间隔相等 | 轴线占满整个交叉轴
+   - flex-start | flex-end | center | space-between | space-around | stretch
+   - 左对齐 | 右对齐 | 居中对齐 | 两端对齐(之间的间隔相等) | 每个项目两侧的间隔相等 | 轴线占满整个交叉轴
 - align-self
 允许单个项目有与其他项目不一样的对齐方式
-auto | flex-start | flex-end | center | baseline | stretch
+   - auto | flex-start | flex-end | center | baseline | stretch
 该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
 可覆盖align-items属性
 默认值auto，表示继承父级元素的align-items，如果没有父级，则则等同于stretch
