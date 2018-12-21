@@ -124,17 +124,16 @@
 ```
 ## 伪类、伪元素
 一个冒号（ : ）表示伪类，两个冒号（ :: ）表示 CSS3新增的伪元素。
-- a:link {color:black;}
-- a:visited {color:gray;}
-- a:hover {text-decoration:none;}
-- a:active {color:red;}
+- a:link {color:black;} a:visited {color:gray;} a:hover {text-decoration:none;} a:active {color:red;}
 - input:focus {border:1px solid blue;}
-如果用户点击一个指向页面中其他元素的链接，则那个元素就是目标（target），可以用 :target 伪类选中它。（<a href="#more_info">More Information</a>）
+如果用户点击一个指向页面中其他元素的链接，则那个元素就是目标（target），可以用 :target 伪类选中它。
+```
+<a href="#more_info">More Information</a>
 #more_info:target {background:#eee;}
-- :first-child 和 :last-child
-- :nth-child
-
-- ::first-letter 伪元素
+```
+- :first-child :last-child :nth-child
+伪元素
+- ::first-letter ::first-line ::before ::after
 ```css
 //首字符下沉
 p::first-letter {
@@ -146,6 +145,21 @@ float:left;
 line-height:0.5;
 }
 ```
-- ::first-line 伪元素
-- ::before 和 ::after 伪元素
+
+## 字体
+- font-style：italic 、 oblique 、 normal
+- font-weight：100 、 200 …… 900 ，或者 lighter 、 normal 、 bold 和 bolder
+- font-variant：small-caps将所有小写英文字母变成小型大写字母
+
+## 文本属性
+文本属性只应用于长长的、细细的、内部的文本盒子，而不是包含元素的盒子。
+- text-indent文本缩进
+- letter-spacing字符间距
+- word-spacing单词间距
+- text-decoration文本装饰（underline 、 overline 、 line-through 、 blink 、 none ）
+- text-align
+- line-height
+- text-transform文本转换（none 、 uppercase 、 lowercase 、 capitalize用于转换元素中文本的大小写，它可以设定英文单词首字母大
+写、全部字母大写和全部字母小写。）
+- vertical-align以基线为参照上下移动文本，但这个属性只影响行内元素。如果你想在垂直方向上对齐块级元素，必须把其 display 属性设定为 inline 。 vertical-align属性最常用于公式或化学分子式中的上标和下标，或者用于文本中脚注的角标，比如把星号变成上角标。浏览器默认<sup>上标，<sub>为下标
 
