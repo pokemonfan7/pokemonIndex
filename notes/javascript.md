@@ -3,11 +3,17 @@
 - Array forEach(): 不能终止跳出循环，除非捕获错误，要想实现`forEach()`相关功能，可使用every()、some()代替
 - Array every(): `return true`跳出循环，`return false`终止循环，`some()`类似
 
-## html加载顺序
-- js会阻塞后续dom和资源的加载
-- css不阻塞后续dom和资源的加载，但会阻塞js的加载
+## 确定原型和实例的关系
+- instanceof操作符测试实例和原型链中出现过的构造参数
+`person1  instanceof  Person;//true`
+- isPrototypeOf()方法，只要是原型链中出现的原型，都可以说是该链所派生的实例的原型
+`Person.prototype.isPrototypeOf(person1);//true`
+- hasOwnProperty()方法，可以检测一个属性是存在于实例中，还是原型中
+`person1.hasOwnProperty(“name”);实例true，原型false`
+in操作符，会在通过对象能够访问给定属性时返回true，无论存在于实例还是原型中
+`'name' in person1;`
+for-in循环返回所有能够通过对象访问的，可枚举的属性，包括实例和原型中的属性
 
-## 浏览器会使用prefetch对引用的资源提前下载
-1. 没有`defer`或`async`，浏览器会立即加载并执行指定的脚本
-2. 有`async`，加载和渲染后续文档元素的过程将和`script.js`的加载与执行并行进行(下载异步，执行同步，加载完就执行)。
-3. 有`defer`，加载后续文档元素的过程将和`script.js`的加载并行进行（异步），但是`script.js`的执行要在所有元素解析完成之后，`DOMContentLoaded`事件触发之前完成。
+## 异步执行
+- microtasks: process.nextTick、 Promises、 Object.observe、 MutationObserver
+- macrotasks: script(整体代码)、 setTimeout、 setInterval、 setImmediate、 I/O、 UI rendering 
