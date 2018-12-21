@@ -94,4 +94,58 @@
 
    当这两个属性遇到了flex-direction: column / column-reverse  整个顺序就都变了。
 
+## white-space
+属性设置如何处理元素内的空白
+- normal	默认，空白会被浏览器忽略。
+- pre	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+- nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+- pre-wrap	保留空白符序列，但是正常地进行换行。
+- pre-line	合并空白符序列，但是保留换行符。
+- inherit	规定应该从父元素继承 white-space 属性的值。
+
+## 39.animation
+- animation-name  名称
+- animation-duration  执行时间
+- animation-timing-function  运动类型(ease-in等)
+- animation-delay  延迟
+- animation-iteration-count  循环次数  可选  number | infinite
+- animation-direction  是否反向运动  alternate
+- animation-fill-mode
+  设置或检索动画时间之外的状态（想让动画保持突然终止时的状态）
+   - none | forwards | backwards | both
+   - 不设置 | 结束时 | 开始时 | 结束或开始的状态
+- animation-play-state  想让动画保持突然终止时的动画状态 running | paused
+```css
+@keyframes name{
+  0% { background: #c00 }
+  50% { background: orange }
+  100% { background: yellowgreen }
+}
+```
+## 伪类、伪元素
+一个冒号（ : ）表示伪类，两个冒号（ :: ）表示 CSS3新增的伪元素。
+- a:link {color:black;}
+- a:visited {color:gray;}
+- a:hover {text-decoration:none;}
+- a:active {color:red;}
+- input:focus {border:1px solid blue;}
+如果用户点击一个指向页面中其他元素的链接，则那个元素就是目标（target），可以用 :target 伪类选中它。（<a href="#more_info">More Information</a>）
+#more_info:target {background:#eee;}
+- :first-child 和 :last-child
+- :nth-child
+
+- ::first-letter 伪元素
+```css
+//首字符下沉
+p::first-letter {
+font-family:Lato, helvetica, sans-serif;
+font-style: normal;
+font-weight:700;
+font-size:4.5em;
+float:left;
+line-height:0.5;
+}
+```
+- ::first-line 伪元素
+- ::before 和 ::after 伪元素
 
