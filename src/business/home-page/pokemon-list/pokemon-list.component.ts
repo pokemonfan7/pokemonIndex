@@ -1,15 +1,15 @@
-import {Component, OnDestroy, OnInit} from '@angular/core'
-import { PokemonJson } from '../../shared/pokemon.service'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { Store } from '@ngxs/store'
 import {Subscription} from 'rxjs'
+import { PokemonJson } from '../../../shared/pokemon.service'
 
 @Component({
-    selector: 'app-pokemon-list',
+    selector: 'pokemon-list',
     templateUrl: './pokemon-list.component.html'
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-    pokemons: PokemonJson[]
+    @Input() pokemons: PokemonJson[]
     private subs: Subscription[] = []
 
     constructor(private store: Store) {}

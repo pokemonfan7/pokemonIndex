@@ -1,63 +1,51 @@
-<header id="nav-header">
-    <a class="logo" [routerLink]="['/']">Pokemon</a>
-    <a class="nav-list" [routerLink]="['/']">主页</a>
-    <a class="nav-list" [routerLink]="['/pokemon/pokemon-list/gen1']">列表</a>
-    <a class="nav-list" [routerLink]="['/pokemon/news']">新闻</a>
-</header>
 <nav id="nav-aside">
   <ul>
     <app-search-pokemon></app-search-pokemon>
     <li>
-      <a [routerLink]="['/pokemon/pokemon-list/gen1']"
-         [ngClass]="{active: selectId === 1}"
+      <a [ngClass]="{active: selectId === 1}"
          (click)="locationPm('pokemonGen1', 1)">
-        <i class="pokeball-icon">@</i>关都
+        <i class="pokeball-icon">@</i>关都 (第一世代)
       </a>
     </li>
     <li>
-      <a [routerLink]="['/pokemon/pokemon-list/gen2']"
-         [ngClass]="{active: selectId === 2}"
+      <a [ngClass]="{active: selectId === 2}"
          (click)="locationPm('pokemonGen2', 2)">
-        <i class="pokeball-icon">@</i>城都
+        <i class="pokeball-icon">@</i>城都 (第二世代)
       </a>
     </li>
     <li>
-      <a [routerLink]="['/pokemon/pokemon-list/gen3']"
-         [ngClass]="{active: selectId === 3}"
+      <a [ngClass]="{active: selectId === 3}"
          (click)="locationPm('pokemonGen3', 3)">
-        <i class="pokeball-icon">@</i>丰缘
+        <i class="pokeball-icon">@</i>丰缘 (第三世代)
       </a>
     </li>
     <li>
-      <a [routerLink]="['/pokemon/pokemon-list/gen4']"
-         [ngClass]="{active: selectId === 4}"
+      <a [ngClass]="{active: selectId === 4}"
          (click)="locationPm('pokemonGen4', 4)">
-        <i class="pokeball-icon">@</i>神奥
+        <i class="pokeball-icon">@</i>神奥 (第四世代)
       </a>
     </li>
     <li>
-      <a [routerLink]="['/pokemon/pokemon-list/gen5']"
-         [ngClass]="{active: selectId === 5}"
+      <a [ngClass]="{active: selectId === 5}"
          (click)="locationPm('pokemonGen5', 5)">
-        <i class="pokeball-icon">@</i>合众
+        <i class="pokeball-icon">@</i>合众 (第五世代)
       </a>
     </li>
     <li>
-      <a [routerLink]="['/pokemon/pokemon-list/gen6']"
-         [ngClass]="{active: selectId === 6}"
+      <a [ngClass]="{active: selectId === 6}"
          (click)="locationPm('pokemonGen6', 6)">
-        <i class="pokeball-icon">@</i>卡洛斯
+        <i class="pokeball-icon">@</i>卡洛斯 (第六世代)
       </a>
     </li>
     <li>
-      <a [routerLink]="['/pokemon/pokemon-list/gen7']"
-         [ngClass]="{active: selectId === 7}"
+      <a [ngClass]="{active: selectId === 7}"
          (click)="locationPm('pokemonGen7', 7)">
-        <i class="pokeball-icon">@</i>阿罗拉
+        <i class="pokeball-icon">@</i>阿罗拉 (第七世代)
       </a>
     </li>
   </ul>
 </nav>
 <main id="main-content">
+  <pokemon-list [pokemons]="pokemons"></pokemon-list>
   <router-outlet></router-outlet>
 </main>
