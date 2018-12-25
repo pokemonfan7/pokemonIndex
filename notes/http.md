@@ -16,10 +16,10 @@
 
 ## HTTP头信息控制缓存
 强制缓存：  
-Expires：是HTTP1.0提出的一个表示资源过期时间的header，描述的是一个绝对时间，因为服务器时间和客户端时间可能存在差异，所以使用较少
+Expires：是HTTP1.0提出的一个表示资源过期时间的header，描述的是一个绝对时间，因为服务器时间和客户端时间可能存在差异，所以使用较少  
 Cache-control：描述的是一个相对时间，在进行缓存命中的时候，都是利用客户端时间进行判断，管理更有效，安全一些 Cache-Control: max-age=3600  
 协商缓存：  
-Last-Modified/If-Modified-Since：标示这个响应资源的最后修改时间。Last-Modified是服务器相应给客户端的，If-Modified-Sinces是客户端发给服务器，服务器判断这个缓存时间是否是最新的，是的话拿缓存。
+Last-Modified/If-Modified-Since：标示这个响应资源的最后修改时间。Last-Modified是服务器相应给客户端的，If-Modified-Sinces是客户端发给服务器，服务器判断这个缓存时间是否是最新的，是的话拿缓存。  
 Etag/If-None-Match：Etag和Last-Modified类似，他是发送一个字符串来标识版本。
 
 ## Etag
