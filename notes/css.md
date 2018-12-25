@@ -12,6 +12,10 @@
 5. 计算BFC的高度时，浮动子元素也参与计算
 6. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
 
+## css选择器实践
+ul li + li{border-top:1px solid #000;}
+第一个li不加border-top，其余都加上
+
 ## position
 - static: 默认值，忽略 top, bottom, left, right 或者 z-index 声明
 - absolute: 会使inline元素变成block元素
