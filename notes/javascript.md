@@ -14,6 +14,20 @@ in操作符，会在通过对象能够访问给定属性时返回true，无论�
 `'name' in person1;`
 for-in循环返回所有能够通过对象访问的，可枚举的属性，包括实例和原型中的属性
 
+## Object.prototype.toString.call(obj)
+```javascript
+Object.prototype.toString.call(123) //[object Number]
+Object.prototype.toString.call('asd') //[object String]
+Object.prototype.toString.call(undefined) //[object Undefined]
+Object.prototype.toString.call(true) //[object Boolean]
+Object.prototype.toString.call({}) //[object Object]
+Object.prototype.toString.call([]) //[object Array]
+Object.prototype.toString.call(function(){}) //[object Function]
+```
+
+## typeof检测基本类型
+number | string | boolean | null（object） | undefined | function（function）
+
 ## 引用类型
 Object、Array、Date、RegExp、Function、基本包装类型（Boolean、Number、String）、单体内置对象（Global、Math）
 
