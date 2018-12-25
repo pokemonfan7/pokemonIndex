@@ -14,6 +14,9 @@ in操作符，会在通过对象能够访问给定属性时返回true，无论�
 `'name' in person1;`
 for-in循环返回所有能够通过对象访问的，可枚举的属性，包括实例和原型中的属性
 
+## 引用类型
+Object、Array、Date、RegExp、Function、基本包装类型（Boolean、Number、String）、单体内置对象（Global、Math）
+
 ## 异步执行
 - microtasks: process.nextTick、 Promises、 Object.observe、 MutationObserver
 - macrotasks: script(整体代码)、 setTimeout、 setInterval、 setImmediate、 I/O、 UI rendering 
@@ -41,6 +44,7 @@ scrollLeft和scrollTop显示内容区到整个内容区的距离
 #### scrollHeight和scrollWidth
 scrollHeight和scrollWidth指的是实际内容的高度、宽度，包括content和padding，不包括border
 
-### clientWidth和clientHeight
+### client
+#### clientWidth和clientHeight
 clientWidth和clientHeight包括content和padding，不包括border
 
