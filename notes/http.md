@@ -15,12 +15,22 @@
 - 第四次挥手：主动关闭方收到`FIN`后，发送一个`ACK`给被动关闭方，确认序号为收到序号+1，至此，完成四次挥手。
 
 ## HTTP头信息控制缓存
-强制缓存：  
-Expires：是HTTP1.0提出的一个表示资源过期时间的header，描述的是一个绝对时间，因为服务器时间和客户端时间可能存在差异，所以使用较少  
+强制缓存：200 from cache  
+Expires：描述的是一个绝对时间，因为服务器时间和客户端时间可能存在差异，所以使用较少  
 Cache-control：描述的是一个相对时间，在进行缓存命中的时候，都是利用客户端时间进行判断，管理更有效，安全一些 Cache-Control: max-age=3600  
-协商缓存：  
+协商缓存：304 not modified  
 Last-Modified/If-Modified-Since：标示这个响应资源的最后修改时间。Last-Modified是服务器相应给客户端的，If-Modified-Sinces是客户端发给服务器，服务器判断这个缓存时间是否是最新的，是的话拿缓存。  
 Etag/If-None-Match：Etag和Last-Modified类似，他是发送一个字符串来标识版本。
+
+### 总结
+- 浏览器端缓存分为200 from cache和304 not modified
+- HTTP协议中Cache-Control 和 Expires可以用来设置新鲜度的限值，前者是HTTP1.1中新增的响应头，后者是HTTP1.0中的响应头。
+- Cache-Control设置max-age（单位为s），而Expires指定的是具体的过期日期而不是秒数
+- Cache-Control和Expires同时使用的话，Cache-Control会覆盖Expires
+- 客户端不用关心ETag值如何产生，只要服务在资源状态发生变更的情况下将ETag值发送给它就行
+- ETag常与If-None-Match或者If-Match一起，由客户端通过HTTP头信息(包括ETag值)发送给服务端处理。
+- Last-Modified常与If-Modified-Since一起由客户端将Last-Modified值包括在HTTP头信息中发给服务端进行处理。
+- 有些文档资源周期性的被重写，但实际内容没有改变。此时文件元数据中会显示文件最近的修改日期与If-Modified-Since不相同，导致不必要的响应。
 
 ## Etag
 聪明的服务器开发者会把ETags和GET请求的“If-None-Match”头一起使用，这样可利用客户端（例如浏览器）的缓存。  
