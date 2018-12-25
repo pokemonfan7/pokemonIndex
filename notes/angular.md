@@ -616,9 +616,9 @@ export class DebounceClickDirective implements OnInit, OnDestroy {
     }
 }
 ```
-<ng-template> 和 <ng-container> 的区别：
-- <ng-template>：使用 * 语法糖的结构指令，最终都会转换为 <ng-template> 或 <template> 模板指令，模板内的内容如果不进行处理，是不会在页面中显示的。
-- <ng-container>：是一个逻辑容器，可用于对节点进行分组，但不作为 DOM 树中的节点，它将被渲染为 HTML中的 comment 元素，它可用于避免添加额外的元素来使用结构指令。
+`<ng-template>`和`<ng-container>`的区别：
+-`<ng-template>`：使用 * 语法糖的结构指令，最终都会转换为`<ng-template>`或`<template>`模板指令，模板内的内容如果不进行处理，是不会在页面中显示的。
+-`<ng-container`：是一个逻辑容器，可用于对节点进行分组，但不作为 DOM 树中的节点，它将被渲染为 HTML中的 comment 元素，它可用于避免添加额外的元素来使用结构指令。
 
 ## Decorator(装饰器)
 装饰器是一个表达式,该表达式被执行后，返回一个函数,函数的入参分别为 targe、name 和 descriptor
