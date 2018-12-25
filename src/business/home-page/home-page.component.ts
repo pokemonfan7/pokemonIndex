@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core'
-import { PokemonService } from '../../shared/pokemon.service'
+import { PokemonJson, PokemonService } from '../../shared/pokemon.service'
 import { Store } from '@ngxs/store'
 import {Subscription} from 'rxjs'
 
@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs'
   styleUrls: [ './home-page.component.less']
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-
+    pokemons: PokemonJson[]
     selectId: number
     subs: Subscription[] = []
 
@@ -28,7 +28,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   locationPm(gen, selectId) {
-      this.pokemonService.getLocationPms(gen, selectId)
+      this.pokemons = this.pokemonService.getLocationPms(gen, selectId)
   }
 
   ngOnDestroy() {
