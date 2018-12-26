@@ -1,3 +1,6 @@
+## target和currentTarget的区别
+event.currentTarget是绑定事件的元素，而event.target是当前触发事件的元素。比如常见的事件委托中的ul和li。
+
 ## 跳出循环
 - for循环: `break`终止循环，`continue`跳出循环，执行下次循环
 - Array forEach(): 不能终止跳出循环，除非捕获错误，要想实现`forEach()`相关功能，可使用every()、some()代替
