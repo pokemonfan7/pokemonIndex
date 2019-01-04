@@ -1,3 +1,45 @@
+## promise
+### Promise捕获错误与 try catch 等同
+```javascript
+var p1 = new Promise(function(resolve, reject) {
+    throw Error('sync error')
+})
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+*****
+var p1 = new Promise(function(resolve, reject) {
+    setTimeout(() => {
+        throw Error('async error')   
+    })
+})
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+*****
+var p1 = new Promise(function(resolve, reject) {
+    resolve()
+})
+    .then(res => {
+        throw Error('sync error') 
+    })
+```
+
+正确答案是：
+1. Error被catch到，最后console.log输出
+2. 错误无法被catch，控制台报错
+3. promise没有catch，错误被捕获后又被抛出，控制台报错
+
+这里考查的主要是Promise的错误捕获，其实仔细想想js中能用的错误捕获也只能是try catch了，而try catch只能捕获同步错误，并且在没有传入错误监听的时候会将捕获到的错误抛出。
+
+### Promise 拥有状态变化
+
 ## Object.seal()、Object.freeze()
 - `Object.seal()`密封的对象可以改变它们现有的属性。
 - `Object.freeze()`冻结的对象中现有属性是不可变的。
