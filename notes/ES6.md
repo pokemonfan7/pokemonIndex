@@ -10,7 +10,7 @@ var p1 = new Promise(function(resolve, reject) {
     .catch(err => {
         console.log(err)
     })
-*****
+//
 var p1 = new Promise(function(resolve, reject) {
     setTimeout(() => {
         throw Error('async error')   
@@ -22,7 +22,7 @@ var p1 = new Promise(function(resolve, reject) {
     .catch(err => {
         console.log(err)
     })
-*****
+//
 var p1 = new Promise(function(resolve, reject) {
     resolve()
 })
@@ -39,6 +39,121 @@ var p1 = new Promise(function(resolve, reject) {
 这里考查的主要是Promise的错误捕获，其实仔细想想js中能用的错误捕获也只能是try catch了，而try catch只能捕获同步错误，并且在没有传入错误监听的时候会将捕获到的错误抛出。
 
 ### Promise 拥有状态变化
+```javascript
+var p1 = new Promise(function(resolve, reject) {
+    resolve(1)
+    throw Error('sync error')
+})
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+//
+var p1 = new Promise(function(resolve, reject) {
+    reject(2)
+    resolve(1)
+})
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+//
+var p1 = new Promise(function(resolve, reject) {
+    resolve(1)
+})
+    .then(res => {
+        throw Error('sync error')
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+```
+
+正确答案是：
+1. 输出 1
+2. 输出 2
+3. console.log输出错误
+
+Promise是一个有状态的容器，当状态被凝固了，后面的resolve或reject就不会被触发。简单的说就是同一个Promise只能触发一个状态监听（onFulfilled或onRejected）。
+
+### Promise 方法中的回调是异步的
+```javascript
+var p1 = new Promise(function(resolve, reject) {
+    resolve()
+    setTimeout(() => {
+        console.log(1)
+    })
+    console.log(2)
+})
+    .then(res => {
+        console.log(3)
+    })
+console.log(4)
+```
+
+正确答案是：
+web依次输出：2 4 3 1
+
+### Promise 会存储返回值
+```javascript
+var p1 = new Promise(function(resolve, reject) {
+    reject(1)
+})
+    .catch(err => {
+        console.log(err)
+        return 2
+    })
+
+setTimeout(() => {
+    p1
+        .then(res => console.log(res))
+}, 1000)
+```
+
+正确答案是：
+先输出 1
+1秒后输出 2
+
+Promise会将最后的值存储起来，如果在下次使用promise方法的时候回直接返回该值的promise。
+
+### Promise 方法每次都返回一个新的Promise
+```javascript
+var p1 = new Promise(function(resolve, reject) {
+    reject(1)
+})
+    .then(
+        res => {
+            console.log(res)
+            return 2
+        },
+        err => {
+            console.log(err)
+            return 3
+        }
+    )
+    .catch(err => {
+        console.log(err)
+        return 4
+    })
+    .finally(res => {
+        console.log(res)
+        return 5
+    })
+    .then(
+        res => console.log(res),
+        err => console.log(err)
+    )
+```
+
+正确答案是：
+依次输出：1 undefined 3
+
+Promise能够链式调用的原因是它的每一个方法都返回新的promise，哪怕是finally方法，特殊的是fanilly会返回上一个promise的值包装成的新promise，并且finally也不接收参数，因为无论Promise是reject还是fulfill它都会被调用。
 
 ## Object.seal()、Object.freeze()
 - `Object.seal()`密封的对象可以改变它们现有的属性。
