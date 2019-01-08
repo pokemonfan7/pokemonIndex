@@ -51,4 +51,10 @@ HTML面板中可以使用`Ctrl`+`c`,或者点击DOM前面的省略号
 ### theme | 切换主题
 ### time | 显示console时间戳
 
-## 
+## Control the sensors（控制传感器）
+位于 Drawer 的 Sensors(传感器) 面板可以让你模拟特定的位置。可以从预定义的位置中进行选择，添加自己的位置，或者只需手动键入纬度/经度。
+  
+选定的值将被navigator.geolocation.watchPosition（或 .getCurrentPosition ）报告。
+  
+如果你的应用使用加速计，传感器面板也可以模拟你设备在3D空间中的位置！
+
