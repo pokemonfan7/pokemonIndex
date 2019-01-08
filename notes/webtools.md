@@ -51,6 +51,10 @@ HTML面板中可以使用`Ctrl`+`c`,或者点击DOM前面的省略号
 ### theme | 切换主题
 ### time | 显示console时间戳
 
+## The DevTools drawer
+Chrome DevTools 有很多部分，被分为9个 tab(标签页/选项卡) ( Elements , Console , Sources , Network , 等等...) - 但那仅仅是它的一部分而已！有一组平行的选项卡，被隐藏在主窗口之下。这个组合被称为 Drawer
+要访问它，当你在DevTools（任何选项卡）中时，按 [esc] ,再次按 [esc] 隐藏它
+
 ## Control the sensors（控制传感器）
 位于 Drawer 的 Sensors(传感器) 面板可以让你模拟特定的位置。可以从预定义的位置中进行选择，添加自己的位置，或者只需手动键入纬度/经度。  
 选定的值将被navigator.geolocation.watchPosition（或 .getCurrentPosition ）报告。  
@@ -63,4 +67,23 @@ Network conditions 面板还可以模拟特定的用户代理。
 ## Have the source by hand (把 source 拿到手)
 类似于在打开不同面板的同时监视 Console 的方式类似，例如，当我主要专注于 Elements 面板时，有时我也想看到源代码。就像 drawer console 一样，你可以在 drawer 中显示 Source。
 
-## 
+## For more readable logs (更易读的日志)
+```javascript
+console.log(name, job, age) //bob, teacher, 25
+console.log({name, job, age}) // {name: 'bob', job: 'teacher', age: 25}
+```
+
+## replay XHR requests (重新发送 XHR 的请求)
+network 右键XHR
+
+## 给你的 console.log 加上 css 样式
+给你的打印文本加上 %c 然后 console.log 的第二个参数变成了... css 规则！  
+你可以利用这一点让你的日志脱颖而出(例如 Facebook在你打开 console的时候所做的一样)
+`console.log('%ctext', 'color:green; background: yellow; font-size: 30px;')`
+
+## Switch between 2 recent DevTools placements 在两个最近使用的 DevTools 的展示位置之间切换
+ctrl + shift + D (⌘ + shift + D Mac)
+
+## Switch between DevTools panels 在 DevTools 的面板之间切换
+点击越少越好！ 我们经常从“元素”面板转到“源”并返回。 这些快捷方式支持我们在活动面板之间切换：  
+按下 ctrl + [ 和 ctrl + ] 分别从当前面板的分别向左和向右切换面板。
