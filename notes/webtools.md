@@ -52,9 +52,15 @@ HTML面板中可以使用`Ctrl`+`c`,或者点击DOM前面的省略号
 ### time | 显示console时间戳
 
 ## Control the sensors（控制传感器）
-位于 Drawer 的 Sensors(传感器) 面板可以让你模拟特定的位置。可以从预定义的位置中进行选择，添加自己的位置，或者只需手动键入纬度/经度。
-  
-选定的值将被navigator.geolocation.watchPosition（或 .getCurrentPosition ）报告。
-  
+位于 Drawer 的 Sensors(传感器) 面板可以让你模拟特定的位置。可以从预定义的位置中进行选择，添加自己的位置，或者只需手动键入纬度/经度。  
+选定的值将被navigator.geolocation.watchPosition（或 .getCurrentPosition ）报告。  
 如果你的应用使用加速计，传感器面板也可以模拟你设备在3D空间中的位置！
 
+## Simulate network conditions(模拟网络状态)
+就像伪造你的位置一样，你可以使用 Drawer 的 Network conditions 面板模拟特定的网络行为：模拟互联网为典型的3G网络甚至离线！这有助于了解页面资源的大小。或者测试应用的离线功能。  
+Network conditions 面板还可以模拟特定的用户代理。
+
+## Have the source by hand (把 source 拿到手)
+类似于在打开不同面板的同时监视 Console 的方式类似，例如，当我主要专注于 Elements 面板时，有时我也想看到源代码。就像 drawer console 一样，你可以在 drawer 中显示 Source。
+
+## 
