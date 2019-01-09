@@ -1,3 +1,61 @@
+## 函数节流
+```javascript
+function throttle(fn, interval) {
+    var _self = fn // 保存需要被延迟执行的函数引用
+    var firstTime = true // 是否初次调用
+    var timer // 定时器
+
+    return function () {
+        var args = arguments
+        var _me = this
+        if (firstTime) {      // 如果是第一次调用不需要延迟执行
+            _self.call(_me, args)
+        }
+        if (timer) {      // 如果定时器还在，说明前一次延迟执行还没有完成
+            return false
+        }
+
+        timer = setTimeout(function () {      // 延迟一段时间执行
+            clearTimeout(timer) // 清除定时器 避免下一次return false
+            timer = null
+            _self.call(_me, args)
+        }, interval || 500)
+    }
+}
+
+function resizeDiv() {
+    var div = document.getElementById('mydiv')
+    div.style.height = div.offsetWidth + 'px'
+    console.log('resize')
+}
+
+window.onresize = throttle(resizeDiv)
+```
+
+## 函数防抖
+```javascript
+function debounce(fn) {
+    var timer
+    var _self = fn
+    return function () {
+        clearTimeout(timer)
+        var args = arguments // fn所需要的参数
+        var _me = this // 当前的this
+        timer = setTimeout(function () {
+            _self.call(_me, args)
+        }, 200)
+    }
+}
+
+function resizeDiv() {
+    var div = document.getElementById('mydiv')
+    div.style.height = div.offsetWidth + 'px'
+    console.log('resize')
+}
+
+window.onresize = debounce(resizeDiv)
+```
+
 ## this指向
 如果要判断一个运行中函数的 this 绑定，就需要找到这个函数的直接调用位置，找到之后就可以顺序应用下面这四条规则来判断 this 的绑定对象  
 - `new`调用：绑定到新创建的对象，注意：显示return函数或对象，返回值不是新创建的对象，而是显式返回的函数或对象。
