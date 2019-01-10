@@ -1,3 +1,35 @@
+## requestAnimationFrame实现回到顶部
+```javascript
+// 匀速返回顶部
+function backToTop(interval = 500, element) {
+  // 当前元素
+  const ele = element || document.body || document.documentElement;
+  // 获取当前时间
+  const getTime = () =>
+    (performance && performance.now && performance.now()) || Date.now();
+  // 获取当前时间
+  const startTime = getTime();
+  // 获取当前页面的滚动高度
+  const scrollTop = ele.scrollTop;
+  // 回调函数
+  const callback = function() {
+    // 已经过去了多久
+    const cost = getTime() - startTime;
+    // 通过已经过去的时间类比已滚动的高度
+    const currentScrollTop =
+      (Math.max(0, interval - cost) / interval) * scrollTop;
+    // 设置当前高度
+    ele.scrollTop = currentScrollTop;
+    // 如果没有到达顶部，下次重绘继续调用
+    currentScrollTop && requestAnimationFrame(callback);
+  };
+  // 如果没有到达顶部，下次重绘继续调用
+  scrollTop && requestAnimationFrame(callback);
+}
+```
+问：为什么我们不直接用(scrollTop/500) * 1/60作为每次调用requestAnimationFrame移动的距离？  
+答：毕竟每次调用requestAnimationFrame的时间间隔不一定等于1/60，还是计算一下距离上次调用过去了多少时间更为准确，而使用performance.now()会比Date.now()更加精确一点。
+
 ## 双向绑定
 ```html
 <!doctype html>
