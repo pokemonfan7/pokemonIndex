@@ -29,7 +29,7 @@ function backToTop(interval = 500, element) {
 ```
 问：为什么我们不直接用(scrollTop/500) * 1/60作为每次调用requestAnimationFrame移动的距离？  
 答：毕竟每次调用requestAnimationFrame的时间间隔不一定等于1/60，还是计算一下距离上次调用过去了多少时间更为准确，而使用performance.now()会比Date.now()更加精确一点。  
-# 公告 => setInterval => requestAnimationFrame => 递归 => 尾递归优化 => 验证堆栈溢出 #
+##公告系统 => setInterval => requestAnimationFrame => 递归 => 尾递归优化 => 验证堆栈溢出##
 
 ## 双向绑定
 ```html
