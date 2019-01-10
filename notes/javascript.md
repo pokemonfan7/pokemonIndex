@@ -1,5 +1,15 @@
 ## 构造函数、原型对象和实例的关系
 ![prototype](./assets/prototype.png "关系图")
+```javascript
+// 证明 p1是 Person 的实例
+p1.constructor === Person // true
+p1 instanceof Person // true
+
+// 证明 Person.prototype 是 p1 的原型对象
+Person.prototype === p1.__proto__ // true
+Person.prototype.isPrototypeOf(p1) // true
+Object.getPrototypeOf(p1) === Person.prototype // true
+```
 
 ## requestAnimationFrame实现回到顶部 (from`https://cuixote.gitee.io/`)
 ```javascript
