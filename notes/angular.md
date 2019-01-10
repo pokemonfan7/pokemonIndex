@@ -827,7 +827,7 @@ setValue() 方法相比 patchValue() 会更严格，会执行多个判断：
 而 patchValue() 方法，会先使用 this.controls[name] 进行过滤，只更新参数 value 中设定控件的值。
 
 ## Router
-根模块中使用`forRoot()``，子模块中使用`forChild()``
+根模块中使用`forRoot()`，子模块中使用`forChild()`
 因为在`AppModule`中，`forRoot()`方法会导入路由模块中的指令和服务。
 但对于子模块来说，`forChild()`方法仅会导入路由模块中定义的指令，而不会再次导入模块中定义的服务。
 
