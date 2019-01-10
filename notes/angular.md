@@ -428,18 +428,44 @@ TemplateRef：用于表示内嵌的 template 模板元素，通过 TemplateRef �
 ViewContainerRef：用于表示一个视图容器，可添加一个或多个视图。通过 ViewContainerRef 实例，我们可以基于 TemplateRef 实例创建内嵌视图，并能指定内嵌视图的插入位置，
 也可以方便对视图容器中已有的视图进行管理。简而言之，ViewContainerRef 的主要作用是创建和管理内嵌视图或组件视图。
 
+1. `Angular`支持的 View(视图) 类型有哪几种？  
+Embedded Views - Template 模板元素  
+Host Views - Component 组件  
+
+- 如何创建`Embedded View`？  
+```
+ngAfterViewInit() {
+    let view = this.tpl.createEmbeddedView(null);
+}
+```
+- 如何创建`Host View`？  
+```
+constructor(private injector: Injector,
+    private r: ComponentFactoryResolver) {
+    let factory = this.r.resolveComponentFactory(AppComponent);
+    let componentRef = factory.create(injector);
+    let view = componentRef.hostView;
+}
+```
+2. `Angular Component`组件中定义的`<template>`模板元素为什么渲染后会被移除？  
+因为 <template> 模板元素，已经被 Angular 2 解析并封装成 TemplateRef 实例，通过 TemplateRef 实例，我们可以方便地创建内嵌视图(Embedded View)，我们不需要像开篇中的例子那样，手动操作 <template> 模板元素。
+
+3. `ViewRef`与`EmbeddedViewRef`之间有什么关系？  
+ViewRef 用于表示 Angular View(视图)，视图是可视化的 UI 界面。  
+EmbeddedViewRef 继承于 ViewRef，用于表示 <template> 模板元素中定义的 UI 元素。  
+
 ## 类的概念
-虽然 JavaScript 中有类的概念，但是可能大多数 JavaScript 程序员并不是非常熟悉类，这里对类相关的概念做一个简单的介绍。
-类 (Class)：一种面向对象计算机编程语言的构造，是创建对象的蓝图，描述了所创建的对象共同的属性和方法。
-对象 (Object)：类的实例，通过 new 创建
-面向对象 (OOP) 的三大特性：封装、继承、多态
-封装 (Encapsulation)：将对数据的操作细节隐藏起来，只暴露对外的接口。外界调用端不需要知道细节，就能通过对外提供的接口来访问该对象，同时也保证了外界无法任意更改对象内部的数据
-继承 (Inheritance)：子类继承父类，子类除了拥有父类的所有特性外，还可以扩展自有的功能特性
-多态 (Polymorphism)：由继承而产生了相关的不同的类，对同一个方法可以有不同的响应。比如 Cat 和 Dog 都继承自 Animal，但是分别实现了自己的 eat() 方法。
-此时针对某一个实例，我们无需了解它是 Cat 还是 Dog，就可以直接调用 eat() 方法，程序会自动判断出来应该如何执行 eat()
-存取器（getter & setter）：用于属性的读取和赋值
-修饰符（Modifiers）：修饰符是一些关键字，用于限定成员或类型的性质。比如 public 表示公有属性或方法
-抽象类（Abstract Class）：抽象类是供其他类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现
+虽然 JavaScript 中有类的概念，但是可能大多数 JavaScript 程序员并不是非常熟悉类，这里对类相关的概念做一个简单的介绍。  
+类 (Class)：一种面向对象计算机编程语言的构造，是创建对象的蓝图，描述了所创建的对象共同的属性和方法。  
+对象 (Object)：类的实例，通过 new 创建  
+面向对象 (OOP) 的三大特性：封装、继承、多态  
+封装 (Encapsulation)：将对数据的操作细节隐藏起来，只暴露对外的接口。外界调用端不需要知道细节，就能通过对外提供的接口来访问该对象，同时也保证了外界无法任意更改对象内部的数据  
+继承 (Inheritance)：子类继承父类，子类除了拥有父类的所有特性外，还可以扩展自有的功能特性  
+多态 (Polymorphism)：由继承而产生了相关的不同的类，对同一个方法可以有不同的响应。比如 Cat 和 Dog 都继承自 Animal，但是分别实现了自己的 eat() 方法。  
+此时针对某一个实例，我们无需了解它是 Cat 还是 Dog，就可以直接调用 eat() 方法，程序会自动判断出来应该如何执行 eat()  
+存取器（getter & setter）：用于属性的读取和赋值  
+修饰符（Modifiers）：修饰符是一些关键字，用于限定成员或类型的性质。比如 public 表示公有属性或方法  
+抽象类（Abstract Class）：抽象类是供其他类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现  
 接口（Interfaces）：不同类之间公有的属性或方法，可以抽象成一个接口。接口可以被类实现（implements）。一个类只能继承自另一个类，但是可以实现多个接口。
 
 ## 组件继承
