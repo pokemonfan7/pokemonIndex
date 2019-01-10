@@ -32,7 +32,7 @@ provide属性是token（一个标志），useclass属性是实例化的类，在
 `[ts] Parameter 'http' implicitly has an 'any' type.`  
 第二种方式，虽然`Angular`内部会合并`design:paramtypes`与`parameters`内的`metadata`信息，但是有点冗余了。  
 总而言之，如果是`Type`类型的参数，推荐使用下面的方式：  
-constructor(private http: Http) { }
+`constructor(private http: Http) { }`
 
 ## NgModule
 declarations 和 providers 属性最令人困惑的是，它们没有相同的作用域和可见性 (scope / visibility)：
