@@ -1,5 +1,5 @@
 ## 构造函数、原型对象和实例的关系
-![prototype](/assets/prototype.jpg "关系图")
+![prototype](/assets/prototype.png "关系图")
 
 ## requestAnimationFrame实现回到顶部 (from`https://cuixote.gitee.io/`)
 ```javascript
