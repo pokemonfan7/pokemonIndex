@@ -1,5 +1,5 @@
 ## 双向绑定
-```
+```html
 <!doctype html>
 <html lang="en">
 <head>
