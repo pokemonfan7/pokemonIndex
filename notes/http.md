@@ -24,7 +24,7 @@ Etag/If-None-Match：Etag和Last-Modified类似，他是发送一个字符串来
 
 ### 总结
 - 浏览器端缓存分为200 from cache和304 not modified
-- HTTP协议中Cache-Control 和 Expires可以用来设置新鲜度的限值，前者是HTTP1.1中新增的响应头，后者是HTTP1.0中的响应头。
+- HTTP协议中Cache-Control 和 Expires可以用来设置新鲜度的限值，前者是HTTP1.1中新增的响应头，后者是HTTP1.0中的响应头
 - Cache-Control设置max-age（单位为s），而Expires指定的是具体的过期日期而不是秒数
 - Cache-Control和Expires同时使用的话，Cache-Control会覆盖Expires
 - 客户端不用关心ETag值如何产生，只要服务在资源状态发生变更的情况下将ETag值发送给它就行
