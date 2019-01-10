@@ -51,7 +51,8 @@ components 和 services 拥有不同的作用域，了解这个区别很重要�
 Angular 框架内部也拆分成多个不同的模块，如 core、common、http 等等。为什么需要导入这些模块?  
 因为组件和服务，拥有不同的作用域：  
 - 如果我们需要在模块中使用导入模块中声明的组件，那我们需要在每个使用的模块中导入对应的模块  
-- 如果我们只是使用模块中定义的服务，那我们只需要在主模块中导入对应的模块  
+- 如果我们只是使用模块中定义的服务，那我们只需要在主模块中导入对应的模块
+
 如果你不了解这些区别，你可能由于忘记导入某个模块，而出现组件不可用的错误。或者你为了使用某个模块中定义的服务，而多次导入同一个模块。  
 
 Modules to import each time you need them  
@@ -81,12 +82,13 @@ ShareModule 定义全局公用的组件、指令、管道，用时就直接导�
 
 如你所见，HeroComponent 组件在 HeroesModule 以及 AnotherModule 中进行声明。在多个模块中使用同一个组件是允许的。  
 但当这种情况发生时，我们应该考虑模块之间的关系是什么。如果一个模块作为另一个模块的子模块，那么针对上面的场景解决方案将是：  
---在子模块的 @NgModule.declaration 中声明 HeroComponent 组件  
---通过子模块的 @NgModule.exports 数组中导出该组件  
---在父模块的 @NgModule.imports 数组中导入子模块  
+- 在子模块的 @NgModule.declaration 中声明 HeroComponent 组件  
+- 通过子模块的 @NgModule.exports 数组中导出该组件  
+- 在父模块的 @NgModule.imports 数组中导入子模块  
+
 而对于其它情况，我们可以创建一个新的模块，如 SharedModule 模块。具体步骤如下：  
---在 SharedModule 中声明和导出 HeroComponent  
---在需要使用 HeroComponent 的模块中导入 SharedModule  
+- 在`SharedModule`中声明和导出`HeroComponent`
+- 在需要使用`HeroComponent`的模块中导入`SharedModule`
 
 ## http
 HTTP
