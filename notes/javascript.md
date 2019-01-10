@@ -1,3 +1,40 @@
+## 双向绑定
+```
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>双向绑定</title>
+</head>
+<body>
+<input id="a">
+<p id="b"></p>
+</body>
+</html>
+<script>
+	var $a = document.getElementById("a");
+	var $b = document.getElementById("b");
+	var obj = {};
+
+	Object.defineProperty(obj, "content", {
+		get: function() {
+			//console.log('get...')
+		},
+		set: function(val) {
+			$b.textContent = val;
+			//console.log('set...')
+		}
+	});
+
+	$a.addEventListener("input", function() {
+		obj.content = this.value;
+	});
+
+	// init
+	$a.value = $b.textContent = obj.content = "123";
+</script>
+```
+
 ## 函数节流
 ```javascript
 function throttle(fn, interval) {
