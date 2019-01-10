@@ -47,46 +47,46 @@ providers / services 是全局作用域 (public visibility)
 ```
 反之，模块中的声明的服务，我们可以在所有模块中使用。
 
-components 和 services 拥有不同的作用域，了解这个区别很重要。如果我们的应用程序不仅仅包含一个模块，事情可能会变得很糟糕。
-Angular 框架内部也拆分成多个不同的模块，如 core、common、http 等等。为什么需要导入这些模块?
-因为组件和服务，拥有不同的作用域：
---如果我们需要在模块中使用导入模块中声明的组件，那我们需要在每个使用的模块中导入对应的模块
---如果我们只是使用模块中定义的服务，那我们只需要在主模块中导入对应的模块
-如果你不了解这些区别，你可能由于忘记导入某个模块，而出现组件不可用的错误。或者你为了使用某个模块中定义的服务，而多次导入同一个模块。
+components 和 services 拥有不同的作用域，了解这个区别很重要。如果我们的应用程序不仅仅包含一个模块，事情可能会变得很糟糕。  
+Angular 框架内部也拆分成多个不同的模块，如 core、common、http 等等。为什么需要导入这些模块?  
+因为组件和服务，拥有不同的作用域：  
+--如果我们需要在模块中使用导入模块中声明的组件，那我们需要在每个使用的模块中导入对应的模块  
+--如果我们只是使用模块中定义的服务，那我们只需要在主模块中导入对应的模块  
+如果你不了解这些区别，你可能由于忘记导入某个模块，而出现组件不可用的错误。或者你为了使用某个模块中定义的服务，而多次导入同一个模块。  
 
-Modules to import each time you need them
-CommonModule (包含 Angular 中定义的内建指令，如 ngIf、ngFor 等)，除了在主模块之外，不需要导入，因为我们已经在主模块中导入了 BrowserModule (此模块已导入了 CommonModule)。其它模块都必须手动导入该模块。
-FormsModule / ReactiveFormsModule
-BrowserAnimationsModule
-FlexLayoutModule
-MaterialModule 和 UI Modules (如 PrimeNg)
-Other Modules (定义 components、directives 或 pipes)
+Modules to import each time you need them  
+CommonModule (包含 Angular 中定义的内建指令，如 ngIf、ngFor 等)，除了在主模块之外，不需要导入，因为我们已经在主模块中导入了 BrowserModule (此模块已导入了 CommonModule)。其它模块都必须手动导入该模块。  
+FormsModule / ReactiveFormsModule  
+BrowserAnimationsModule  
+FlexLayoutModule  
+MaterialModule 和 UI Modules (如 PrimeNg)  
+Other Modules (定义 components、directives 或 pipes)  
 
-Modules to import only once
-HttpModule
-Other Modules (仅提供服务)
+Modules to import only once  
+HttpModule  
+Other Modules (仅提供服务)  
 
 如何同时管理具有组件和服务的模块？这是一个比较复杂的问题。你可能已经接触过 RouterModule，该模块不仅提供了 <router-outlet> 、routerLink 指令，
-而且还提供了 ActivedRouter 服务 (用于获取 URL 参数)、Router 服务 (用于页面导航) 。
-幸运的是，这个问题是由模块本身来解决。 Angular CLI 会为我们自动生成路由文件，但你可能已经注意到，应用程序主模块的路由和子模块路由之间存在细微差别。
-对于 AppModule，我们这样使用：
-RouterModule.forRoot(routes)
-对于子模块，我们这样使用：
-RouterModule.forChild(routes)
+而且还提供了`ActivedRouter`服务 (用于获取`URL`参数)、`Router`服务(用于页面导航)  
+幸运的是，这个问题是由模块本身来解决。Angular CLI 会为我们自动生成路由文件，但你可能已经注意到，应用程序主模块的路由和子模块路由之间存在细微差别。
+对于 AppModule，我们这样使用：  
+RouterModule.forRoot(routes)  
+对于子模块，我们这样使用：  
+RouterModule.forChild(routes)  
 为什么呢？因为在 AppModule 中，forRoot() 方法会导入路由模块中的指令和服务。但对于子模块来说，forChild() 方法仅会导入路由模块中定义的指令，而不会再次导入模块中定义的服务。
 
 CoreModule 定义在根模块中，因为服务是全局作用域，所以只实例化一次（例如：store，全局只能有一个）
 
 ShareModule 定义全局公用的组件、指令、管道，用时就直接导入ShareModule
 
-如你所见，HeroComponent 组件在 HeroesModule 以及 AnotherModule 中进行声明。在多个模块中使用同一个组件是允许的。
-但当这种情况发生时，我们应该考虑模块之间的关系是什么。如果一个模块作为另一个模块的子模块，那么针对上面的场景解决方案将是：
---在子模块的 @NgModule.declaration 中声明 HeroComponent 组件
---通过子模块的 @NgModule.exports 数组中导出该组件
---在父模块的 @NgModule.imports 数组中导入子模块
-而对于其它情况，我们可以创建一个新的模块，如 SharedModule 模块。具体步骤如下：
---在 SharedModule 中声明和导出 HeroComponent
---在需要使用 HeroComponent 的模块中导入 SharedModule
+如你所见，HeroComponent 组件在 HeroesModule 以及 AnotherModule 中进行声明。在多个模块中使用同一个组件是允许的。  
+但当这种情况发生时，我们应该考虑模块之间的关系是什么。如果一个模块作为另一个模块的子模块，那么针对上面的场景解决方案将是：  
+--在子模块的 @NgModule.declaration 中声明 HeroComponent 组件  
+--通过子模块的 @NgModule.exports 数组中导出该组件  
+--在父模块的 @NgModule.imports 数组中导入子模块  
+而对于其它情况，我们可以创建一个新的模块，如 SharedModule 模块。具体步骤如下：  
+--在 SharedModule 中声明和导出 HeroComponent  
+--在需要使用 HeroComponent 的模块中导入 SharedModule  
 
 ## http
 HTTP
@@ -96,31 +96,31 @@ HTTP
 └┬┘   └───┬──┘ └─┬─┘ └┬┘        └────┬────┘└─┬─┘
   协议        用户信息      主机名    端口                查询参数          片段
 
-HTTP 协议主要特点
-- 简单快速：当客户端向服务器端发送请求时，只是简单的填写请求路径和请求方法即可，然后就可以通过浏览器或其他方式将该请求发送就行了
-- 灵活：HTTP 协议允许客户端和服务器端传输任意类型任意格式的数据对象
-- 无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接，采用这种方式可以节省传输时间。(当今多数服务器支持Keep-Alive功能，使用服务器支持长连接，解决无连接的问题)
-- 无状态：无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。即客户端发送HTTP请求后，服务器根据请求，会给我们发送数据，发送完后，不会记录信息。(使用 cookie 机制可以保持 session，解决无状态的问题)
+HTTP 协议主要特点  
+- 简单快速：当客户端向服务器端发送请求时，只是简单的填写请求路径和请求方法即可，然后就可以通过浏览器或其他方式将该请求发送就行了  
+- 灵活：HTTP 协议允许客户端和服务器端传输任意类型任意格式的数据对象  
+- 无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接，采用这种方式可以节省传输时间。(当今多数服务器支持Keep-Alive功能，使用服务器支持长连接，解决无连接的问题)  
+- 无状态：无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。即客户端发送HTTP请求后，服务器根据请求，会给我们发送数据，发送完后，不会记录信息。(使用 cookie 机制可以保持 session，解决无状态的问题)  
 
 HTTP 请求报文由请求行、请求头、空行 和 请求体(请求数据) 4 个部分组成
 
 请求行
-请求行由请求方法、URL 和 HTTP 协议版本组成，它们之间用空格分开。
+请求行由请求方法、URL 和 HTTP 协议版本组成，它们之间用空格分开。  
 GET / HTTP/1.1
 
 请求头
-请求头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。请求头通知服务器有关于客户端请求的信息，典型的请求头有：
-- User-Agent：用户代理信息 - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 ...
-- Accept：客户端可识别的内容类型列表 - text/html,application/xhtml+xml,application/xml
-- Accept-Language：客户端可接受的自然语言 - zh-CN,zh;q=0.8,en;q=0.6,id;q=0.4
-- Accept-Encoding：客户端可接受的编码压缩格式 - gzip, deflate, sdch, br
-- Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机 - www.baidu.com
-- connection：连接方式
-- close：告诉WEB服务器或代理服务器，在完成本次请求的响应后，断开连接
-- keep-alive：告诉WEB服务器或代理服务器。在完成本次请求的响应后，保持连接，以等待后续请求
-- Cookie：存储于客户端扩展字段，向同一域名的服务端发送属于该域的cookie - PSTM=1490844191; BIDUPSID=2145FF54639208435F60E1E165379255;
-- 空行
-最后一个请求头之后是一个空行，发送回车符和换行符，通知服务器以下不再有请求头。
+请求头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。请求头通知服务器有关于客户端请求的信息，典型的请求头有：  
+- User-Agent：用户代理信息 - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 ...  
+- Accept：客户端可识别的内容类型列表 - text/html,application/xhtml+xml,application/xml  
+- Accept-Language：客户端可接受的自然语言 - zh-CN,zh;q=0.8,en;q=0.6,id;q=0.4  
+- Accept-Encoding：客户端可接受的编码压缩格式 - gzip, deflate, sdch, br  
+- Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机 - `www.baidu.com`  
+- connection：连接方式  
+- close：告诉WEB服务器或代理服务器，在完成本次请求的响应后，断开连接  
+- keep-alive：告诉WEB服务器或代理服务器。在完成本次请求的响应后，保持连接，以等待后续请求  
+- Cookie：存储于客户端扩展字段，向同一域名的服务端发送属于该域的cookie - PSTM=1490844191; BIDUPSID=2145FF54639208435F60E1E165379255;  
+- 空行  
+最后一个请求头之后是一个空行，发送回车符和换行符，通知服务器以下不再有请求头。  
 
 请求体
 请求数据不在 GET 方法中使用，而是在 POST 方法中使用。与请求数据相关的最常使用的请求头是 Content-Type和 Content-Length。
@@ -135,8 +135,8 @@ HTTP响应报文由状态行、响应头、空行和响应体4 个部分组成
 - CRLF - 回车/换行符
 
 响应头
-响应头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。
-响应头域允许服务器传递不能放在状态行的附加信息，这些域主要描述服务器的信息和Request-URI进一步的信息，典型的响应头有：
+响应头由 key-value 对组成，每行一对，key (键) 和 value (值)用英文冒号 : 分隔。  
+响应头域允许服务器传递不能放在状态行的附加信息，这些域主要描述服务器的信息和Request-URI进一步的信息，典型的响应头有：  
 - Server：包含处理请求的原始服务器的软件信息
 - Date：服务器日期
 - Content-Type：返回的资源类型 (MIME)
@@ -150,8 +150,8 @@ HTTP响应报文由状态行、响应头、空行和响应体4 个部分组成
 最后一个响应头之后是一个空行，发送回车符和换行符，通知浏览器以下不再有响应头。
 
 ## HttpClient
-当调用 Http 对象的 get()、post()、put() 等方法时，会返回一个 Observable<Response> 对象，仅当我们订阅该 Observable 对象时，才会正式发起 HTTP 请求。
-Angular 内部使用 Request 和 Response 对象来封装请求信息和响应信息。Request 类和 Response 类都是继承于 Body 类，Body 类中提供了四个方法用于数据转换：
+当调用 Http 对象的 get()、post()、put() 等方法时，会返回一个 Observable<Response> 对象，仅当我们订阅该 Observable 对象时，才会正式发起 HTTP 请求。  
+Angular 内部使用 Request 和 Response 对象来封装请求信息和响应信息。Request 类和 Response 类都是继承于 Body 类，Body 类中提供了四个方法用于数据转换：  
 - json(): any - 转换为 JSON 对象
 - text(): string -
 - arrayBuffer(): ArrayBuffer - 转换为 ArrayBuffer 对象
@@ -164,10 +164,10 @@ url 支持自动传参的，如：
 http.get(ApiAddress.URL, {params: {lotId: '1', deviceNo: 'xxx'}})
 ```
 
-现在 JSON 是默认的数据格式，我们不需要再进行显式的解析。即我们不需要再使用以下代码：
-http.get(url).map(res => res.json()).subscribe(...)
-现在我们可以这样写：
-http.get(url).subscribe(...)
+现在 JSON 是默认的数据格式，我们不需要再进行显式的解析。即我们不需要再使用以下代码：  
+http.get(url).map(res => res.json()).subscribe(...)  
+现在我们可以这样写：  
+http.get(url).subscribe(...)  
 
 http调用接口会自动取消订阅，不需要取消订阅
 
@@ -195,25 +195,25 @@ http调用接口会自动取消订阅，不需要取消订阅
 - ngOnDestroy - 指令销毁前调用
 
 constructor VS ngOnInit
-`constructor()`是类中的特殊方法，主要用来做初始化操作，在进行类实例化操作时，会被自动调用。
-在`Angular`中，构造函数一般用于依赖注入或执行一些简单的初始化操作。
-`ngOnInit()`用于在获取输入属性后初始化组件，该钩子方法会在第一次`ngOnChanges`之后被调用。
-在项目开发中我们要尽量保持构造函数简单明了，让它只执行简单的数据初始化操作，因此我们会把其他的初始化操作放在`ngOnInit`钩子中去执行。
-如在组件获取输入属性之后，需执行组件初始化操作等。
+`constructor()`是类中的特殊方法，主要用来做初始化操作，在进行类实例化操作时，会被自动调用。  
+在`Angular`中，构造函数一般用于依赖注入或执行一些简单的初始化操作。  
+`ngOnInit()`用于在获取输入属性后初始化组件，该钩子方法会在第一次`ngOnChanges`之后被调用。  
+在项目开发中我们要尽量保持构造函数简单明了，让它只执行简单的数据初始化操作，因此我们会把其他的初始化操作放在`ngOnInit`钩子中去执行。  
+如在组件获取输入属性之后，需执行组件初始化操作等。  
 类中的静态属性(static)是属于`AppComponent`构造函数的，而成员属性是属于`AppComponent`实例。
 
 ## ViewEncapsulation
-ViewEncapsulation 允许设置三个可选的值：
-ViewEncapsulation.Emulated - 无 Shadow DOM，但是通过 Angular 提供的样式包装机制来封装组件，使得组件的样式不受外部影响。这是 Angular 的默认设置。
-ViewEncapsulation.Native - 使用原生的 Shadow DOM 特性
-ViewEncapsulation.None - 无 Shadow DOM，并且也无样式包装
+ViewEncapsulation 允许设置三个可选的值：  
+ViewEncapsulation.Emulated - 无`Shadow DOM`，但是通过`Angular`提供的样式包装机制来封装组件，使得组件的样式不受外部影响。这是`Angular`的默认设置。 
+ViewEncapsulation.Native - 使用原生的 Shadow DOM 特性  
+ViewEncapsulation.None - 无 Shadow DOM，并且也无样式包装  
 
 ## @Input()
-@Input('bindingPropertyName')
+@Input('bindingPropertyName')  
 Input 装饰器支持一个可选的参数，用来指定组件绑定属性的名称。如果没有指定，则默认使用 @Input 装饰器，装饰的属性名。
 
-setter 和 getter 是用来约束属性的设置和获取，它们提供了一些属性读写的封装，可以让代码更便捷，更具可扩展性。
-通过 setter 和 getter 方式，我们对类中的私有属性进行了封装，能避免外界操作影响到该私有属性。此外通过 setter 我们还可以封装一些业务逻辑，
+setter 和 getter 是用来约束属性的设置和获取，它们提供了一些属性读写的封装，可以让代码更便捷，更具可扩展性。  
+通过 setter 和 getter 方式，我们对类中的私有属性进行了封装，能避免外界操作影响到该私有属性。此外通过 setter 我们还可以封装一些业务逻辑，  
 具体示例如下：
 ```javascript
 _count: number = 0; // 默认私有属性以下划线开头，不是必须也可以使用$count
@@ -229,9 +229,9 @@ get count(): number {
     return this._count;
 }
 ```
-当数据绑定输入属性的值发生变化的时候，Angular 将会主动调用 ngOnChanges 方法。
-在组件内手动改变输入属性的值，ngOnChanges 钩子是不会触发的。
-它会获得一个 SimpleChanges 对象，包含绑定属性的新值和旧值，它主要用于监测组件输入属性的变化。具体示例如下：
+当数据绑定输入属性的值发生变化的时候，Angular 将会主动调用 ngOnChanges 方法。  
+在组件内手动改变输入属性的值，ngOnChanges 钩子是不会触发的。  
+它会获得一个 SimpleChanges 对象，包含绑定属性的新值和旧值，它主要用于监测组件输入属性的变化。具体示例如下：  
 ```javascript
 ngOnChanges(changes: SimpleChanges) {
     console.dir(changes['count']);
@@ -265,9 +265,9 @@ numberEmitter.subscribe((value: number) => console.log(value));
 numberEmitter.emit(10);
 ```
 
-在`Angular`中的`EventEmitter`应用场景是：子指令创建一个`EventEmitter`实例，并将其作为输出属性导出。
-子指令调用已创建的`EventEmitter`实例中的`emit(payload)`方法来触发一个事件，
-父指令通过事件绑定`(eventName)`的方式监听该事件，并通过`$event`对象来获取`payload`对象。
+在`Angular`中的`EventEmitter`应用场景是：子指令创建一个`EventEmitter`实例，并将其作为输出属性导出。  
+子指令调用已创建的`EventEmitter`实例中的`emit(payload)`方法来触发一个事件，  
+父指令通过事件绑定`(eventName)`的方式监听该事件，并通过`$event`对象来获取`payload`对象。  
 ```javascript
 son.component:
 @Output() change: EventEmitter<number> = new EventEmitter<number>();
