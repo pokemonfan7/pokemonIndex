@@ -206,7 +206,7 @@ constructor VS ngOnInit
 
 ## ViewEncapsulation
 ViewEncapsulation 允许设置三个可选的值：  
-ViewEncapsulation.Emulated - 无`Shadow DOM`，但是通过`Angular`提供的样式包装机制来封装组件，使得组件的样式不受外部影响。这是`Angular`的默认设置。 
+ViewEncapsulation.Emulated - 无`Shadow DOM`，但是通过`Angular`提供的样式包装机制来封装组件，使得组件的样式不受外部影响。这是`Angular`的默认设置。  
 ViewEncapsulation.Native - 使用原生的 Shadow DOM 特性  
 ViewEncapsulation.None - 无 Shadow DOM，并且也无样式包装  
 
