@@ -353,7 +353,7 @@ onClick(btn: Event) {
 highlight(color: string) {
     this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', color);
 }
-
+```
 HostBinding 是属性装饰器，用来动态设置宿主元素的属性值。
 ```javascript
 @HostBinding('attr.role') role = 'button';
