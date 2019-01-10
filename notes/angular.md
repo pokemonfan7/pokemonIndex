@@ -20,18 +20,18 @@ provide属性是token（一个标志），useclass属性是实例化的类，在
 - @SkipSelf() - 表示不从本级注入器获取依赖对象
 - @Optional - 表示该依赖对象是可选的，如果找不到返回 null
 
-为什么在构造函数中，非`Type`类型的参数只能用`@Inject(Something)`的方式注入 ？
+为什么在构造函数中，非`Type`类型的参数只能用`@Inject(Something)`的方式注入？  
 因为`Type`类型的对象，会被`TypeScript`编译器编译。即我们通过`class`关键字声明的服务，最终都会编译成`ES5`的函数对象。
 
-在构造函数中，Type 类型的参数能用`@Inject(Type)`的方式注入么？
-`Type`类型的参数也能使用`@Inject(Type)`的方式注入，具体如下：
-`constructor(@Inject(Http) private http) { }`
-同样也可以使用以下方式：
-`constructor(@Inject(Http) private http: Http) { }`
-第一种方式虽然可以正常编译，但 IDE 会有如下的提示信息：
-`[ts] Parameter 'http' implicitly has an 'any' type.`
-第二种方式，虽然`Angular`内部会合并`design:paramtypes`与`parameters`内的`metadata`信息，但是有点冗余了。
-总而言之，如果是`Type`类型的参数，推荐使用下面的方式：
+在构造函数中，Type 类型的参数能用`@Inject(Type)`的方式注入么？  
+`Type`类型的参数也能使用`@Inject(Type)`的方式注入，具体如下：  
+`constructor(@Inject(Http) private http) { }`  
+同样也可以使用以下方式：  
+`constructor(@Inject(Http) private http: Http) { }`  
+第一种方式虽然可以正常编译，但 IDE 会有如下的提示信息：  
+`[ts] Parameter 'http' implicitly has an 'any' type.`  
+第二种方式，虽然`Angular`内部会合并`design:paramtypes`与`parameters`内的`metadata`信息，但是有点冗余了。  
+总而言之，如果是`Type`类型的参数，推荐使用下面的方式：  
 constructor(private http: Http) { }
 
 ## NgModule
