@@ -621,15 +621,16 @@ export class DebounceClickDirective implements OnInit, OnDestroy {
 - `<ng-container`：是一个逻辑容器，可用于对节点进行分组，但不作为 DOM 树中的节点，它将被渲染为 HTML中的 comment 元素，它可用于避免添加额外的元素来使用结构指令。
 
 ## Decorator(装饰器)
-装饰器是一个表达式,该表达式被执行后，返回一个函数,函数的入参分别为 targe、name 和 descriptor
-执行该函数后，可能返回 descriptor 对象，用于配置 target 对象　
+装饰器是一些用于修饰 JavaScript 类的函数。Angular 定义了许多装饰器，这些装饰器会把一些特定种类的元数据附加到类上，以便 Angular 了解这些这些类的含义以及该如何使用它们。  
+装饰器是一个表达式，该表达式被执行后，返回一个函数,函数的入参分别为 targe、name 和 descriptor
+执行该函数后，可能返回 descriptor 对象，用于配置 target 对象  
 装饰器的分类
 - 类装饰器 (Class decorators)
 - 属性装饰器 (Property decorators)
 - 方法装饰器 (Method decorators)
 - 参数装饰器 (Parameter decorators)
 
-Angular内置装饰器分类：
+Angular内置装饰器分类
 - 类装饰器
    @Component、@NgModule、@Pipe、@Injectable
 - 属性装饰器
