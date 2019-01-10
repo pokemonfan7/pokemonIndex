@@ -1,4 +1,4 @@
-## requestAnimationFrame实现回到顶部
+## requestAnimationFrame实现回到顶部 (from`https://cuixote.gitee.io/`)
 ```javascript
 // 匀速返回顶部
 function backToTop(interval = 500, element) {
