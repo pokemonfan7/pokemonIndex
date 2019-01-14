@@ -267,7 +267,7 @@ getJSON('/posts.json').then(function(posts) {
   console.log('发生错误！', error);
 });
 ```
-上面代码中，getJSON方法返回一个 Promise 对象，如果该对象状态变为resolved，则会调用then方法指定的回调函数；如果异步操作抛出错误，状态就会变为rejected，就会调用catch方法指定的回调函数，处理这个错误。*另外，then方法指定的回调函数，如果运行中抛出错误，也会被catch方法捕获。*
+上面代码中，getJSON方法返回一个 Promise 对象，如果该对象状态变为resolved，则会调用then方法指定的回调函数；如果异步操作抛出错误，状态就会变为rejected，就会调用catch方法指定的回调函数，处理这个错误。**另外，then方法指定的回调函数，如果运行中抛出错误，也会被catch方法捕获。**
 
 如果 Promise 状态已经变成resolved，再抛出错误是无效的。
 
@@ -318,7 +318,75 @@ p的状态由p1、p2、p3决定，分成两种情况:
 - 只有p1、p2、p3的状态都变成fulfilled，p的状态才会变成fulfilled，此时p1、p2、p3的返回值组成一个数组，传递给p的回调函数。
 - 只要p1、p2、p3之中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的返回值，会传递给p的回调函数。
 
-*注意，如果作为参数的 Promise 实例，自己定义了catch方法，那么它一旦被rejected，并不会触发Promise.all()的catch方法。*
+**注意，如果作为参数的 Promise 实例，自己定义了catch方法，那么它一旦被rejected，并不会触发Promise.all()的catch方法。**
+
+### Promise.race
+Promise.race方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。
+
+`const p = Promise.race([p1, p2, p3]);`
+
+上面代码中，只要p1、p2、p3之中有一个实例率先改变状态，p的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给p的回调函数。
+
+### Promise.resolve
+Promise.resolve等价于下面的写法。
+```javascript
+Promise.resolve('foo')
+// 等价于
+new Promise(resolve => resolve('foo'))
+```
+1. 参数是一个 Promise 实例
+如果参数是 Promise 实例，那么Promise.resolve将不做任何修改、原封不动地返回这个实例。
+
+2. 参数是一个thenable对象
+thenable对象指的是具有then方法的对象，比如下面这个对象。
+```javascript
+let thenable = {
+  then: function(resolve, reject) {
+    resolve(42);
+  }
+};
+```
+Promise.resolve方法会将这个对象转为 Promise 对象，然后就立即执行thenable对象的then方法。
+
+3. 参数不是具有then方法的对象，或根本就不是对象
+如果参数是一个原始值，或者是一个不具有then方法的对象，则Promise.resolve方法返回一个新的 Promise 对象，状态为resolved。  
+返回 Promise 实例的状态从一生成就是resolved，所以回调函数会立即执行。Promise.resolve方法的参数，会同时传给回调函数。
+
+4. 不带有任何参数
+Promise.resolve方法允许调用时不带参数，直接返回一个resolved状态的 Promise 对象。  
+所以，如果希望得到一个 Promise 对象，比较方便的方法就是直接调用Promise.resolve方法。
+```javascript
+const p = Promise.resolve();
+
+p.then(function () {
+  // ...
+});
+```
+上面代码的变量p就是一个 Promise 对象。p.then执行时间和普通 Promise 对象一样
+
+### Promise.reject
+```javascript
+const p = Promise.reject('出错了');
+// 等同于
+const p = new Promise((resolve, reject) => reject('出错了'))
+
+p.then(null, function (s) {
+  console.log(s)
+});
+// 出错了
+```
+上面代码生成一个 Promise 对象的实例p，状态为rejected，回调函数会立即执行。
+
+**注意，Promise.reject()方法的参数，会原封不动地作为reject的理由，变成后续方法的参数。这一点与Promise.resolve方法不一致。**
+
+### Promise.try
+实际开发中，经常遇到一种情况：不知道或者不想区分，函数f是同步函数还是异步操作，但是想用 Promise 来处理它。因为这样就可以不管f是否包含异步操作，都用then方法指定下一步流程，用catch方法处理f抛出的错误。
+```javascript
+Promise.try(() => database.users.get({id: userId}))
+  .then(...)
+  .catch(...)
+```
+事实上，Promise.try就是模拟try代码块，就像promise.catch模拟的是catch代码块。
 
 ## Object.seal()、Object.freeze()
 - `Object.seal()`密封的对象可以改变它们现有的属性。
