@@ -117,9 +117,114 @@ super这个关键字，既可以当作函数使用，也可以当作对象使用
 作为函数时，super()只能用在子类的构造函数之中，用在其他地方就会报错。
 
 第二种情况，super作为对象时，在普通方法中，指向父类的原型对象；在静态方法中，指向父类。  
-ES6 规定，在子类普通方法中通过super调用父类的方法时，方法内部的this指向当前的子类实例。
+ES6 规定，在子类普通方法中通过super调用父类的方法时，方法内部的this指向当前的子类实例。  
+由于this指向子类实例，所以如果通过super对某个属性赋值，这时super就是this，赋值的属性会变成子类实例的属性。  
+如果super作为对象，用在静态方法之中，这时super将指向父类，而不是父类的原型对象。  
+另外，在子类的静态方法中通过super调用父类的方法时，方法内部的this指向当前的子类，而不是子类的实例。
 
+### 类的prototype属性和__proto__属性
+1. 子类的__proto__属性，表示构造函数的继承，总是指向父类。
+2. 子类prototype属性的__proto__属性，表示方法的继承，总是指向父类的prototype属性。
 
+这样的结果是因为，类的继承是按照下面的模式实现的。
+```javascript
+class A {
+}
+
+class B {
+}
+
+// B 的实例继承 A 的实例
+Object.setPrototypeOf(B.prototype, A.prototype);
+
+// B 继承 A 的静态属性
+Object.setPrototypeOf(B, A);
+
+const b = new B();
+```
+Object.setPrototypeOf方法的实现
+```javascript
+Object.setPrototypeOf = function (obj, proto) {
+  obj.__proto__ = proto;
+  return obj;
+}
+```
+因此，就得到了上面的结果。
+```javascript
+Object.setPrototypeOf(B.prototype, A.prototype);
+// 等同于
+B.prototype.__proto__ = A.prototype;
+
+Object.setPrototypeOf(B, A);
+// 等同于
+B.__proto__ = A;
+```
+
+下面，讨论两种情况。第一种，子类继承Object类。
+```jvascript
+class A extends Object {
+}
+
+A.__proto__ === Object // true
+A.prototype.__proto__ === Object.prototype // true
+```
+这种情况下，A其实就是构造函数Object的复制，A的实例就是Object的实例。
+
+第二种情况，不存在任何继承。
+```javascript
+class A {
+}
+
+A.__proto__ === Function.prototype // true
+A.prototype.__proto__ === Object.prototype // true
+```
+这种情况下，A作为一个基类（即不存在任何继承），就是一个普通函数，所以直接继承`Function.prototype`。但是，A调用后返回一个空对象（即Object实例），所以`A.prototype.__proto__`指向构造函数（Object）的prototype属性。
+
+### 实例的`__proto__`属性
+子类实例的__proto__属性的__proto__属性，指向父类实例的__proto__属性。也就是说，子类的原型的原型，是父类的原型。
+
+### 原生构造函数的继承
+原生构造函数是指语言内置的构造函数，通常用来生成数据结构。ECMAScript 的原生构造函数大致有下面这些。
+```javascript
+Boolean()
+Number()
+String()
+Array()
+Date()
+Function()
+RegExp()
+Error()
+Object()
+```
+以前，这些原生构造函数是无法继承的
+
+ES6 允许继承原生构造函数定义子类，因为 ES6 是先新建父类的实例对象this，然后再用子类的构造函数修饰this，使得父类的所有行为都可以继承。下面是一个继承Array的例子。
+```javascript
+class MyArray extends Array {
+  constructor(...args) {
+    super(...args);
+  }
+}
+
+var arr = new MyArray();
+arr[0] = 12;
+arr.length // 1
+
+arr.length = 0;
+arr[0] // undefined
+```
+
+**注意，继承Object的子类，有一个行为差异。**
+```javascript
+class NewObj extends Object{
+  constructor(){
+    super(...arguments);
+  }
+}
+var o = new NewObj({attr: true});
+o.attr === true  // false
+```
+上面代码中，NewObj继承了Object，但是无法通过super方法向父类Object传参。这是因为 ES6 改变了Object构造函数的行为，一旦发现Object方法不是通过new Object()这种形式调用，ES6 规定Object构造函数会忽略参数。
 
 ## promise
 ### Promise捕获错误与 try catch 等同
