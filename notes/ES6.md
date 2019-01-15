@@ -1,3 +1,126 @@
+## Class
+### 基本语法
+ES6 的类，完全可以看作构造函数的另一种写法。
+```javascript
+class Point {
+  // ...
+}
+
+typeof Point // "function"
+Point === Point.prototype.constructor // true
+```
+上面代码表明，类的数据类型就是函数，类本身就指向构造函数。  
+使用的时候，也是直接对类使用new命令，跟构造函数的用法完全一致。
+
+构造函数的prototype属性，在 ES6 的“类”上面继续存在。事实上，类的所有方法都定义在类的prototype属性上面。  
+在类的实例上面调用方法，其实就是调用原型上的方法。
+
+**类的内部所有定义的方法，都是不可枚举的（non-enumerable）,这一点与 ES5 的行为不一致。**
+
+### constructor方法
+constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。  
+constructor方法默认返回实例对象（即this），完全可以指定返回另外一个对象，此时实例对象将不再是原来类的实例  
+类必须使用new调用，否则会报错。这是它跟普通构造函数的一个主要区别，后者不用new也可以执行。
+
+### 类的实例
+与 ES5 一样，实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）。  
+与 ES5 一样，类的所有实例共享一个原型对象。这也意味着，可以通过实例的`__proto__`属性为“类”添加方法。但不推荐使用，推荐使用`Object.getPrototypeOf` 方法来获取实例对象的原型，然后再来为原型添加方法/属性。
+
+### setter&getter
+与 ES5 一样，在“类”的内部可以使用get和set关键字，对某个属性设置存值函数和取值函数，拦截该属性的存取行为。
+```javascript
+class MyClass {
+  constructor() {
+    // ...
+  }
+  get prop() {
+    return 'getter';
+  }
+  set prop(value) {
+    console.log('setter: '+value);
+  }
+}
+
+let inst = new MyClass();
+
+inst.prop = 123;
+// setter: 123
+
+inst.prop
+// 'getter'
+```
+上面代码中，prop属性有对应的存值函数和取值函数，因此赋值和读取行为都被自定义了。
+
+### Class表达式
+与函数一样，类也可以使用表达式的形式定义。
+```javascript
+const MyClass = class Me {
+  getClassName() {
+    return Me.name;
+  }
+};
+```
+上面代码使用表达式定义了一个类。需要注意的是，这个类的名字是MyClass而不是Me，Me只在 Class 的内部代码可用，指代当前类。  
+如果类的内部没用到的话，可以省略Me，也就是可以写成下面的形式。  
+`const MyClass = class { /* ... */ };`
+采用 Class 表达式，可以写出立即执行的 Class。
+```javascript
+let person = new class {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayName() {
+    console.log(this.name);
+  }
+}('张三');
+
+person.sayName(); // "张三"
+```
+
+### 静态方法
+类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为“静态方法”。  
+**注意，如果静态方法包含this关键字，这个this指的是类，而不是实例。**
+```javascript
+class Foo {
+  static bar() {
+    this.baz();
+  }
+  static baz() {
+    console.log('hello');
+  }
+  baz() {
+    console.log('world');
+  }
+}
+
+Foo.bar() // hello
+```
+上面代码中，静态方法bar调用了this.baz，这里的this指的是Foo类，而不是Foo的实例，等同于调用Foo.baz。另外，从这个例子还可以看出，静态方法可以与非静态方法重名。  
+父类的静态方法，可以被子类继承。静态方法也是可以从super对象上调用的。
+
+## Class继承
+### 简介
+**子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类自己的this对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用super方法，子类就得不到this对象。**  
+ES5 的继承，实质是先创造子类的实例对象this，然后再将父类的方法添加到this上面（Parent.apply(this)）。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到this上面（所以必须先调用super方法），然后再用子类的构造函数修改this。  
+
+### Object.getPrototypeOf()
+Object.getPrototypeOf方法可以用来从子类上获取父类。
+`Object.getPrototypeOf(ColorPoint) === Point // true`
+因此，可以使用这个方法判断，一个类是否继承了另一个类。
+
+### super关键字
+super这个关键字，既可以当作函数使用，也可以当作对象使用。在这两种情况下，它的用法完全不同。
+
+第一种情况，super作为函数调用时，代表父类的构造函数。ES6 要求，子类的构造函数必须执行一次super函数。  
+**注意，super虽然代表了父类A的构造函数，但是返回的是子类B的实例，即super内部的this指的是B**  
+作为函数时，super()只能用在子类的构造函数之中，用在其他地方就会报错。
+
+第二种情况，super作为对象时，在普通方法中，指向父类的原型对象；在静态方法中，指向父类。  
+ES6 规定，在子类普通方法中通过super调用父类的方法时，方法内部的this指向当前的子类实例。
+
+
+
 ## promise
 ### Promise捕获错误与 try catch 等同
 ```javascript
