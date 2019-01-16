@@ -141,7 +141,7 @@ ul li + li{border-top:1px solid #000;}
 :first-child :last-child :nth-child  
 :link :visited :hover :active  
 input:focus :target
-```css
+```
 //如果用户点击一个指向页面中其他元素的链接，则那个元素就是目标（target），可以用 :target 伪类选中它。
 <a href="#more_info">More Information</a>
 #more_info:target {background:#eee;}
