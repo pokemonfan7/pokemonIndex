@@ -72,6 +72,9 @@ ul li + li{border-top:1px solid #000;}
 在分配空间之前，也已经分得到空间
 缩写：flex: none 或者 [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]（||后面的属性可不写）
 
+- order
+利用order来控制div块的顺序，默认为0，大于0在前，小于0在后
+
 - flex-direction
 排列方式，决定主轴位置（水平方向）：
    - row | row-reverse | column | column-reverse
@@ -133,6 +136,7 @@ ul li + li{border-top:1px solid #000;}
 ```
 ## 伪类、伪元素
 一个冒号（ : ）表示伪类，两个冒号（ :: ）表示 CSS3新增的伪元素。
+伪类： 
 - :first-child :last-child :nth-child
 - a:link {color:black;} a:visited {color:gray;} a:hover {text-decoration:none;} a:active {color:red;}
 - input:focus {border:1px solid blue;}
@@ -141,9 +145,8 @@ ul li + li{border-top:1px solid #000;}
 <a href="#more_info">More Information</a>
 #more_info:target {background:#eee;}
 ```
-
-伪元素
-- ::first-letter ::first-line ::before ::after
+伪元素：
+- ::first-letter ::first-line ::before ::after ::selection
 ```css
 //首字符下沉
 p::first-letter {
