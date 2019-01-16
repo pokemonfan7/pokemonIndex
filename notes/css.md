@@ -9,7 +9,8 @@
 - `position`的值不为`static`或者`relative`
 - `display`的值为`table-cell`、`table-caption`、`inline-block`、`flex`、 `inline-flex`
 - `overflow`的值不为 visible
-约束规则：
+
+约束规则：  
 1. 内部的Box会在垂直方向上一个接一个的放置
 2. 同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。
 3. BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界
@@ -18,7 +19,7 @@
 6. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
 
 ## css选择器实践
-ul li + li{border-top:1px solid #000;}
+`ul li + li{border-top:1px solid #000;}`
 第一个li不加border-top，其余都加上
 
 ## position
@@ -31,11 +32,11 @@ ul li + li{border-top:1px solid #000;}
 - 效果: transform-style：flat | preserve-3d
 
 ## outline
-轮廓是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+轮廓是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。  
 轮廓线不会占据空间，也不一定是矩形。
 
 ## resize
-属性规定是否可由用户调整元素的尺寸。
+属性规定是否可由用户调整元素的尺寸。  
 如果希望此属性生效，需要设置元素的 overflow 属性，值可以是 auto、hidden 或 scroll。
 - none 用户无法调整元素的尺寸
 - both 用户可调整元素的高度和宽度
@@ -53,7 +54,7 @@ ul li + li{border-top:1px solid #000;}
 属性控制滚动元素内的背景图片是否随元素滚动而移动。（默认为scroll，固定背景为fixed），可加入background的简写
 
 ## background-clip & background-origin
-对于这两个新属性，其对应的keyword是相同的：border-box, padding-box, content-box。
+对于这两个新属性，其对应的keyword是相同的：border-box, padding-box, content-box。  
 它们的最根本的区别就是：background-clip 是对背景图片的裁剪，background-origin是对背景图片设置起始点。
 - 对于background-clip, 其关键字是指将背景图片以border的尺寸、以padding的尺寸，以content的尺寸进行切割，其得到的结果是不完整的背景，也就是其中的一部分(原理与截图差不多)。而且有一点要注意，background-clip的切割是对这个容器背景的切割(包括图片与背景颜色)。
 - 对于background-origin，其关键字是指将背景图片放置到border范围内，padding范围内、content范围内，其得到的结果是完整的背景(原理与图片的缩放相似)。与background-clip不同的是，它只是单纯设置背景图片的边界，并不会对背景颜色造成影响。
