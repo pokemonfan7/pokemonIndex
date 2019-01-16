@@ -136,18 +136,24 @@ ul li + li{border-top:1px solid #000;}
 ```
 ## 伪类、伪元素
 一个冒号（ : ）表示伪类，两个冒号（ :: ）表示 CSS3新增的伪元素。
-伪类： 
-- :first-child :last-child :nth-child
-- a:link {color:black;} a:visited {color:gray;} a:hover {text-decoration:none;} a:active {color:red;}
-- input:focus {border:1px solid blue;}
-如果用户点击一个指向页面中其他元素的链接，则那个元素就是目标（target），可以用 :target 伪类选中它。
-```html
+```
+//伪类
+:first-child :last-child :nth-child
+:link :visited :hover :active
+input:focus
+```
+```
+//如果用户点击一个指向页面中其他元素的链接，则那个元素就是目标（target），可以用 :target 伪类选中它。
 <a href="#more_info">More Information</a>
 #more_info:target {background:#eee;}
 ```
-伪元素：
-- ::first-letter ::first-line ::before ::after ::selection
-```css
+```
+//伪元素
+::first-letter ::first-line
+::before ::after
+::selection
+```
+```
 //首字符下沉
 p::first-letter {
 font-family:Lato, helvetica, sans-serif;
