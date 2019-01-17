@@ -1,3 +1,6 @@
+## 判断对象相等
+用JSON.stringify()
+
 ## 构造函数、原型对象和实例的关系
 ![prototype](./assets/prototype.png "关系图")
 ```javascript
