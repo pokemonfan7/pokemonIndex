@@ -1,3 +1,37 @@
+## 微信小程序
+```
+properties: {
+  latest:{
+      type:Boolean,
+      value:false,
+      //当这个值改变时触发，注意，在其中setData改变该值可能引起循环调用
+      observer:function(){
+        // console.log('111111')
+        // this.setData({
+        //   latest:this.properties.latest
+        // })
+      }
+}
+```
+
+`this.triggerEvent('getuserinfo', '传递参数', {})`触发自定义事件
+
+```javascript
+Behavior({
+  properties: {
+   
+  },
+  data: {
+    
+  },
+
+  methods: {
+  
+  }
+})
+```
+behavior定义继承
+
 ## Electron
 ```javscript
 //main.js
