@@ -32,6 +32,25 @@ Behavior({
 ```
 behavior定义继承
 
+缓存数据
+`wx.setStorageSync(string key, any data)`
+
+wx:for wx:key
+- 当for本身的是一组数字或者字符串，则key可以使用`*this`
+- 当for本身为对象时，可以使用对象中不重复的属性复制，该属性的值需为数字或字符串
+
+跳转页面使用
+```
+wx.navigateTo({
+  url: '../../pages/detail/detail?bid='+this.properties.book.id,
+})
+
+//page
+onload(option){
+  console.log(option.bid)
+}
+```
+
 ## Electron
 ```javscript
 //main.js
