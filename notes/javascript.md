@@ -1,3 +1,6 @@
+## 事件循环
+script(主程序代码)—>process.nextTick—>Promises...——>setTimeout——>setInterval——>setImmediate——> I/O——>UI rendering
+
 ## call、apply、bind()
 `apply`、`call`、`bind`三者都是用来改变函数的this对象的指向的  
 `apply`、`call`、`bind`三者第一个参数都是this要指向的对象，也就是想指定的上下文  
