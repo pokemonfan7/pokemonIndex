@@ -193,7 +193,8 @@ Object、Array、Date、RegExp、Function、基本包装类型（Boolean、Numbe
 
 ## 异步执行
 - microtasks: process.nextTick、 Promises、 Object.observe、 MutationObserver
-- macrotasks: script(整体代码)、 setTimeout、 setInterval、 setImmediate、 I/O、 UI rendering  
+- macrotasks: script(整体代码)、 setTimeout、 setInterval、 setImmediate、 I/O、 UI rendering
+
 执行顺序:  
 script(主程序代码)—>process.nextTick—>Promises...——>setTimeout——>setInterval——>setImmediate——> I/O——>UI rendering
 
