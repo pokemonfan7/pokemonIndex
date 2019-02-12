@@ -1,3 +1,42 @@
+## 原型继承
+```javascript
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.setName = function(name) {
+  this.name = name;
+};
+Animal.prototype.getName = function(name) {
+  return this.name;
+};
+
+function Dog(name, breed) {
+  Animal.call(this, name);
+  this.breed = breed;
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+
+// 因为上面的语句将我们原来的prototype的指向修改了，所以我们要重新定义Dog的prototype属性的constructor属性
+Reflect.defineProperty(Dog.prototype, "constructor", {
+  value: Dog,
+  enumerable: false, // 不可枚举
+  writable: true
+});
+
+const animal = new Animal("potato");
+console.log(animal.__proto__ === Animal.prototype); // true
+console.log(animal.constructor === Animal); // true
+console.log(animal.name); // potato
+
+const dog = new Dog("potato", "labrador");
+console.log(dog.name); // potato
+console.log(dog.breed); // labrador
+console.log(dog.__proto__ === Dog.prototype); // true
+console.log(dog.constructor === Dog); // true
+```
+
 ## call、apply、bind()
 `apply`、`call`、`bind`三者都是用来改变函数的this对象的指向的  
 `apply`、`call`、`bind`三者第一个参数都是this要指向的对象，也就是想指定的上下文  
