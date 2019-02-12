@@ -1,6 +1,3 @@
-## 事件循环
-script(主程序代码)—>process.nextTick—>Promises...——>setTimeout——>setInterval——>setImmediate——> I/O——>UI rendering
-
 ## call、apply、bind()
 `apply`、`call`、`bind`三者都是用来改变函数的this对象的指向的  
 `apply`、`call`、`bind`三者第一个参数都是this要指向的对象，也就是想指定的上下文  
@@ -196,7 +193,10 @@ Object、Array、Date、RegExp、Function、基本包装类型（Boolean、Numbe
 
 ## 异步执行
 - microtasks: process.nextTick、 Promises、 Object.observe、 MutationObserver
-- macrotasks: script(整体代码)、 setTimeout、 setInterval、 setImmediate、 I/O、 UI rendering 
+- macrotasks: script(整体代码)、 setTimeout、 setInterval、 setImmediate、 I/O、 UI rendering
+执行顺序:  
+script(主程序代码)—>process.nextTick—>Promises...——>setTimeout——>setInterval——>setImmediate——> I/O——>UI rendering
+
 
 ## offset、scroll、client
 ### offset
