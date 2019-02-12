@@ -182,5 +182,5 @@ line-height:0.5;
 - line-height
 - text-transform文本转换（none 、 uppercase 、 lowercase 、 capitalize用于转换元素中文本的大小写，它可以设定英文单词首字母大
 写、全部字母大写和全部字母小写。）
-- vertical-align以基线为参照上下移动文本，但这个属性只影响行内元素。如果你想在垂直方向上对齐块级元素，必须把其 display 属性设定为 inline 。 vertical-align属性最常用于公式或化学分子式中的上标和下标，或者用于文本中脚注的角标，比如把星号变成上角标。浏览器默认<sup>上标，<sub>为下标
+- vertical-align以基线为参照上下移动文本，但这个属性只影响行内元素。如果你想在垂直方向上对齐块级元素，必须把其 display 属性设定为 inline 。 vertical-align属性最常用于公式或化学分子式中的上标和下标，或者用于文本中脚注的角标，比如把星号变成上角标。浏览器默认`<sup>`上标，`<sub>`为下标
 
