@@ -1,3 +1,87 @@
+## 排序
+### 冒泡排序
+```javascript
+function maoPao(arr) {
+  const len = arr.length
+  for(let i = 0; i < len - 1; i++){
+    for(let j = 1; j < len; j++){
+      if (arr[j - 1] > arr[j]){
+        let k = arr[j - 1]
+        arr[j - 1] = arr[j]
+        arr[j] = k
+      }
+    }
+  }
+  return arr
+}
+```
+### 插入排序
+```javascript
+function chaRu(arr) {
+  const len = arr.length
+  for(let i = 1; i < len; i++){
+    for (let j = i; j > 0; j--){
+      if (arr[j - 1] > arr[j]){
+        let k = arr[j - 1]
+        arr[j - 1] = arr[j]
+        arr[j] = k
+      }
+    }
+  }
+  return arr
+}
+```
+### 选择排序
+```javascript
+function xuanZhe(arr) {
+  const len = arr.length
+  for(let i = 0; i < len - 1; i++){
+    for(let j = i; j < len; j++){
+      if (arr[i] > arr[j]){
+        let k = arr[i]
+        arr[i] = arr[j]
+        arr[j] = k
+      }
+    }
+  }
+  return arr
+}
+```
+### 快速排序
+```javascript
+function kuaiSu(arr) {
+  if (arr.length < 2) {
+    return arr
+  }
+  let leftArr = []
+  let rightArr = []
+  let theNumIndex = Math.floor(arr.length/2)
+  let theNum = arr.splice(theNumIndex - 1, 1)
+  arr.forEach((v) => {
+    if (v <= theNum) {
+      leftArr.push(v)
+    } else {
+      rightArr.push(v)
+    }
+  })
+  return kuaiSu(leftArr).concat(theNum, kuaiSu(rightArr))
+}
+```
+### 数组排序算法的复杂性
+
+| 名称                  | 最优      | 平均      | 最坏          | 内存      | 稳定      | 备注                  |
+| --------------------- | :-------: | :-------: | :-----------: | :-------: | :-------: | --------------------- |
+| **冒泡排序**          | n         | n^2       | n^2           | 1         | Yes       |                       |
+| **插入排序**          | n         | n^2       | n^2           | 1         | Yes       |                       |
+| **选择排序**          | n^2       | n^2       | n^2           | 1         | No        |                       |
+| **堆排序**            | n log(n)  | n log(n)  | n log(n)      | 1         | No        |                       |
+| **归并排序**          | n log(n)  | n log(n)  | n log(n)      | n         | Yes       |                       |
+| **快速排序**          | n log(n)  | n log(n)  | n^2           | log(n)    | No        | 在 in-place 版本下，内存复杂度通常是 O(log(n)) |
+| **希尔排序**          | n log(n)  | 取决于差距序列   | n (log(n))^2  | 1         | No        |  |
+| **计数排序**          | n + r     | n + r     | n + r         | n + r     | Yes       | r - 数组里最大的数    |
+| **基数排序**          | n * k     | n * k     | n * k         | n + k     | Yes       | k - 最长 key 的升序   |
+
+
 ## 原型继承
 ```javascript
 function Animal(name) {
