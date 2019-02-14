@@ -72,10 +72,6 @@ function kuaiSu(arr) {
 
 大O符号中指定的算法的增长顺序。
 
-![Big O graphs](./assets/big-o-graph.png)
-
-源: [Big O Cheat Sheet](http://bigocheatsheet.com/).
-
 以下是一些最常用的 大O标记法 列表以及它们与不同大小输入数据的性能比较。
 
 | 大O标记法      | 计算10个元素                 | 计算100个元素                 | 计算1000个元素                  |
