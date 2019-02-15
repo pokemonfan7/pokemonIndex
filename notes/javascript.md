@@ -1,3 +1,40 @@
+## 递归
+给定一个无序不重复数组，找出3个数，它们的和为目标数
+```javascript
+var arr = [2, 3, 1, 5, 7, 8, 8, 4, 10, 15]
+var target = 9
+
+var combinationSum2 = function(arr, target) {
+	const buffer = [];
+	const result = [];
+
+    const backTrace = (index, target) => {
+        if(target === 0) {
+            return result.push(buffer.slice());
+        }
+
+        if(target < 0) {
+            return;
+        }
+
+        if(index === arr.length) {
+          return;
+        }
+
+        buffer.push(arr[index]);//暂时保存当前数字
+        backTrace(index + 1, target - arr[index]);
+        buffer.pop();//删除保存的数组，下一步重新开始
+
+        backTrace(index + 1, target);
+    }
+    backTrace(0, target);
+
+    return result.filter(item => item.length === 3)
+};
+
+console.log(combinationSum2(arr, target))
+```
+
 ## 排序
 ### 冒泡排序
 ```javascript
