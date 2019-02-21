@@ -51,6 +51,8 @@ onload(option){
 }
 ```
 
+wxs在wxml中引用，wxs和ES5语法类似
+
 ## Electron
 ```javscript
 //main.js
