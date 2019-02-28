@@ -427,7 +427,7 @@ TemplateRef：用于表示内嵌的 template 模板元素，通过 TemplateRef �
 
 ViewContainerRef：用于表示一个视图容器，可添加一个或多个视图。通过 ViewContainerRef 实例，我们可以基于 TemplateRef 实例创建内嵌视图，并能指定内嵌视图的插入位置，
 也可以方便对视图容器中已有的视图进行管理。简而言之，ViewContainerRef 的主要作用是创建和管理内嵌视图或组件视图。  
-*如果你以某个元素或组件作为视图容器ViewContainerRef，对其新增的组件、模版，将成为这个视图容器的兄弟节点(新增使用createEmbeddedView())*
+**如果你以某个元素或组件作为视图容器ViewContainerRef，对其新增的组件、模版，将成为这个视图容器的兄弟节点(新增使用createEmbeddedView())**
 
 1. `Angular`支持的 View(视图) 类型有哪几种？  
 Embedded Views - Template 模板元素  
