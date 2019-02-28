@@ -113,7 +113,7 @@ flex属性的简写应将所有的值写上，否则根据默认的值会有问�
 
    当这两个属性遇到了flex-direction: column / column-reverse  整个顺序就都变了。
 
-## white-space
+## white-space、word-break、word-wrap
 属性设置如何处理元素内的空白
 - normal	默认，空白会被浏览器忽略。
 - pre	空白会被浏览器保留。其行为方式类似`HTML`中的`<pre>`标签。
@@ -121,6 +121,10 @@ flex属性的简写应将所有的值写上，否则根据默认的值会有问�
 - pre-wrap	保留空白符序列，但是正常地进行换行。
 - pre-line	合并空白符序列，但是保留换行符。
 - inherit	规定应该从父元素继承`white-space`属性的值。
+
+word-break，控制单词如何被拆分换行。它有三个值：normal | break-all | keep-all  
+
+word-wrap（overflow-wrap）控制长度超过一行的单词是否被拆分换行，是word-break的补充，它有两个值：normal | break-word
 
 ## 39.animation
 - animation-name  名称
